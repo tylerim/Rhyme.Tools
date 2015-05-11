@@ -70,6 +70,8 @@
 			this.btnLogServer = new System.Windows.Forms.Button();
 			this.btnLogClient = new System.Windows.Forms.Button();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.label4 = new System.Windows.Forms.Label();
+			this.btnViewTourney = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtBufferTime = new System.Windows.Forms.TextBox();
@@ -99,8 +101,6 @@
 			this.txtUATPath = new System.Windows.Forms.TextBox();
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.btnViewTourney = new System.Windows.Forms.Button();
-			this.label4 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.gbClient.SuspendLayout();
@@ -553,6 +553,25 @@
 			this.tabPage5.Text = "Tourney";
 			this.tabPage5.UseVisualStyleBackColor = true;
 			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(3, 10);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(61, 13);
+			this.label4.TabIndex = 15;
+			this.label4.Text = "Connection";
+			// 
+			// btnViewTourney
+			// 
+			this.btnViewTourney.Location = new System.Drawing.Point(414, 33);
+			this.btnViewTourney.Name = "btnViewTourney";
+			this.btnViewTourney.Size = new System.Drawing.Size(137, 25);
+			this.btnViewTourney.TabIndex = 14;
+			this.btnViewTourney.Text = "View TourneyTemplates";
+			this.btnViewTourney.UseVisualStyleBackColor = true;
+			this.btnViewTourney.Click += new System.EventHandler(this.btnViewTourney_Click);
+			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
@@ -841,25 +860,6 @@
 			this.groupBox2.TabIndex = 20;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "UAT / Live Path";
-			// 
-			// btnViewTourney
-			// 
-			this.btnViewTourney.Location = new System.Drawing.Point(414, 33);
-			this.btnViewTourney.Name = "btnViewTourney";
-			this.btnViewTourney.Size = new System.Drawing.Size(92, 25);
-			this.btnViewTourney.TabIndex = 14;
-			this.btnViewTourney.Text = "View Tourney";
-			this.btnViewTourney.UseVisualStyleBackColor = true;
-			this.btnViewTourney.Click += new System.EventHandler(this.btnViewTourney_Click);
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(3, 10);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(61, 13);
-			this.label4.TabIndex = 15;
-			this.label4.Text = "Connection";
 			// 
 			// frmMain
 			// 
