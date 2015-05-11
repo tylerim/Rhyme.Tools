@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MonitoringServerInformation>
+    <Enable>false</Enable>
+    <Host>localhost</Host>
+    <Port>6115</Port>
+  </MonitoringServerInformation>
+  <CRMServerInformation>
+    <Enable>true</Enable>
+    <Host>localhost</Host>
+    <Port>7115</Port>
+  </CRMServerInformation>
+  <MangoServerInformation>
+    <Enable>false</Enable>
+    <Host>middlewares.stage.mango.1luck.com:6379</Host>
+  </MangoServerInformation>
+  <CacheServerInformation>
+    <Addresses>192.168.0.151</Addresses>
+  </CacheServerInformation>
+	<ModuleInformations>
+		<ModuleInformation>
+			<Id>1</Id>
+			<MachineIdentifier>*</MachineIdentifier>
+			<Module>Account</Module>
+			<ServiceType>1</ServiceType>
+			<ServiceImplName>AccountImpl</ServiceImplName>
+			<ServiceImplAddress>localhost</ServiceImplAddress>
+			<ServiceImplPort>6203</ServiceImplPort>
+			<PublicServiceImplAddress />
+			<ConnectIds>
+				<unsignedInt>3</unsignedInt>
+			</ConnectIds>
+		</ModuleInformation>
+		<ModuleInformation>
+			<Id>2</Id>
+			<MachineIdentifier>*</MachineIdentifier>
+			<Module>Client</Module>
+			<ServiceType>2</ServiceType>
+			<ServiceImplName>ClientProxy</ServiceImplName>
+			<ServiceImplAddress>localhost</ServiceImplAddress>
+			<ServiceImplPort>6124</ServiceImplPort>
+			<PublicServiceImplAddress />
+			<ConnectIds>
+				<unsignedInt>1</unsignedInt>
+				<unsignedInt>4</unsignedInt>
+				<unsignedInt>5</unsignedInt>
+				<unsignedInt>6</unsignedInt>
+				<unsignedInt>7</unsignedInt>
+				<unsignedInt>9</unsignedInt>
+				<unsignedInt>11</unsignedInt>
+			</ConnectIds>
+		</ModuleInformation>
+		<ModuleInformation>
+			<Id>3</Id>
+			<MachineIdentifier>*</MachineIdentifier>
+			<Module>DB</Module>
+			<ServiceType>3</ServiceType>
+			<ServiceImplName>DbImpl</ServiceImplName>
+			<ServiceImplAddress>localhost</ServiceImplAddress>
+			<ServiceImplPort>6204</ServiceImplPort>
+			<PublicServiceImplAddress />
+			<ConnectIds />
+		</ModuleInformation>
+		<ModuleInformation>
+			<Id>4</Id>
+			<MachineIdentifier>*</MachineIdentifier>
+			<Module>Image</Module>
+			<ServiceType>4</ServiceType>
+			<ServiceImplName>ImageImpl</ServiceImplName>
+			<ServiceImplAddress>localhost</ServiceImplAddress>
+			<ServiceImplPort>6206</ServiceImplPort>
+			<PublicServiceImplAddress />
+			<ConnectIds />
+		</ModuleInformation>
+		<ModuleInformation>
+			<Id>5</Id>
+			<MachineIdentifier>*</MachineIdentifier>
+			<Module>Lobby</Module>
+			<ServiceType>5</ServiceType>
+			<ServiceImplName>LobbyImpl</ServiceImplName>
+			<ServiceImplAddress>localhost</ServiceImplAddress>
+			<ServiceImplPort>6207</ServiceImplPort>
+			<PublicServiceImplAddress />
+			<ConnectIds />
+		</ModuleInformation>
+		<ModuleInformation>
+			<Id>6</Id>
+			<MachineIdentifier>*</MachineIdentifier>
+			<Module>Mail</Module>
+			<ServiceType>6</ServiceType>
+			<ServiceImplName>MailImpl</ServiceImplName>
+			<ServiceImplAddress>localhost</ServiceImplAddress>
+			<ServiceImplPort>6208</ServiceImplPort>
+			<PublicServiceImplAddress />
+			<ConnectIds>
+				<unsignedInt>3</unsignedInt>
+			</ConnectIds>
+		</ModuleInformation>
+		<ModuleInformation>
+			<Id>7</Id>
+			<MachineIdentifier>*</MachineIdentifier>
+			<Module>Jump</Module>
+			<ServiceType>7</ServiceType>
+			<ServiceImplName>JumpService</ServiceImplName>
+			<ServiceImplAddress>localhost</ServiceImplAddress>
+			<ServiceImplPort>6209</ServiceImplPort>
+			<PublicServiceImplAddress></PublicServiceImplAddress>
+			<ConnectIds>
+				<unsignedInt>1</unsignedInt>
+			</ConnectIds>
+		</ModuleInformation>
+		<ModuleInformation>
+			<Id>8</Id>
+			<MachineIdentifier>*</MachineIdentifier>
+			<Module>Table</Module>
+			<ServiceType>8</ServiceType>
+			<ServiceImplName>TableService</ServiceImplName>
+			<ServiceImplAddress>localhost</ServiceImplAddress>
+			<ServiceImplPort>6125</ServiceImplPort>
+			<PublicServiceImplAddress></PublicServiceImplAddress>
+			<ConnectIds>
+				<unsignedInt>1</unsignedInt>
+        <unsignedInt>7</unsignedInt>
+				<unsignedInt>9</unsignedInt>
+				<unsignedInt>11</unsignedInt>
+			</ConnectIds>
+		</ModuleInformation>
+		<ModuleInformation>
+			<Id>9</Id>
+			<MachineIdentifier>*</MachineIdentifier>
+			<Module>TableManager</Module>
+			<ServiceType>9</ServiceType>
+			<ServiceImplName>TableManagerImpl</ServiceImplName>
+			<ServiceImplAddress>localhost</ServiceImplAddress>
+			<ServiceImplPort>6205</ServiceImplPort>
+			<PublicServiceImplAddress />
+			<ConnectIds>
+				<unsignedInt>3</unsignedInt>
+			</ConnectIds>
+		</ModuleInformation>
+		<ModuleInformation>
+			<Id>10</Id>
+			<MachineIdentifier>*</MachineIdentifier>
+			<Module>BackOffice</Module>
+			<ServiceType>10</ServiceType>
+			<ServiceImplName>BackOffice</ServiceImplName>
+			<ServiceImplAddress>localhost</ServiceImplAddress>
+			<ServiceImplPort>6210</ServiceImplPort>
+			<PublicServiceImplAddress />
+			<ConnectIds>
+				<unsignedInt>3</unsignedInt>
+				<unsignedInt>9</unsignedInt>
+			</ConnectIds>
+		</ModuleInformation>
+		<ModuleInformation>
+			<Id>11</Id>
+			<MachineIdentifier>*</MachineIdentifier>
+			<Module>Tournament</Module>
+			<ServiceType>11</ServiceType>
+			<ServiceImplName>TourneyService</ServiceImplName>
+			<ServiceImplAddress>localhost</ServiceImplAddress>
+			<ServiceImplPort>6211</ServiceImplPort>
+			<PublicServiceImplAddress />
+			<ConnectIds>
+				<unsignedInt>1</unsignedInt>
+				<unsignedInt>3</unsignedInt>
+			</ConnectIds>
+		</ModuleInformation>
+	</ModuleInformations>
+</ServiceConfiguration>
+

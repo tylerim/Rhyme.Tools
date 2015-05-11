@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CBB96A24-01A2-4C06-8872-8B537F79DC41}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rhyme.Tools</RootNamespace>
+    <AssemblyName>RhymeTools</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>RequireFiles\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>RequireFiles\HAHA.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behavior\DbBehavior.cs" />
+    <Compile Include="Behavior\Paths.cs" />
+    <Compile Include="Behavior\ProcessBehavior.cs" />
+    <Compile Include="Behavior\WindowBehavior.cs" />
+    <Compile Include="frmMainContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainContainer.Designer.cs">
+      <DependentUpon>frmMainContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\SqlHelperAdd.cs" />
+    <Compile Include="Helper\SqlHelper.cs" />
+    <Compile Include="Services\ExecutePowerShell\frmExecutePowerShell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\ExecutePowerShell\frmExecutePowerShell.Designer.cs">
+      <DependentUpon>frmExecutePowerShell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\GuidGenerator\frmGuidGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\GuidGenerator\frmGuidGenerator.Designer.cs">
+      <DependentUpon>frmGuidGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\GuidGenerator\GuidExtension.cs" />
+    <Compile Include="Services\HandIdConverter\frmHandIdConverter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\HandIdConverter\frmHandIdConverter.Designer.cs">
+      <DependentUpon>frmHandIdConverter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\HandIdConverter\HandIdConverter.cs" />
+    <Compile Include="Services\LoginTool\frmViewTourney.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\LoginTool\frmViewTourney.Designer.cs">
+      <DependentUpon>frmViewTourney.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\LoginTool\RhymeModule\Bootstrapper\Service\BackupDomain.cs" />
+    <Compile Include="Services\LoginTool\RhymeModule\Common\Defines.cs" />
+    <Compile Include="Services\LoginTool\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\LoginTool\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\LoginTool\RhymeModule\Common\Utilities\DirectoryHelper.cs" />
+    <Compile Include="Services\LoginTool\RhymeModule\Common\Utilities\ServiceProviderHelper.cs" />
+    <Compile Include="Services\LoginTool\RhymeModule\Preferences.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LoginTool\RhymeModule\LoginHelper.cs" />
+    <Compile Include="Helper\NativeMethodsHelper.cs" />
+    <Compile Include="Services\Socket\frmSocket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\Socket\frmSocket.Designer.cs">
+      <DependentUpon>frmSocket.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Services\ExecutePowerShell\frmExecutePowerShell.resx">
+      <DependentUpon>frmExecutePowerShell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\GuidGenerator\frmGuidGenerator.resx">
+      <DependentUpon>frmGuidGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\HandIdConverter\frmHandIdConverter.resx">
+      <DependentUpon>frmHandIdConverter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\LoginTool\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainContainer.resx">
+      <DependentUpon>frmMainContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Services\LoginTool\frmViewTourney.resx">
+      <DependentUpon>frmViewTourney.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\Socket\frmSocket.resx">
+      <DependentUpon>frmSocket.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="RequireFiles\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RequireFiles\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RequireFiles\HAHA.ico" />
+    <Content Include="TableManager.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="RequireFiles\db.env_modify.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="RequireFiles\Y.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
