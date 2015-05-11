@@ -621,7 +621,7 @@
 			this.btnDbExecute.Name = "btnDbExecute";
 			this.btnDbExecute.Size = new System.Drawing.Size(117, 25);
 			this.btnDbExecute.TabIndex = 9;
-			this.btnDbExecute.Text = "Bounty Tournament";
+			this.btnDbExecute.Text = "Make Tournament";
 			this.btnDbExecute.UseVisualStyleBackColor = true;
 			this.btnDbExecute.Click += new System.EventHandler(this.btnDbExecute_Click);
 			// 

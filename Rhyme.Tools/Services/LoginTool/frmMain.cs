@@ -250,9 +250,7 @@ namespace Rhyme.Tools.Services.LoginTool
 		}
 
 		#endregion
-
-
-
+		
 		#region Terminate
 
 		private void button3_Click(object sender, EventArgs e)
