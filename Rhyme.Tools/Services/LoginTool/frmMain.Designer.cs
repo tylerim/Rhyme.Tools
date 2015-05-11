@@ -46,14 +46,13 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.gbClient = new System.Windows.Forms.GroupBox();
-			this.btnStartLive = new System.Windows.Forms.Button();
+			this.txtServiceProviderName = new System.Windows.Forms.TextBox();
 			this.txtLanguage = new System.Windows.Forms.TextBox();
 			this.cbxEnvironment = new System.Windows.Forms.ComboBox();
 			this.isRelaeaseCheckBox = new System.Windows.Forms.CheckBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.commandLineTextBox = new System.Windows.Forms.TextBox();
 			this.txtPrefix = new System.Windows.Forms.TextBox();
-			this.btnStartUAT = new System.Windows.Forms.Button();
 			this.cbxClientCount = new System.Windows.Forms.ComboBox();
 			this.gbServer = new System.Windows.Forms.GroupBox();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -77,6 +76,8 @@
 			this.txtTourneyTemplateId = new System.Windows.Forms.TextBox();
 			this.txtDbConnectionString = new System.Windows.Forms.TextBox();
 			this.btnDbExecute = new System.Windows.Forms.Button();
+			this.btnStartLive = new System.Windows.Forms.Button();
+			this.btnStartUAT = new System.Windows.Forms.Button();
 			this.btnClientCaptionChange = new System.Windows.Forms.Button();
 			this.btnMoveHoldemTable = new System.Windows.Forms.Button();
 			this.lbLog = new System.Windows.Forms.ListBox();
@@ -98,7 +99,8 @@
 			this.txtUATPath = new System.Windows.Forms.TextBox();
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.txtServiceProviderName = new System.Windows.Forms.TextBox();
+			this.btnViewTourney = new System.Windows.Forms.Button();
+			this.label4 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.gbClient.SuspendLayout();
@@ -283,15 +285,13 @@
 			this.gbClient.TabStop = false;
 			this.gbClient.Text = "Client";
 			// 
-			// btnStartLive
+			// txtServiceProviderName
 			// 
-			this.btnStartLive.Location = new System.Drawing.Point(297, 45);
-			this.btnStartLive.Name = "btnStartLive";
-			this.btnStartLive.Size = new System.Drawing.Size(38, 25);
-			this.btnStartLive.TabIndex = 9;
-			this.btnStartLive.Text = "Live";
-			this.btnStartLive.UseVisualStyleBackColor = true;
-			this.btnStartLive.Click += new System.EventHandler(this.btnStartLive_Click);
+			this.txtServiceProviderName.Location = new System.Drawing.Point(76, 22);
+			this.txtServiceProviderName.Name = "txtServiceProviderName";
+			this.txtServiceProviderName.Size = new System.Drawing.Size(51, 20);
+			this.txtServiceProviderName.TabIndex = 17;
+			this.txtServiceProviderName.Text = "GG";
 			// 
 			// txtLanguage
 			// 
@@ -351,16 +351,6 @@
 			this.txtPrefix.TabIndex = 12;
 			this.txtPrefix.Text = "t";
 			// 
-			// btnStartUAT
-			// 
-			this.btnStartUAT.Location = new System.Drawing.Point(297, 19);
-			this.btnStartUAT.Name = "btnStartUAT";
-			this.btnStartUAT.Size = new System.Drawing.Size(38, 25);
-			this.btnStartUAT.TabIndex = 10;
-			this.btnStartUAT.Text = "UAT";
-			this.btnStartUAT.UseVisualStyleBackColor = true;
-			this.btnStartUAT.Click += new System.EventHandler(this.btnStartUAT_Click);
-			// 
 			// cbxClientCount
 			// 
 			this.cbxClientCount.FormattingEnabled = true;
@@ -414,7 +404,7 @@
 			this.tabPage3.Controls.Add(this.label5);
 			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Size = new System.Drawing.Size(744, 90);
+			this.tabPage3.Size = new System.Drawing.Size(694, 90);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "QA";
 			this.tabPage3.UseVisualStyleBackColor = true;
@@ -491,7 +481,7 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(744, 90);
+			this.tabPage2.Size = new System.Drawing.Size(694, 90);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Test";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -511,7 +501,7 @@
 			this.tabPage4.Controls.Add(this.btnLogClient);
 			this.tabPage4.Location = new System.Drawing.Point(4, 22);
 			this.tabPage4.Name = "tabPage4";
-			this.tabPage4.Size = new System.Drawing.Size(744, 90);
+			this.tabPage4.Size = new System.Drawing.Size(694, 90);
 			this.tabPage4.TabIndex = 3;
 			this.tabPage4.Text = "Log Folder";
 			this.tabPage4.UseVisualStyleBackColor = true;
@@ -548,6 +538,8 @@
 			// 
 			// tabPage5
 			// 
+			this.tabPage5.Controls.Add(this.label4);
+			this.tabPage5.Controls.Add(this.btnViewTourney);
 			this.tabPage5.Controls.Add(this.label2);
 			this.tabPage5.Controls.Add(this.label1);
 			this.tabPage5.Controls.Add(this.txtBufferTime);
@@ -556,7 +548,7 @@
 			this.tabPage5.Controls.Add(this.btnDbExecute);
 			this.tabPage5.Location = new System.Drawing.Point(4, 22);
 			this.tabPage5.Name = "tabPage5";
-			this.tabPage5.Size = new System.Drawing.Size(744, 90);
+			this.tabPage5.Size = new System.Drawing.Size(694, 90);
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "Tourney";
 			this.tabPage5.UseVisualStyleBackColor = true;
@@ -564,7 +556,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(90, 38);
+			this.label2.Location = new System.Drawing.Point(141, 36);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(73, 13);
 			this.label2.TabIndex = 12;
@@ -573,7 +565,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(3, 36);
+			this.label1.Location = new System.Drawing.Point(48, 36);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(16, 13);
 			this.label1.TabIndex = 12;
@@ -581,7 +573,7 @@
 			// 
 			// txtBufferTime
 			// 
-			this.txtBufferTime.Location = new System.Drawing.Point(159, 33);
+			this.txtBufferTime.Location = new System.Drawing.Point(220, 33);
 			this.txtBufferTime.Name = "txtBufferTime";
 			this.txtBufferTime.Size = new System.Drawing.Size(65, 20);
 			this.txtBufferTime.TabIndex = 11;
@@ -589,7 +581,7 @@
 			// 
 			// txtTourneyTemplateId
 			// 
-			this.txtTourneyTemplateId.Location = new System.Drawing.Point(21, 33);
+			this.txtTourneyTemplateId.Location = new System.Drawing.Point(70, 33);
 			this.txtTourneyTemplateId.Name = "txtTourneyTemplateId";
 			this.txtTourneyTemplateId.Size = new System.Drawing.Size(65, 20);
 			this.txtTourneyTemplateId.TabIndex = 10;
@@ -597,22 +589,42 @@
 			// 
 			// txtDbConnectionString
 			// 
-			this.txtDbConnectionString.Location = new System.Drawing.Point(3, 3);
+			this.txtDbConnectionString.Location = new System.Drawing.Point(70, 7);
 			this.txtDbConnectionString.Name = "txtDbConnectionString";
-			this.txtDbConnectionString.Size = new System.Drawing.Size(389, 20);
+			this.txtDbConnectionString.Size = new System.Drawing.Size(606, 20);
 			this.txtDbConnectionString.TabIndex = 10;
 			this.txtDbConnectionString.Text = "Data Source=192.168.0.40\\RICHBITCH;Initial Catalog=rb_crm_dev;Integrated Security" +
     "=False;User Id=CRM;Password=CRM;";
 			// 
 			// btnDbExecute
 			// 
-			this.btnDbExecute.Location = new System.Drawing.Point(229, 33);
+			this.btnDbExecute.Location = new System.Drawing.Point(291, 33);
 			this.btnDbExecute.Name = "btnDbExecute";
 			this.btnDbExecute.Size = new System.Drawing.Size(117, 25);
 			this.btnDbExecute.TabIndex = 9;
 			this.btnDbExecute.Text = "Bounty Tournament";
 			this.btnDbExecute.UseVisualStyleBackColor = true;
 			this.btnDbExecute.Click += new System.EventHandler(this.btnDbExecute_Click);
+			// 
+			// btnStartLive
+			// 
+			this.btnStartLive.Location = new System.Drawing.Point(297, 45);
+			this.btnStartLive.Name = "btnStartLive";
+			this.btnStartLive.Size = new System.Drawing.Size(38, 25);
+			this.btnStartLive.TabIndex = 9;
+			this.btnStartLive.Text = "Live";
+			this.btnStartLive.UseVisualStyleBackColor = true;
+			this.btnStartLive.Click += new System.EventHandler(this.btnStartLive_Click);
+			// 
+			// btnStartUAT
+			// 
+			this.btnStartUAT.Location = new System.Drawing.Point(297, 19);
+			this.btnStartUAT.Name = "btnStartUAT";
+			this.btnStartUAT.Size = new System.Drawing.Size(38, 25);
+			this.btnStartUAT.TabIndex = 10;
+			this.btnStartUAT.Text = "UAT";
+			this.btnStartUAT.UseVisualStyleBackColor = true;
+			this.btnStartUAT.Click += new System.EventHandler(this.btnStartUAT_Click);
 			// 
 			// btnClientCaptionChange
 			// 
@@ -830,13 +842,24 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "UAT / Live Path";
 			// 
-			// txtServiceProviderName
+			// btnViewTourney
 			// 
-			this.txtServiceProviderName.Location = new System.Drawing.Point(76, 22);
-			this.txtServiceProviderName.Name = "txtServiceProviderName";
-			this.txtServiceProviderName.Size = new System.Drawing.Size(51, 20);
-			this.txtServiceProviderName.TabIndex = 17;
-			this.txtServiceProviderName.Text = "GG";
+			this.btnViewTourney.Location = new System.Drawing.Point(414, 33);
+			this.btnViewTourney.Name = "btnViewTourney";
+			this.btnViewTourney.Size = new System.Drawing.Size(92, 25);
+			this.btnViewTourney.TabIndex = 14;
+			this.btnViewTourney.Text = "View Tourney";
+			this.btnViewTourney.UseVisualStyleBackColor = true;
+			this.btnViewTourney.Click += new System.EventHandler(this.btnViewTourney_Click);
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(3, 10);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(61, 13);
+			this.label4.TabIndex = 15;
+			this.label4.Text = "Connection";
 			// 
 			// frmMain
 			// 
@@ -951,6 +974,8 @@
 		private System.Windows.Forms.GroupBox gbServer;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.TextBox txtServiceProviderName;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.Button btnViewTourney;
 	}
 }
 

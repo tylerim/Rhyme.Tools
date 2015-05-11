@@ -497,6 +497,21 @@ namespace Rhyme.Tools.Services.LoginTool
 			}
 		}
 
+		private void btnViewTourney_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				DbBehavior.DbConnectionString = this.txtDbConnectionString.Text;
+
+				var form = new frmViewTourney();
+				form.Show();
+			}
+			catch (Exception)
+			{
+				AddLog("Error");
+			}
+		}
+
 		private void btnStartLive_Click(object sender, EventArgs e)
 		{
 			ProcessBehavior.ExecuteFile(txtLivePath.Text);
