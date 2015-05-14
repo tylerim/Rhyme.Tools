@@ -613,7 +613,7 @@
 			this.txtDbConnectionString.Size = new System.Drawing.Size(606, 20);
 			this.txtDbConnectionString.TabIndex = 10;
 			this.txtDbConnectionString.Text = "Data Source=192.168.0.40\\RICHBITCH;Initial Catalog=rb_crm_dev;Integrated Security" +
-    "=False;User Id=CRM;Password=CRM;";
+    "=False;User Id=CRM;Password=CRM;Connection Timeout=1";
 			// 
 			// btnDbExecute
 			// 
