@@ -13,7 +13,7 @@ namespace Rhyme.Tools.Services.LoginTool
 	
 		private void btnViewTourny_Click(object sender, EventArgs e)
 		{
-			this.dataGridViewTourney.DataSource = DbBehavior.SelectTourney(this.txtSql.Text);
+			this.dataGridViewTourney.DataSource = DbBehavior.ExecuteSql(this.txtSql.Text);
 		}
 	}
 }

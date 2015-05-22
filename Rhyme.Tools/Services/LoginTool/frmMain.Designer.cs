@@ -70,6 +70,7 @@
 			this.btnLogServer = new System.Windows.Forms.Button();
 			this.btnLogClient = new System.Windows.Forms.Button();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.btnConnect = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.btnViewTourney = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
@@ -538,6 +539,7 @@
 			// 
 			// tabPage5
 			// 
+			this.tabPage5.Controls.Add(this.btnConnect);
 			this.tabPage5.Controls.Add(this.label4);
 			this.tabPage5.Controls.Add(this.btnViewTourney);
 			this.tabPage5.Controls.Add(this.label2);
@@ -552,6 +554,16 @@
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "Tourney";
 			this.tabPage5.UseVisualStyleBackColor = true;
+			// 
+			// btnConnect
+			// 
+			this.btnConnect.Location = new System.Drawing.Point(557, 34);
+			this.btnConnect.Name = "btnConnect";
+			this.btnConnect.Size = new System.Drawing.Size(90, 23);
+			this.btnConnect.TabIndex = 16;
+			this.btnConnect.Text = "Connect Test";
+			this.btnConnect.UseVisualStyleBackColor = true;
+			this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
 			// 
 			// label4
 			// 
@@ -976,6 +988,7 @@
 		private System.Windows.Forms.TextBox txtServiceProviderName;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button btnViewTourney;
+		private System.Windows.Forms.Button btnConnect;
 	}
 }
 

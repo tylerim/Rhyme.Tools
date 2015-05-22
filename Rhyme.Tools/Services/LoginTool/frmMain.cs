@@ -487,11 +487,12 @@ namespace Rhyme.Tools.Services.LoginTool
 				var bufferTime = int.Parse(this.txtBufferTime.Text);
 
 				var result = DbBehavior.CreateTourney(tourneyTemplateId, bufferTime);
-				//AddLog(result.ToString());
+
+				AddLog("Result code : ", result.ToString());
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				AddLog("Error");
+				AddLog("Exception : ", ex.ToString());
 			}
 		}
 
@@ -504,9 +505,25 @@ namespace Rhyme.Tools.Services.LoginTool
 				var form = new frmViewTourney();
 				form.Show();
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				AddLog("Error");
+				AddLog("Exception : ", ex.ToString());
+			}
+		}
+
+		private void btnConnect_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				DbBehavior.DbConnectionString = this.txtDbConnectionString.Text;
+
+				var dateTime = DbBehavior.ExecuteSql("Select Getdate() as MSSQLServerDate").Rows[0][0];
+
+				AddLog("Now db server datetime : ", dateTime.ToString());
+			}
+			catch (Exception ex)
+			{
+				AddLog("Exception : ", ex.ToString());
 			}
 		}
 

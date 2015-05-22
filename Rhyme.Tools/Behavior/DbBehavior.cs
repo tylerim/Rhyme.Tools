@@ -99,7 +99,7 @@ namespace Rhyme.Tools.Behavior
 			}
 		}
 
-		public static DataTable SelectTourney(string sql)
+		public static DataTable ExecuteSql(string sql)
 		{
 			try
 			{
