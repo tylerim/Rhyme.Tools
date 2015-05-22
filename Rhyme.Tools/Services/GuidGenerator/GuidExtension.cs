@@ -14,6 +14,7 @@ namespace Rhyme.Common.Utilities
             TournamentId,
 			TournamentTableId,
 			CashOutRequestId, // use for GGPMarket, LeaderBoard
+			OFCPineAppleTableId,
 			JumpEntryId = 100,
 			JumpPlayerId,
             TicketId = 200,
