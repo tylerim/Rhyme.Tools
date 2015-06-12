@@ -134,7 +134,7 @@ namespace Rhyme.Tools.Services.LoginTool
 			//this.CopyXmlFile("ServiceConfiguration.xml");
 			//this.CopyXmlFile("TableManager.xml");
 
-			if (Process.GetProcesses().Where((p) => p.ProcessName == "Front").Any())
+			if (Process.GetProcesses().Any(p => p.ProcessName == "Front"))
 			{
 				if (MessageBox.Show("Close?", "Already Exists", MessageBoxButtons.OKCancel) == DialogResult.OK)
 				{
@@ -170,7 +170,7 @@ namespace Rhyme.Tools.Services.LoginTool
 			SetWindowPos(process.MainWindowHandle, 0, position.X, position.Y, 0, 0, 0x01);
 		}
 
-		private string GetLiveToken(string environment, string testClientId, string testPassword)
+		private string GetLoginToken(string environment, string testClientId, string testPassword)
 		{
 			this.AddLog("Start, Get Token...");
 
@@ -187,7 +187,7 @@ namespace Rhyme.Tools.Services.LoginTool
 			}
 			finally
 			{
-				Cursor.Current = Cursors.Default;	
+				Cursor.Current = Cursors.Default;
 			}
 		}
 
@@ -211,7 +211,11 @@ namespace Rhyme.Tools.Services.LoginTool
 				Preferences.Shutdown();
 			}
 
-			var idNumber = Convert.ToInt32(txtTestClientIdList.Text);
+			var idNumberString = txtTestClientIdList.Text ?? "";
+			var idPrefix = txtPrefix.Text ?? "";
+
+			int idNumber;
+			var isBoolIdNumber = int.TryParse(txtTestClientIdList.Text, out idNumber);
 			var clientCount = Convert.ToInt32(cbxClientCount.Text);
 
 			for (var i = clientCount - 1; i >= 0; i--)
@@ -220,18 +224,20 @@ namespace Rhyme.Tools.Services.LoginTool
 
 				Task.Run(() =>
 				{
-					var liveToken = GetLiveToken(
-						cbxEnvironment.Text,
-						string.Format("{0}{1}", txtPrefix.Text, (idNumber + refI)),
-						"1");
+					var testClientId = "";
+					if (isBoolIdNumber)
+						testClientId = string.Format("{0}{1}", idPrefix, (idNumber + refI));
+					else
+						testClientId = string.Format("{0}{1}", idPrefix, idNumberString);
 
-					if (liveToken == string.Empty)
+					var loginToken = GetLoginToken(cbxEnvironment.Text, testClientId, "1");
+					if (loginToken == string.Empty)
 					{
 						AddLog("invalid token");
 						return;
 					}
 
-					var args = ProcessBehavior.GetClientStartString(txtServiceProviderName.Text, liveToken, this.cbxEnvironment.Text, this.txtLanguage.Text, this.commandLineTextBox.Text);
+					var args = ProcessBehavior.GetClientStartString(txtServiceProviderName.Text, loginToken, this.cbxEnvironment.Text, this.txtLanguage.Text, this.commandLineTextBox.Text);
 
 					ProcessBehavior.GGnet("GGnet.exe", this.GetSourceRootDir, args, isRelaeaseCheckBox.Checked);
 				});
@@ -241,7 +247,7 @@ namespace Rhyme.Tools.Services.LoginTool
 
 			//foreach (var id in list)
 			//{
-			//	var liveToken = this.GetLiveToken(this.txtEnvironment.Text, string.Format("t{0}", id.Trim()), "1");
+			//	var liveToken = this.GetLoginToken(this.txtEnvironment.Text, string.Format("t{0}", id.Trim()), "1");
 
 			//	var args = ProcessBehavior.GetClientStartString(liveToken, this.txtEnvironment.Text, this.txtLanguage.Text);
 
@@ -250,7 +256,7 @@ namespace Rhyme.Tools.Services.LoginTool
 		}
 
 		#endregion
-		
+
 		#region Terminate
 
 		private void button3_Click(object sender, EventArgs e)
@@ -273,7 +279,7 @@ namespace Rhyme.Tools.Services.LoginTool
 		// Get token to textbox
 		private void button16_Click(object sender, EventArgs e)
 		{
-			var response = this.GetLiveToken(this.txtTestEnvironment.Text, this.txtTestUserId.Text, this.txtTestUserPassword.Text);
+			var response = this.GetLoginToken(this.txtTestEnvironment.Text, this.txtTestUserId.Text, this.txtTestUserPassword.Text);
 			this.txtAcquireToken.Text = response;
 		}
 
@@ -287,7 +293,7 @@ namespace Rhyme.Tools.Services.LoginTool
 
 			foreach (var id in list)
 			{
-				var liveToken = this.GetLiveToken(this.txtQAEnvironment.Text, string.Format("{0}", id.Trim()), "1");
+				var liveToken = this.GetLoginToken(this.txtQAEnvironment.Text, string.Format("{0}", id.Trim()), "1");
 
 				var args = ProcessBehavior.GetClientStartString(txtServiceProviderName.Text, liveToken, this.txtQAEnvironment.Text, this.txtQALanguage.Text, this.commandLineTextBox.Text);
 
@@ -415,7 +421,7 @@ namespace Rhyme.Tools.Services.LoginTool
 		{
 			foreach (var log in logs)
 			{
-				this.lbLog.Items.Add(log);	
+				this.lbLog.Items.Add(log);
 			}
 
 			this.lbLog.SetSelected(this.lbLog.Items.Count - 1, true);

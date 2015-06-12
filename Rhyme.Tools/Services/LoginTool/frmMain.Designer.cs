@@ -189,7 +189,7 @@
 			// 
 			// txtFrontIP
 			// 
-			this.txtFrontIP.Location = new System.Drawing.Point(385, 22);
+			this.txtFrontIP.Location = new System.Drawing.Point(441, 22);
 			this.txtFrontIP.Name = "txtFrontIP";
 			this.txtFrontIP.Size = new System.Drawing.Size(74, 20);
 			this.txtFrontIP.TabIndex = 5;
@@ -230,9 +230,9 @@
 			// 
 			// txtTestClientIdList
 			// 
-			this.txtTestClientIdList.Location = new System.Drawing.Point(207, 22);
+			this.txtTestClientIdList.Location = new System.Drawing.Point(257, 22);
 			this.txtTestClientIdList.Name = "txtTestClientIdList";
-			this.txtTestClientIdList.Size = new System.Drawing.Size(27, 20);
+			this.txtTestClientIdList.Size = new System.Drawing.Size(52, 20);
 			this.txtTestClientIdList.TabIndex = 7;
 			this.txtTestClientIdList.Text = "981";
 			// 
@@ -312,7 +312,7 @@
             "UAT",
             "STRESS",
             "LIVE"});
-			this.cbxEnvironment.Location = new System.Drawing.Point(321, 22);
+			this.cbxEnvironment.Location = new System.Drawing.Point(377, 22);
 			this.cbxEnvironment.Name = "cbxEnvironment";
 			this.cbxEnvironment.Size = new System.Drawing.Size(58, 21);
 			this.cbxEnvironment.TabIndex = 16;
@@ -348,7 +348,8 @@
 			// 
 			this.txtPrefix.Location = new System.Drawing.Point(190, 22);
 			this.txtPrefix.Name = "txtPrefix";
-			this.txtPrefix.Size = new System.Drawing.Size(12, 20);
+			this.txtPrefix.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.txtPrefix.Size = new System.Drawing.Size(61, 20);
 			this.txtPrefix.TabIndex = 12;
 			this.txtPrefix.Text = "t";
 			// 
@@ -376,9 +377,9 @@
             "18",
             "19",
             "20"});
-			this.cbxClientCount.Location = new System.Drawing.Point(237, 22);
+			this.cbxClientCount.Location = new System.Drawing.Point(315, 22);
 			this.cbxClientCount.Name = "cbxClientCount";
-			this.cbxClientCount.Size = new System.Drawing.Size(78, 21);
+			this.cbxClientCount.Size = new System.Drawing.Size(56, 21);
 			this.cbxClientCount.TabIndex = 11;
 			// 
 			// gbServer
