@@ -202,7 +202,7 @@ namespace Rhyme.Tools.Services.LoginTool
 				Preferences.WorkingDirectory = this.GetSourceRootDir;
 			}
 
-			if (isRelaeaseCheckBox.Checked == false)
+			if (isReleaseCheckBox.Checked == false)
 			{
 				ServiceProviderHelper.OnlyInLoginToolSetConvertedSpName("GG");
 
@@ -211,8 +211,13 @@ namespace Rhyme.Tools.Services.LoginTool
 				Preferences.Shutdown();
 			}
 
+			var serviceProviderName = txtServiceProviderName.Text;
+			var env = cbxEnvironment.Text;
+			var language = txtLanguage.Text;
 			var idNumberString = txtTestClientIdList.Text ?? "";
 			var idPrefix = txtPrefix.Text ?? "";
+			var commandLine = commandLineTextBox.Text;
+			var isReleaseChecked = isReleaseCheckBox.Checked;
 
 			int idNumber;
 			var isBoolIdNumber = int.TryParse(txtTestClientIdList.Text, out idNumber);
@@ -230,16 +235,16 @@ namespace Rhyme.Tools.Services.LoginTool
 					else
 						testClientId = string.Format("{0}{1}", idPrefix, idNumberString);
 
-					var loginToken = GetLoginToken(cbxEnvironment.Text, testClientId, "1");
+					var loginToken = GetLoginToken(env, testClientId, "1");
 					if (loginToken == string.Empty)
 					{
 						AddLog("invalid token");
 						return;
 					}
 
-					var args = ProcessBehavior.GetClientStartString(txtServiceProviderName.Text, loginToken, this.cbxEnvironment.Text, this.txtLanguage.Text, this.commandLineTextBox.Text);
+					var args = ProcessBehavior.GetClientStartString(serviceProviderName, loginToken, env, language, commandLine);
 
-					ProcessBehavior.GGnet("GGnet.exe", this.GetSourceRootDir, args, isRelaeaseCheckBox.Checked);
+					ProcessBehavior.GGnet("GGnet.exe", this.GetSourceRootDir, args, isReleaseChecked);
 				});
 			}
 
@@ -419,6 +424,12 @@ namespace Rhyme.Tools.Services.LoginTool
 
 		private void AddLog(params string[] logs)
 		{
+			if (this.InvokeRequired)
+			{
+				this.Invoke(new Action(() => AddLog(logs)));
+				return;
+			}
+
 			foreach (var log in logs)
 			{
 				this.lbLog.Items.Add(log);

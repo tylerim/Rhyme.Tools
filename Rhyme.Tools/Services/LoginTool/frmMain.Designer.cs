@@ -49,7 +49,7 @@
 			this.txtServiceProviderName = new System.Windows.Forms.TextBox();
 			this.txtLanguage = new System.Windows.Forms.TextBox();
 			this.cbxEnvironment = new System.Windows.Forms.ComboBox();
-			this.isRelaeaseCheckBox = new System.Windows.Forms.CheckBox();
+			this.isReleaseCheckBox = new System.Windows.Forms.CheckBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.commandLineTextBox = new System.Windows.Forms.TextBox();
 			this.txtPrefix = new System.Windows.Forms.TextBox();
@@ -271,7 +271,7 @@
 			this.gbClient.Controls.Add(this.txtServiceProviderName);
 			this.gbClient.Controls.Add(this.txtLanguage);
 			this.gbClient.Controls.Add(this.cbxEnvironment);
-			this.gbClient.Controls.Add(this.isRelaeaseCheckBox);
+			this.gbClient.Controls.Add(this.isReleaseCheckBox);
 			this.gbClient.Controls.Add(this.txtFrontIP);
 			this.gbClient.Controls.Add(this.label3);
 			this.gbClient.Controls.Add(this.commandLineTextBox);
@@ -317,15 +317,15 @@
 			this.cbxEnvironment.Size = new System.Drawing.Size(58, 21);
 			this.cbxEnvironment.TabIndex = 16;
 			// 
-			// isRelaeaseCheckBox
+			// isReleaseCheckBox
 			// 
-			this.isRelaeaseCheckBox.AutoSize = true;
-			this.isRelaeaseCheckBox.Location = new System.Drawing.Point(6, 55);
-			this.isRelaeaseCheckBox.Name = "isRelaeaseCheckBox";
-			this.isRelaeaseCheckBox.Size = new System.Drawing.Size(65, 17);
-			this.isRelaeaseCheckBox.TabIndex = 15;
-			this.isRelaeaseCheckBox.Text = "Release";
-			this.isRelaeaseCheckBox.UseVisualStyleBackColor = true;
+			this.isReleaseCheckBox.AutoSize = true;
+			this.isReleaseCheckBox.Location = new System.Drawing.Point(6, 55);
+			this.isReleaseCheckBox.Name = "isReleaseCheckBox";
+			this.isReleaseCheckBox.Size = new System.Drawing.Size(65, 17);
+			this.isReleaseCheckBox.TabIndex = 15;
+			this.isReleaseCheckBox.Text = "Release";
+			this.isReleaseCheckBox.UseVisualStyleBackColor = true;
 			// 
 			// label3
 			// 
@@ -977,7 +977,7 @@
 		private System.Windows.Forms.TextBox txtPrefix;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox commandLineTextBox;
-		private System.Windows.Forms.CheckBox isRelaeaseCheckBox;
+		private System.Windows.Forms.CheckBox isReleaseCheckBox;
 		private System.Windows.Forms.ComboBox cbxEnvironment;
 		private System.Windows.Forms.TextBox txtSourceRootDir3;
 		private System.Windows.Forms.TextBox txtSourceRootDir2;
