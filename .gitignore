@@ -1,2 +1,13 @@
-/Rhyme.Tools/obj
-/Rhyme.Tools/bin
+obj
+build
+bin
+packages
+debug
+release
+*.autogen
+*.swp
+*.suo
+*.sdf
+*.aps
+*.csproj.user
+*.DotSettings.user

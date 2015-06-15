@@ -88,8 +88,8 @@ namespace Rhyme.Tools.Services.LoginTool
 
 		private void CopyXmlFile(string filename)
 		{
-			var fronttPath = Paths.GetRhymePath(Paths.RhymePathEnum.Front);
-			var frontFullPath = Path.Combine(this.GetSourceRootDir, fronttPath, "Config");
+			var frontPath = Paths.GetRhymePath(Paths.RhymePathEnum.Front);
+			var frontFullPath = Path.Combine(this.GetSourceRootDir, frontPath, "Config");
 
 			CopyXmlFileInternal(Path.Combine(Application.StartupPath, filename), Path.Combine(frontFullPath, filename));
 		}
@@ -123,7 +123,7 @@ namespace Rhyme.Tools.Services.LoginTool
 
 			if (Screen.AllScreens.Length > 1)
 			{
-				Point position = new Point(Screen.AllScreens[1].WorkingArea.X + this.Width + 10, Screen.AllScreens[1].WorkingArea.Height - 600);
+				var position = new Point(Screen.AllScreens[1].WorkingArea.X + this.Width + 10, Screen.AllScreens[1].WorkingArea.Height - 600);
 				Move(process, position);
 			}
 		}

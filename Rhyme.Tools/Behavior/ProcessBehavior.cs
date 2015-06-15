@@ -112,20 +112,28 @@ namespace Rhyme.Tools.Behavior
 		{
 			Cursor.Current = Cursors.WaitCursor;
 
-			var info = new ProcessStartInfo(startInfo.FileName)
+			try
 			{
-				WorkingDirectory = startInfo.WorkingDirectory,
-				Arguments = startInfo.Arguments,
-				WindowStyle = startInfo.WindowStyle,
-			};
-			var process = Process.Start(info);
+				var info = new ProcessStartInfo(startInfo.FileName)
+				{
+					WorkingDirectory = startInfo.WorkingDirectory,
+					Arguments = startInfo.Arguments,
+					WindowStyle = startInfo.WindowStyle,
+				};
 
+				PrintLog(string.Format("{0}{1} {2}", info.WorkingDirectory, info.FileName, info.Arguments));
 
-			Cursor.Current = Cursors.Default;
-
-			PrintLog(string.Format("{0}{1} {2}", info.WorkingDirectory, info.FileName, info.Arguments));
-
-			return process;
+				return Process.Start(info);
+			}
+			catch (Exception ex)
+			{
+				PrintLog(ex.ToString());
+				return null;
+			}
+			finally
+			{
+				Cursor.Current = Cursors.Default;
+			}
 		}
 
 		public static void DoProcessClose(string programName)
