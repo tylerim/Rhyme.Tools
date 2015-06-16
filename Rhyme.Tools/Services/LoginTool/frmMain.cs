@@ -10,13 +10,13 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsApplication1;
+
 using Rhyme.Bootstrapper;
 using Rhyme.Common;
 using Rhyme.Common.Utilities;
 using Rhyme.Tools.Behavior;
 using Rhyme.Tools.Helper;
-using RhymeLoginTool;
+using Rhyme.Tools.Services.LoginTool.RhymeModule;
 
 namespace Rhyme.Tools.Services.LoginTool
 {
@@ -170,20 +170,51 @@ namespace Rhyme.Tools.Services.LoginTool
 			SetWindowPos(process.MainWindowHandle, 0, position.X, position.Y, 0, 0, 0x01);
 		}
 
-		private string GetLoginToken(string environment, string testClientId, string testPassword)
+		private async Task<string> GetVaultLoginToken(string environment, string userId, string password, string serviceProviderName)
 		{
-			this.AddLog("Start, Get Token...");
+			this.AddLog("Start, Get Vault Token...");
 
 			Cursor.Current = Cursors.WaitCursor;
 
 			try
 			{
-				LoginHelper.EnvironmentName = environment;
-				LoginHelper.UserId = testClientId;
-				LoginHelper.UserPassword = testPassword;
-				var tokenString = LoginHelper.GetToken();
+				var token = await VaultLoginHelper.GetAuthToken(environment, userId, password);
+				if (token == null)
+				{
+					this.AddLog(string.Format("vault_auth_failed : {0}, {1}, {2}", environment, userId, password));
+					return null;
+				}
 
-				return LoginHelper.ValidateTokenString(tokenString) ? tokenString : string.Empty;
+				this.AddLog(string.Format("vault_login_token_info : {0}" , token));
+				
+				Guid resultGuid;
+				return Guid.TryParse(token, out resultGuid) ? token : string.Empty;
+			}
+			finally
+			{
+				Cursor.Current = Cursors.Default;
+			}
+		}
+
+		private async Task<string> GetGpLoginToken(string environment, string userId, string password)
+		{
+			this.AddLog("Start, Get Gp Token...");
+
+			Cursor.Current = Cursors.WaitCursor;
+
+			try
+			{
+				var token = await GpLoginHelper.GetAuthToken(environment, userId, password);
+				if (token == null)
+				{
+					this.AddLog(string.Format("gp_auth_failed : {0}, {1}, {2}", environment, userId, password));
+					return null;
+				}
+
+				this.AddLog(string.Format("gp_login_token_info : {0} | {1}" , token.gp_id, token.token));
+				
+				Guid resultGuid;
+				return Guid.TryParse(token.token, out resultGuid) ? token.token : string.Empty;
 			}
 			finally
 			{
@@ -212,7 +243,7 @@ namespace Rhyme.Tools.Services.LoginTool
 			}
 
 			var serviceProviderName = txtServiceProviderName.Text;
-			var env = cbxEnvironment.Text;
+			var env = cbxEnvironment.Text.ToLower();
 			var language = txtLanguage.Text;
 			var idNumberString = txtTestClientIdList.Text ?? "";
 			var idPrefix = txtPrefix.Text ?? "";
@@ -222,6 +253,9 @@ namespace Rhyme.Tools.Services.LoginTool
 			int idNumber;
 			var isBoolIdNumber = int.TryParse(txtTestClientIdList.Text, out idNumber);
 			var clientCount = Convert.ToInt32(cbxClientCount.Text);
+			var password = txtPassword.Text;
+
+			var isLoginTokenFromGp = rbGp.Checked;
 
 			for (var i = clientCount - 1; i >= 0; i--)
 			{
@@ -235,10 +269,19 @@ namespace Rhyme.Tools.Services.LoginTool
 					else
 						testClientId = string.Format("{0}{1}", idPrefix, idNumberString);
 
-					var loginToken = GetLoginToken(env, testClientId, "1");
-					if (loginToken == string.Empty)
+					var loginToken = "";
+					if (isLoginTokenFromGp)
 					{
-						AddLog("invalid token");
+						loginToken = GetGpLoginToken(env, testClientId, password).Result;
+					}
+					else
+					{
+						loginToken = GetVaultLoginToken(env, testClientId, password, serviceProviderName).Result;
+					}
+					
+					if (string.IsNullOrEmpty(loginToken) || loginToken == Guid.Empty.ToString())
+					{
+						AddLog(string.Format("invalid token : {0}", loginToken));
 						return;
 					}
 
@@ -252,7 +295,7 @@ namespace Rhyme.Tools.Services.LoginTool
 
 			//foreach (var id in list)
 			//{
-			//	var liveToken = this.GetLoginToken(this.txtEnvironment.Text, string.Format("t{0}", id.Trim()), "1");
+			//	var liveToken = this.GetVaultLoginToken(this.txtEnvironment.Text, string.Format("t{0}", id.Trim()), "1");
 
 			//	var args = ProcessBehavior.GetClientStartString(liveToken, this.txtEnvironment.Text, this.txtLanguage.Text);
 
@@ -284,7 +327,8 @@ namespace Rhyme.Tools.Services.LoginTool
 		// Get token to textbox
 		private void button16_Click(object sender, EventArgs e)
 		{
-			var response = this.GetLoginToken(this.txtTestEnvironment.Text, this.txtTestUserId.Text, this.txtTestUserPassword.Text);
+			// NOTE : GG ... is temp ...
+			var response = this.GetVaultLoginToken(this.txtTestEnvironment.Text, this.txtTestUserId.Text, this.txtTestUserPassword.Text, "GG").Result;
 			this.txtAcquireToken.Text = response;
 		}
 
@@ -298,7 +342,8 @@ namespace Rhyme.Tools.Services.LoginTool
 
 			foreach (var id in list)
 			{
-				var liveToken = this.GetLoginToken(this.txtQAEnvironment.Text, string.Format("{0}", id.Trim()), "1");
+				// NOTE : GG ... is temp ...
+				var liveToken = this.GetVaultLoginToken(this.txtQAEnvironment.Text, string.Format("{0}", id.Trim()), "1", "GG").Result;
 
 				var args = ProcessBehavior.GetClientStartString(txtServiceProviderName.Text, liveToken, this.txtQAEnvironment.Text, this.txtQALanguage.Text, this.commandLineTextBox.Text);
 

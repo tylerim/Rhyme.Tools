@@ -46,6 +46,7 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.gbClient = new System.Windows.Forms.GroupBox();
+			this.txtPassword = new System.Windows.Forms.TextBox();
 			this.txtServiceProviderName = new System.Windows.Forms.TextBox();
 			this.txtLanguage = new System.Windows.Forms.TextBox();
 			this.cbxEnvironment = new System.Windows.Forms.ComboBox();
@@ -102,6 +103,8 @@
 			this.txtUATPath = new System.Windows.Forms.TextBox();
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.rbVault = new System.Windows.Forms.RadioButton();
+			this.rbGp = new System.Windows.Forms.RadioButton();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.gbClient.SuspendLayout();
@@ -189,7 +192,7 @@
 			// 
 			// txtFrontIP
 			// 
-			this.txtFrontIP.Location = new System.Drawing.Point(441, 22);
+			this.txtFrontIP.Location = new System.Drawing.Point(428, 50);
 			this.txtFrontIP.Name = "txtFrontIP";
 			this.txtFrontIP.Size = new System.Drawing.Size(74, 20);
 			this.txtFrontIP.TabIndex = 5;
@@ -268,6 +271,9 @@
 			this.gbClient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.gbClient.Controls.Add(this.rbGp);
+			this.gbClient.Controls.Add(this.rbVault);
+			this.gbClient.Controls.Add(this.txtPassword);
 			this.gbClient.Controls.Add(this.txtServiceProviderName);
 			this.gbClient.Controls.Add(this.txtLanguage);
 			this.gbClient.Controls.Add(this.cbxEnvironment);
@@ -285,6 +291,14 @@
 			this.gbClient.TabIndex = 18;
 			this.gbClient.TabStop = false;
 			this.gbClient.Text = "Client";
+			// 
+			// txtPassword
+			// 
+			this.txtPassword.Location = new System.Drawing.Point(377, 22);
+			this.txtPassword.Name = "txtPassword";
+			this.txtPassword.Size = new System.Drawing.Size(45, 20);
+			this.txtPassword.TabIndex = 18;
+			this.txtPassword.Text = "1";
 			// 
 			// txtServiceProviderName
 			// 
@@ -312,9 +326,9 @@
             "UAT",
             "STRESS",
             "LIVE"});
-			this.cbxEnvironment.Location = new System.Drawing.Point(377, 22);
+			this.cbxEnvironment.Location = new System.Drawing.Point(428, 22);
 			this.cbxEnvironment.Name = "cbxEnvironment";
-			this.cbxEnvironment.Size = new System.Drawing.Size(58, 21);
+			this.cbxEnvironment.Size = new System.Drawing.Size(74, 21);
 			this.cbxEnvironment.TabIndex = 16;
 			// 
 			// isReleaseCheckBox
@@ -802,7 +816,7 @@
 			this.txtSourceRootDir3.Name = "txtSourceRootDir3";
 			this.txtSourceRootDir3.Size = new System.Drawing.Size(100, 20);
 			this.txtSourceRootDir3.TabIndex = 5;
-			this.txtSourceRootDir3.Text = "D:\\Rhyme_1.3.x\\";
+			this.txtSourceRootDir3.Text = "D:\\Rhyme_uat";
 			// 
 			// txtSourceRootDir2
 			// 
@@ -810,7 +824,7 @@
 			this.txtSourceRootDir2.Name = "txtSourceRootDir2";
 			this.txtSourceRootDir2.Size = new System.Drawing.Size(100, 20);
 			this.txtSourceRootDir2.TabIndex = 5;
-			this.txtSourceRootDir2.Text = "D:\\Rhyme_1.2.x\\";
+			this.txtSourceRootDir2.Text = "D:\\Rhyme_dev";
 			// 
 			// rbSourceRootDir3
 			// 
@@ -873,6 +887,27 @@
 			this.groupBox2.TabIndex = 20;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "UAT / Live Path";
+			// 
+			// rbVault
+			// 
+			this.rbVault.AutoSize = true;
+			this.rbVault.Location = new System.Drawing.Point(321, 52);
+			this.rbVault.Name = "rbVault";
+			this.rbVault.Size = new System.Drawing.Size(49, 17);
+			this.rbVault.TabIndex = 19;
+			this.rbVault.Text = "Vault";
+			this.rbVault.UseVisualStyleBackColor = true;
+			// 
+			// rbGp
+			// 
+			this.rbGp.AutoSize = true;
+			this.rbGp.Checked = true;
+			this.rbGp.Location = new System.Drawing.Point(376, 52);
+			this.rbGp.Name = "rbGp";
+			this.rbGp.Size = new System.Drawing.Size(40, 17);
+			this.rbGp.TabIndex = 20;
+			this.rbGp.Text = "GP";
+			this.rbGp.UseVisualStyleBackColor = true;
 			// 
 			// frmMain
 			// 
@@ -990,6 +1025,9 @@
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button btnViewTourney;
 		private System.Windows.Forms.Button btnConnect;
+		private System.Windows.Forms.TextBox txtPassword;
+		private System.Windows.Forms.RadioButton rbGp;
+		private System.Windows.Forms.RadioButton rbVault;
 	}
 }
 
