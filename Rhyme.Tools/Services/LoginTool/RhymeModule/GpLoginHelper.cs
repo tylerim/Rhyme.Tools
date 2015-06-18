@@ -25,12 +25,12 @@ namespace Rhyme.Tools.Services.LoginTool.RhymeModule
 				{
 					case "dev":
 					case "test":
-						tokenUrlGP = "http://192.168.0.203:8080/gg-launch-token?userName={0}&password={1}";
+						tokenUrlGP = "http://192.168.0.203:8080/gg-launch-token?username={0}&password={1}";
 						break;
 					case "stress":
 						throw new InvalidOperationException("Not support yet");
 					case "uat":
-						tokenUrlGP = "http://web-stage.good-gamenetwork.com:8080/gg-launch-token?userName={0}&password={1}";
+						tokenUrlGP = "http://web-stage.good-gamenetwork.com:8080/gg-launch-token?username={0}&password={1}";
 						break;
 					case "live":
 						throw new InvalidOperationException("Not support yet");

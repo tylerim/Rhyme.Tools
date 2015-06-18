@@ -14,7 +14,9 @@ namespace Rhyme.Tools.Services.LoginTool.RhymeModule
 		{
 			try
 			{
-				var tokenUrl = string.Format(TokenUrlString, env);
+				var localEnv = env == "test" ? "dev" : env;
+
+				var tokenUrl = string.Format(TokenUrlString, localEnv);
 
 				var request = WebRequest.CreateHttp(tokenUrl) as HttpWebRequest;
 				request.ContentType = "application/json; charset=utf-8";
