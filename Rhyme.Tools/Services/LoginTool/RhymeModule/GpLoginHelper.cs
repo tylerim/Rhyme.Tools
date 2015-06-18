@@ -31,7 +31,7 @@ namespace Rhyme.Tools.Services.LoginTool.RhymeModule
 						throw new InvalidOperationException("Not support yet");
 					case "uat":
 						//tokenUrlGP = "http://web-stage.good-gamenetwork.com:8080/gg-launch-token?username={0}&password={1}";
-						tokenUrlGP = "http://tst-uat.p2p-game.co.uk:8080/gg-launch-token?username=t1&password=1";
+						tokenUrlGP = "http://tst-uat.p2p-game.co.uk:8080/gg-launch-token?username={0}&password={1}";
 						break;
 					case "live":
 						throw new InvalidOperationException("Not support yet");
