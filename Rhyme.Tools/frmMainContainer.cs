@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Windows.Forms;
 
+using Rhyme.Tools.Services.BotLauncher;
 using Rhyme.Tools.Services.ExecutePowerShell;
 using Rhyme.Tools.Services.GuidGenerator;
 using Rhyme.Tools.Services.HandIdConverter;
@@ -48,6 +49,11 @@ namespace Rhyme.Tools
 		private void toolStripButton4_Click(object sender, EventArgs e)
 		{
 			MDIManager.Show(this, new frmSocket());
+		}
+
+		private void toolStripButton5_Click(object sender, EventArgs e)
+		{
+			MDIManager.Show(this, new FrmBotLauncher());
 		}
 	}
 
