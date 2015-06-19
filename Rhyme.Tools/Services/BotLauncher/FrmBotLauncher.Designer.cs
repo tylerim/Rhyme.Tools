@@ -128,6 +128,7 @@
 			this.cboTableIndex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cboTableIndex.FormattingEnabled = true;
 			this.cboTableIndex.Items.AddRange(new object[] {
+            "0, None",
             "1, $0.01 / $0.02 | $0.50",
             "2, $0.02 / $0.05 | $1.50",
             "3, $0.05 / $0.10 | $5",
