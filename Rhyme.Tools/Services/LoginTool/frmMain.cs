@@ -214,7 +214,9 @@ namespace Rhyme.Tools.Services.LoginTool
 				this.AddLog(string.Format("gp_login_token_info : {0} | {1}" , token.gp_id, token.token));
 				
 				Guid resultGuid;
-				return Guid.TryParse(token.token, out resultGuid) ? token.token : string.Empty;
+				return Guid.TryParse(token.token, out resultGuid) == false
+					? string.Empty
+					: string.Format("{0}:{1}", token.token, token.gp_id);
 			}
 			finally
 			{
@@ -223,7 +225,7 @@ namespace Rhyme.Tools.Services.LoginTool
 		}
 
 		// GGnet.exe 시작 버튼
-		private void btnStartAll_Click(object sender, EventArgs e)
+		private async void btnStartAll_Click(object sender, EventArgs e)
 		{
 			// Preferences.xml 에 저장
 			Preferences.WorkingDirectory = Path.Combine(this.GetSourceRootDir, Paths.GetRhymePath(Paths.RhymePathEnum.Client));
@@ -233,10 +235,11 @@ namespace Rhyme.Tools.Services.LoginTool
 				Preferences.WorkingDirectory = this.GetSourceRootDir;
 			}
 
+			ServiceProviderHelper.OnlyInLoginToolSetConvertedSpName(txtServiceProviderName.Text);
+
+			// use txtFrontIP.Text if DEV
 			if (isReleaseCheckBox.Checked == false)
 			{
-				ServiceProviderHelper.OnlyInLoginToolSetConvertedSpName("GG");
-
 				Preferences.Initialize();
 				Preferences.SetValue(Configurations.ServerAddress, this.txtFrontIP.Text);
 				Preferences.Shutdown();
@@ -261,7 +264,7 @@ namespace Rhyme.Tools.Services.LoginTool
 			{
 				var refI = i;
 
-				Task.Run(() =>
+				await Task.Run(() =>
 				{
 					var testClientId = "";
 					if (isBoolIdNumber)
@@ -272,6 +275,10 @@ namespace Rhyme.Tools.Services.LoginTool
 					var loginToken = "";
 					if (isLoginTokenFromGp)
 					{
+						// must change
+						serviceProviderName = "GP";
+
+						// login_token:gp_id
 						loginToken = GetGpLoginToken(env, testClientId, password).Result;
 					}
 					else
@@ -289,6 +296,8 @@ namespace Rhyme.Tools.Services.LoginTool
 
 					ProcessBehavior.GGnet("GGnet.exe", this.GetSourceRootDir, args, isReleaseChecked);
 				});
+
+				await Task.Delay(100);
 			}
 
 			//var list = this.txtTestClientIdList.Text.Split(',');
