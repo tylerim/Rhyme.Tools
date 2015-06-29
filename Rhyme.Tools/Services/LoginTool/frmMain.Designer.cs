@@ -46,6 +46,8 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.gbClient = new System.Windows.Forms.GroupBox();
+			this.rbGp = new System.Windows.Forms.RadioButton();
+			this.rbVault = new System.Windows.Forms.RadioButton();
 			this.txtPassword = new System.Windows.Forms.TextBox();
 			this.txtServiceProviderName = new System.Windows.Forms.TextBox();
 			this.txtLanguage = new System.Windows.Forms.TextBox();
@@ -103,8 +105,6 @@
 			this.txtUATPath = new System.Windows.Forms.TextBox();
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.rbVault = new System.Windows.Forms.RadioButton();
-			this.rbGp = new System.Windows.Forms.RadioButton();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.gbClient.SuspendLayout();
@@ -291,6 +291,28 @@
 			this.gbClient.TabIndex = 18;
 			this.gbClient.TabStop = false;
 			this.gbClient.Text = "Client";
+			// 
+			// rbGp
+			// 
+			this.rbGp.AutoSize = true;
+			this.rbGp.Checked = true;
+			this.rbGp.Location = new System.Drawing.Point(376, 52);
+			this.rbGp.Name = "rbGp";
+			this.rbGp.Size = new System.Drawing.Size(40, 17);
+			this.rbGp.TabIndex = 20;
+			this.rbGp.TabStop = true;
+			this.rbGp.Text = "GP";
+			this.rbGp.UseVisualStyleBackColor = true;
+			// 
+			// rbVault
+			// 
+			this.rbVault.AutoSize = true;
+			this.rbVault.Location = new System.Drawing.Point(321, 52);
+			this.rbVault.Name = "rbVault";
+			this.rbVault.Size = new System.Drawing.Size(49, 17);
+			this.rbVault.TabIndex = 19;
+			this.rbVault.Text = "Vault";
+			this.rbVault.UseVisualStyleBackColor = true;
 			// 
 			// txtPassword
 			// 
@@ -812,9 +834,9 @@
 			// 
 			// txtSourceRootDir3
 			// 
-			this.txtSourceRootDir3.Location = new System.Drawing.Point(242, 22);
+			this.txtSourceRootDir3.Location = new System.Drawing.Point(264, 22);
 			this.txtSourceRootDir3.Name = "txtSourceRootDir3";
-			this.txtSourceRootDir3.Size = new System.Drawing.Size(100, 20);
+			this.txtSourceRootDir3.Size = new System.Drawing.Size(85, 20);
 			this.txtSourceRootDir3.TabIndex = 5;
 			this.txtSourceRootDir3.Text = "D:\\Rhyme_uat";
 			// 
@@ -822,14 +844,14 @@
 			// 
 			this.txtSourceRootDir2.Location = new System.Drawing.Point(118, 22);
 			this.txtSourceRootDir2.Name = "txtSourceRootDir2";
-			this.txtSourceRootDir2.Size = new System.Drawing.Size(100, 20);
+			this.txtSourceRootDir2.Size = new System.Drawing.Size(120, 20);
 			this.txtSourceRootDir2.TabIndex = 5;
-			this.txtSourceRootDir2.Text = "D:\\Rhyme_dev";
+			this.txtSourceRootDir2.Text = "D:\\Rhyme_dev_refac";
 			// 
 			// rbSourceRootDir3
 			// 
 			this.rbSourceRootDir3.AutoSize = true;
-			this.rbSourceRootDir3.Location = new System.Drawing.Point(225, 25);
+			this.rbSourceRootDir3.Location = new System.Drawing.Point(244, 25);
 			this.rbSourceRootDir3.Name = "rbSourceRootDir3";
 			this.rbSourceRootDir3.Size = new System.Drawing.Size(14, 13);
 			this.rbSourceRootDir3.TabIndex = 4;
@@ -887,27 +909,6 @@
 			this.groupBox2.TabIndex = 20;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "UAT / Live Path";
-			// 
-			// rbVault
-			// 
-			this.rbVault.AutoSize = true;
-			this.rbVault.Location = new System.Drawing.Point(321, 52);
-			this.rbVault.Name = "rbVault";
-			this.rbVault.Size = new System.Drawing.Size(49, 17);
-			this.rbVault.TabIndex = 19;
-			this.rbVault.Text = "Vault";
-			this.rbVault.UseVisualStyleBackColor = true;
-			// 
-			// rbGp
-			// 
-			this.rbGp.AutoSize = true;
-			this.rbGp.Checked = true;
-			this.rbGp.Location = new System.Drawing.Point(376, 52);
-			this.rbGp.Name = "rbGp";
-			this.rbGp.Size = new System.Drawing.Size(40, 17);
-			this.rbGp.TabIndex = 20;
-			this.rbGp.Text = "GP";
-			this.rbGp.UseVisualStyleBackColor = true;
 			// 
 			// frmMain
 			// 
