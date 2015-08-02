@@ -237,7 +237,7 @@
 			this.txtTestClientIdList.Name = "txtTestClientIdList";
 			this.txtTestClientIdList.Size = new System.Drawing.Size(52, 20);
 			this.txtTestClientIdList.TabIndex = 7;
-			this.txtTestClientIdList.Text = "981";
+			this.txtTestClientIdList.Text = "1";
 			// 
 			// tabControl1
 			// 
@@ -387,7 +387,7 @@
 			this.txtPrefix.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.txtPrefix.Size = new System.Drawing.Size(61, 20);
 			this.txtPrefix.TabIndex = 12;
-			this.txtPrefix.Text = "t";
+			this.txtPrefix.Text = "s";
 			// 
 			// cbxClientCount
 			// 
