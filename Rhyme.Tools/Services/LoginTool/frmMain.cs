@@ -117,7 +117,7 @@ namespace Rhyme.Tools.Services.LoginTool
 		// Rhyme.CRM.Server.exe 시작 버튼
 		private void button15_Click(object sender, EventArgs e)
 		{
-			this.CopyXmlFileToCRM("TableManager.xml");
+			//this.CopyXmlFileToCRM("TableManager.xml");
 
 			var process = ProcessBehavior.CRMServer("Rhyme.CRM.Server.exe", this.GetSourceRootDir);
 
