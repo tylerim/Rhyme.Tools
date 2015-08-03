@@ -387,7 +387,7 @@
 			this.txtPrefix.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.txtPrefix.Size = new System.Drawing.Size(61, 20);
 			this.txtPrefix.TabIndex = 12;
-			this.txtPrefix.Text = "s";
+			this.txtPrefix.Text = "t";
 			// 
 			// cbxClientCount
 			// 
