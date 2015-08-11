@@ -31,7 +31,6 @@
 			this.btnStart = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtPath = new System.Windows.Forms.TextBox();
-			this.txtIP = new System.Windows.Forms.TextBox();
 			this.txtStartIndex = new System.Windows.Forms.TextBox();
 			this.txtBotCount = new System.Windows.Forms.TextBox();
 			this.cboBotType = new System.Windows.Forms.ComboBox();
@@ -39,15 +38,19 @@
 			this.cboTableIndex = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
+			this.txtStartBotDelay = new System.Windows.Forms.TextBox();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label9 = new System.Windows.Forms.Label();
+			this.txtIPList = new System.Windows.Forms.TextBox();
+			this.label10 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// btnStart
 			// 
-			this.btnStart.Location = new System.Drawing.Point(291, 170);
+			this.btnStart.Location = new System.Drawing.Point(372, 195);
 			this.btnStart.Name = "btnStart";
 			this.btnStart.Size = new System.Drawing.Size(75, 23);
 			this.btnStart.TabIndex = 0;
@@ -66,24 +69,17 @@
 			// 
 			// txtPath
 			// 
+			this.txtPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtPath.Location = new System.Drawing.Point(109, 12);
 			this.txtPath.Name = "txtPath";
-			this.txtPath.Size = new System.Drawing.Size(455, 20);
+			this.txtPath.Size = new System.Drawing.Size(434, 20);
 			this.txtPath.TabIndex = 2;
 			this.txtPath.Text = "D:\\Rhyme\\dev\\src\\tools\\Rhyme.Bot\\Rhyme.Bot\\bin\\Debug\\Rhyme.Bot.exe";
 			// 
-			// txtIP
-			// 
-			this.txtIP.Enabled = false;
-			this.txtIP.Location = new System.Drawing.Point(109, 92);
-			this.txtIP.Name = "txtIP";
-			this.txtIP.Size = new System.Drawing.Size(100, 20);
-			this.txtIP.TabIndex = 2;
-			this.txtIP.Text = "127.0.0.1";
-			// 
 			// txtStartIndex
 			// 
-			this.txtStartIndex.Location = new System.Drawing.Point(109, 118);
+			this.txtStartIndex.Location = new System.Drawing.Point(109, 92);
 			this.txtStartIndex.Name = "txtStartIndex";
 			this.txtStartIndex.Size = new System.Drawing.Size(100, 20);
 			this.txtStartIndex.TabIndex = 2;
@@ -91,7 +87,7 @@
 			// 
 			// txtBotCount
 			// 
-			this.txtBotCount.Location = new System.Drawing.Point(109, 144);
+			this.txtBotCount.Location = new System.Drawing.Point(109, 118);
 			this.txtBotCount.Name = "txtBotCount";
 			this.txtBotCount.Size = new System.Drawing.Size(100, 20);
 			this.txtBotCount.TabIndex = 2;
@@ -117,11 +113,13 @@
 			this.cboConnectType.Items.AddRange(new object[] {
             "Dev",
             "Test",
-            "Uat"});
+            "Uat",
+            "UatNew"});
 			this.cboConnectType.Location = new System.Drawing.Point(109, 65);
 			this.cboConnectType.Name = "cboConnectType";
 			this.cboConnectType.Size = new System.Drawing.Size(100, 21);
 			this.cboConnectType.TabIndex = 13;
+			this.cboConnectType.SelectedIndexChanged += new System.EventHandler(this.cboConnectType_SelectedIndexChanged);
 			// 
 			// cboTableIndex
 			// 
@@ -139,9 +137,9 @@
             "8, $2    / $4    | $320",
             "9, $3    / $6    | $500",
             "10, $5    / $10   | $800"});
-			this.cboTableIndex.Location = new System.Drawing.Point(109, 170);
+			this.cboTableIndex.Location = new System.Drawing.Point(109, 144);
 			this.cboTableIndex.Name = "cboTableIndex";
-			this.cboTableIndex.Size = new System.Drawing.Size(176, 21);
+			this.cboTableIndex.Size = new System.Drawing.Size(257, 21);
 			this.cboTableIndex.TabIndex = 14;
 			// 
 			// label2
@@ -162,19 +160,10 @@
 			this.label3.TabIndex = 16;
 			this.label3.Text = "Connect type :";
 			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(46, 95);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(57, 13);
-			this.label4.TabIndex = 17;
-			this.label4.Text = "Target IP :";
-			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(14, 121);
+			this.label5.Location = new System.Drawing.Point(14, 95);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(91, 13);
 			this.label5.TabIndex = 18;
@@ -183,7 +172,7 @@
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(44, 147);
+			this.label6.Location = new System.Drawing.Point(44, 121);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(59, 13);
 			this.label6.TabIndex = 19;
@@ -192,21 +181,68 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(10, 173);
+			this.label7.Location = new System.Drawing.Point(10, 147);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(93, 13);
 			this.label7.TabIndex = 20;
 			this.label7.Text = "Table blind index :";
 			// 
+			// txtStartBotDelay
+			// 
+			this.txtStartBotDelay.Location = new System.Drawing.Point(109, 171);
+			this.txtStartBotDelay.Name = "txtStartBotDelay";
+			this.txtStartBotDelay.Size = new System.Drawing.Size(100, 20);
+			this.txtStartBotDelay.TabIndex = 21;
+			this.txtStartBotDelay.Text = "200";
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(22, 174);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(81, 13);
+			this.label8.TabIndex = 22;
+			this.label8.Text = "Start bot delay :";
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Location = new System.Drawing.Point(27, 200);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(76, 13);
+			this.label9.TabIndex = 24;
+			this.label9.Text = "Target IP List :";
+			// 
+			// txtIPList
+			// 
+			this.txtIPList.Enabled = false;
+			this.txtIPList.Location = new System.Drawing.Point(109, 197);
+			this.txtIPList.Name = "txtIPList";
+			this.txtIPList.Size = new System.Drawing.Size(257, 20);
+			this.txtIPList.TabIndex = 23;
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Location = new System.Drawing.Point(215, 174);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(63, 13);
+			this.label10.TabIndex = 25;
+			this.label10.Text = "milliseconds";
+			// 
 			// FrmBotLauncher
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(576, 207);
+			this.ClientSize = new System.Drawing.Size(555, 229);
+			this.Controls.Add(this.label10);
+			this.Controls.Add(this.label9);
+			this.Controls.Add(this.txtIPList);
+			this.Controls.Add(this.label8);
+			this.Controls.Add(this.txtStartBotDelay);
 			this.Controls.Add(this.label7);
 			this.Controls.Add(this.label6);
 			this.Controls.Add(this.label5);
-			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.cboTableIndex);
@@ -214,7 +250,6 @@
 			this.Controls.Add(this.cboBotType);
 			this.Controls.Add(this.txtBotCount);
 			this.Controls.Add(this.txtStartIndex);
-			this.Controls.Add(this.txtIP);
 			this.Controls.Add(this.txtPath);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnStart);
@@ -231,7 +266,6 @@
 		private System.Windows.Forms.Button btnStart;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox txtPath;
-		private System.Windows.Forms.TextBox txtIP;
 		private System.Windows.Forms.TextBox txtStartIndex;
 		private System.Windows.Forms.TextBox txtBotCount;
 		private System.Windows.Forms.ComboBox cboBotType;
@@ -239,9 +273,13 @@
 		private System.Windows.Forms.ComboBox cboTableIndex;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
-		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.TextBox txtStartBotDelay;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.TextBox txtIPList;
+		private System.Windows.Forms.Label label10;
 	}
 }
