@@ -225,9 +225,9 @@
 			// 
 			this.btnStartAll.Location = new System.Drawing.Point(6, 21);
 			this.btnStartAll.Name = "btnStartAll";
-			this.btnStartAll.Size = new System.Drawing.Size(64, 25);
+			this.btnStartAll.Size = new System.Drawing.Size(68, 25);
 			this.btnStartAll.TabIndex = 6;
-			this.btnStartAll.Text = "DEV";
+			this.btnStartAll.Text = "GGnet.exe";
 			this.btnStartAll.UseVisualStyleBackColor = true;
 			this.btnStartAll.Click += new System.EventHandler(this.btnStartAll_Click);
 			// 
@@ -324,9 +324,9 @@
 			// 
 			// txtServiceProviderName
 			// 
-			this.txtServiceProviderName.Location = new System.Drawing.Point(76, 22);
+			this.txtServiceProviderName.Location = new System.Drawing.Point(80, 22);
 			this.txtServiceProviderName.Name = "txtServiceProviderName";
-			this.txtServiceProviderName.Size = new System.Drawing.Size(51, 20);
+			this.txtServiceProviderName.Size = new System.Drawing.Size(47, 20);
 			this.txtServiceProviderName.TabIndex = 17;
 			this.txtServiceProviderName.Text = "GG";
 			// 

@@ -46,11 +46,17 @@
 			this.label9 = new System.Windows.Forms.Label();
 			this.txtIPList = new System.Windows.Forms.TextBox();
 			this.label10 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.rbRegisterTourneyTrue = new System.Windows.Forms.RadioButton();
+			this.rbRegisterTourneyFalse = new System.Windows.Forms.RadioButton();
+			this.label11 = new System.Windows.Forms.Label();
+			this.cboLoginPlatform = new System.Windows.Forms.ComboBox();
+			this.label12 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// btnStart
 			// 
-			this.btnStart.Location = new System.Drawing.Point(372, 195);
+			this.btnStart.Location = new System.Drawing.Point(372, 250);
 			this.btnStart.Name = "btnStart";
 			this.btnStart.Size = new System.Drawing.Size(75, 23);
 			this.btnStart.TabIndex = 0;
@@ -96,6 +102,7 @@
 			// cboBotType
 			// 
 			this.cboBotType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboBotType.Enabled = false;
 			this.cboBotType.FormattingEnabled = true;
 			this.cboBotType.Items.AddRange(new object[] {
             "TcpProxy",
@@ -114,7 +121,8 @@
             "Dev",
             "Test",
             "Uat",
-            "UatNew"});
+            "UatNew",
+            "Direct"});
 			this.cboConnectType.Location = new System.Drawing.Point(109, 65);
 			this.cboConnectType.Name = "cboConnectType";
 			this.cboConnectType.Size = new System.Drawing.Size(100, 21);
@@ -207,7 +215,7 @@
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(27, 200);
+			this.label9.Location = new System.Drawing.Point(27, 255);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(76, 13);
 			this.label9.TabIndex = 24;
@@ -215,8 +223,7 @@
 			// 
 			// txtIPList
 			// 
-			this.txtIPList.Enabled = false;
-			this.txtIPList.Location = new System.Drawing.Point(109, 197);
+			this.txtIPList.Location = new System.Drawing.Point(109, 252);
 			this.txtIPList.Name = "txtIPList";
 			this.txtIPList.Size = new System.Drawing.Size(257, 20);
 			this.txtIPList.TabIndex = 23;
@@ -230,11 +237,79 @@
 			this.label10.TabIndex = 25;
 			this.label10.Text = "milliseconds";
 			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(22, 201);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(81, 13);
+			this.label4.TabIndex = 26;
+			this.label4.Text = "Start bot delay :";
+			// 
+			// rbRegisterTourneyTrue
+			// 
+			this.rbRegisterTourneyTrue.AutoSize = true;
+			this.rbRegisterTourneyTrue.Location = new System.Drawing.Point(109, 197);
+			this.rbRegisterTourneyTrue.Name = "rbRegisterTourneyTrue";
+			this.rbRegisterTourneyTrue.Size = new System.Drawing.Size(103, 17);
+			this.rbRegisterTourneyTrue.TabIndex = 27;
+			this.rbRegisterTourneyTrue.Text = "토너 자동 등록";
+			this.rbRegisterTourneyTrue.UseVisualStyleBackColor = true;
+			// 
+			// rbRegisterTourneyFalse
+			// 
+			this.rbRegisterTourneyFalse.AutoSize = true;
+			this.rbRegisterTourneyFalse.Checked = true;
+			this.rbRegisterTourneyFalse.Location = new System.Drawing.Point(218, 197);
+			this.rbRegisterTourneyFalse.Name = "rbRegisterTourneyFalse";
+			this.rbRegisterTourneyFalse.Size = new System.Drawing.Size(159, 17);
+			this.rbRegisterTourneyFalse.TabIndex = 28;
+			this.rbRegisterTourneyFalse.TabStop = true;
+			this.rbRegisterTourneyFalse.Text = "Table blind index 게임 등록";
+			this.rbRegisterTourneyFalse.UseVisualStyleBackColor = true;
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Location = new System.Drawing.Point(23, 228);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(80, 13);
+			this.label11.TabIndex = 30;
+			this.label11.Text = "Login Platform :";
+			// 
+			// cboLoginPlatform
+			// 
+			this.cboLoginPlatform.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cboLoginPlatform.FormattingEnabled = true;
+			this.cboLoginPlatform.Items.AddRange(new object[] {
+            "Vault",
+            "GP",
+            "MyPlatform"});
+			this.cboLoginPlatform.Location = new System.Drawing.Point(109, 225);
+			this.cboLoginPlatform.Name = "cboLoginPlatform";
+			this.cboLoginPlatform.Size = new System.Drawing.Size(100, 21);
+			this.cboLoginPlatform.TabIndex = 29;
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Location = new System.Drawing.Point(106, 275);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(259, 13);
+			this.label12.TabIndex = 31;
+			this.label12.Text = "(DEV 일때 IP List 를 넣지 않으면 Local IP 로 처리)";
+			// 
 			// FrmBotLauncher
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(555, 229);
+			this.ClientSize = new System.Drawing.Size(555, 303);
+			this.Controls.Add(this.label12);
+			this.Controls.Add(this.label11);
+			this.Controls.Add(this.cboLoginPlatform);
+			this.Controls.Add(this.rbRegisterTourneyFalse);
+			this.Controls.Add(this.rbRegisterTourneyTrue);
+			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label10);
 			this.Controls.Add(this.label9);
 			this.Controls.Add(this.txtIPList);
@@ -281,5 +356,11 @@
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.TextBox txtIPList;
 		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.RadioButton rbRegisterTourneyTrue;
+		private System.Windows.Forms.RadioButton rbRegisterTourneyFalse;
+		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.ComboBox cboLoginPlatform;
+		private System.Windows.Forms.Label label12;
 	}
 }
