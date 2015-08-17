@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -12,7 +11,7 @@ namespace Rhyme.Tools.Services.BotLauncher
 			InitializeComponent();
 		}
 
-		private void FrmBotLauncher_Load(object sender, System.EventArgs e)
+		private void FrmBotLauncher_Load(object sender, EventArgs e)
 		{
 			cboBotType.SelectedIndex = 2;			// TCP
 			cboConnectType.SelectedIndex = 0;		// Dev
@@ -20,7 +19,7 @@ namespace Rhyme.Tools.Services.BotLauncher
 			cboLoginPlatform.SelectedIndex = 1;		// GP
 		}
 
-		private void btnStart_Click(object sender, System.EventArgs e)
+		private void btnStart_Click(object sender, EventArgs e)
 		{
 			if (cboTableIndex.SelectedIndex == 0)
 			{
@@ -30,19 +29,23 @@ namespace Rhyme.Tools.Services.BotLauncher
 
 			try
 			{
+				var arguments = string.Format(
+					"{0} {1} {2} {3} {4} {5} {6} {7} {8}",
+					cboBotType.SelectedItem,
+					cboConnectType.SelectedItem,
+					txtStartIndex.Text,
+					txtBotCount.Text,
+					cboTableIndex.SelectedIndex,
+					txtStartBotDelay.Text,
+					rbRegisterTourneyTrue.Checked ? "True" : "False",
+					cboLoginPlatform.SelectedItem,
+					txtIPList.Text);
+
+				txtCommand.Text = arguments;
+
 				Process.Start(new ProcessStartInfo(txtPath.Text)
 				{
-					Arguments = string.Format(
-						"{0} {1} {2} {3} {4} {5} {6} {7} {8}",
-						cboBotType.SelectedItem,
-						cboConnectType.SelectedItem,
-						txtStartIndex.Text,
-						txtBotCount.Text,
-						cboTableIndex.SelectedIndex,
-						txtStartBotDelay.Text,
-						rbRegisterTourneyTrue.Checked ? "True" : "False",
-						cboLoginPlatform.SelectedItem,
-						txtIPList.Text)
+					Arguments = arguments
 				});
 			}
 			catch (Exception ex)

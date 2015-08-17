@@ -52,6 +52,8 @@
 			this.label11 = new System.Windows.Forms.Label();
 			this.cboLoginPlatform = new System.Windows.Forms.ComboBox();
 			this.label12 = new System.Windows.Forms.Label();
+			this.label13 = new System.Windows.Forms.Label();
+			this.txtCommand = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
 			// btnStart
@@ -299,11 +301,33 @@
 			this.label12.TabIndex = 31;
 			this.label12.Text = "(DEV 일때 IP List 를 넣지 않으면 Local IP 로 처리)";
 			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.Location = new System.Drawing.Point(43, 316);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(60, 13);
+			this.label13.TabIndex = 33;
+			this.label13.Text = "Command :";
+			// 
+			// txtCommand
+			// 
+			this.txtCommand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.txtCommand.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtCommand.Location = new System.Drawing.Point(109, 313);
+			this.txtCommand.Name = "txtCommand";
+			this.txtCommand.ReadOnly = true;
+			this.txtCommand.Size = new System.Drawing.Size(434, 20);
+			this.txtCommand.TabIndex = 32;
+			// 
 			// FrmBotLauncher
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(555, 303);
+			this.ClientSize = new System.Drawing.Size(555, 345);
+			this.Controls.Add(this.label13);
+			this.Controls.Add(this.txtCommand);
 			this.Controls.Add(this.label12);
 			this.Controls.Add(this.label11);
 			this.Controls.Add(this.cboLoginPlatform);
@@ -362,5 +386,7 @@
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.ComboBox cboLoginPlatform;
 		private System.Windows.Forms.Label label12;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.TextBox txtCommand;
 	}
 }
