@@ -44,13 +44,13 @@
 			this.dataGridViewTourney.Location = new System.Drawing.Point(10, 105);
 			this.dataGridViewTourney.Name = "dataGridViewTourney";
 			this.dataGridViewTourney.RowTemplate.Height = 23;
-			this.dataGridViewTourney.Size = new System.Drawing.Size(1540, 166);
+			this.dataGridViewTourney.Size = new System.Drawing.Size(1565, 166);
 			this.dataGridViewTourney.TabIndex = 0;
 			// 
 			// btnViewTourny
 			// 
 			this.btnViewTourny.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnViewTourny.Location = new System.Drawing.Point(1486, 13);
+			this.btnViewTourny.Location = new System.Drawing.Point(1511, 13);
 			this.btnViewTourny.Name = "btnViewTourny";
 			this.btnViewTourny.Size = new System.Drawing.Size(64, 25);
 			this.btnViewTourny.TabIndex = 1;
@@ -65,7 +65,7 @@
 			this.txtSql.Location = new System.Drawing.Point(10, 13);
 			this.txtSql.Multiline = true;
 			this.txtSql.Name = "txtSql";
-			this.txtSql.Size = new System.Drawing.Size(1540, 85);
+			this.txtSql.Size = new System.Drawing.Size(1565, 85);
 			this.txtSql.TabIndex = 2;
 			this.txtSql.Text = resources.GetString("txtSql.Text");
 			// 
@@ -73,7 +73,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1560, 284);
+			this.ClientSize = new System.Drawing.Size(1585, 284);
 			this.Controls.Add(this.btnViewTourny);
 			this.Controls.Add(this.txtSql);
 			this.Controls.Add(this.dataGridViewTourney);
