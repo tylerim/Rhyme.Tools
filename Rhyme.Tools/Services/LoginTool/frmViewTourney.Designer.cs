@@ -41,18 +41,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dataGridViewTourney.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridViewTourney.Location = new System.Drawing.Point(12, 97);
+			this.dataGridViewTourney.Location = new System.Drawing.Point(10, 105);
 			this.dataGridViewTourney.Name = "dataGridViewTourney";
 			this.dataGridViewTourney.RowTemplate.Height = 23;
-			this.dataGridViewTourney.Size = new System.Drawing.Size(260, 153);
+			this.dataGridViewTourney.Size = new System.Drawing.Size(1540, 166);
 			this.dataGridViewTourney.TabIndex = 0;
 			// 
 			// btnViewTourny
 			// 
 			this.btnViewTourny.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnViewTourny.Location = new System.Drawing.Point(197, 12);
+			this.btnViewTourny.Location = new System.Drawing.Point(1486, 13);
 			this.btnViewTourny.Name = "btnViewTourny";
-			this.btnViewTourny.Size = new System.Drawing.Size(75, 23);
+			this.btnViewTourny.Size = new System.Drawing.Size(64, 25);
 			this.btnViewTourny.TabIndex = 1;
 			this.btnViewTourny.Text = "View";
 			this.btnViewTourny.UseVisualStyleBackColor = true;
@@ -62,18 +62,18 @@
 			// 
 			this.txtSql.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.txtSql.Location = new System.Drawing.Point(12, 12);
+			this.txtSql.Location = new System.Drawing.Point(10, 13);
 			this.txtSql.Multiline = true;
 			this.txtSql.Name = "txtSql";
-			this.txtSql.Size = new System.Drawing.Size(260, 79);
+			this.txtSql.Size = new System.Drawing.Size(1540, 85);
 			this.txtSql.TabIndex = 2;
 			this.txtSql.Text = resources.GetString("txtSql.Text");
 			// 
 			// frmViewTourney
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(284, 262);
+			this.ClientSize = new System.Drawing.Size(1560, 284);
 			this.Controls.Add(this.btnViewTourny);
 			this.Controls.Add(this.txtSql);
 			this.Controls.Add(this.dataGridViewTourney);
