@@ -31,11 +31,11 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainContainer));
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.toolStripButton_LoginTool = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-			this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -64,12 +64,21 @@
 			this.toolStripButton_LoginTool.Text = "Login Tool";
 			this.toolStripButton_LoginTool.Click += new System.EventHandler(this.toolStripButton_LoginTool_Click);
 			// 
+			// toolStripButton5
+			// 
+			this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+			this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton5.Name = "toolStripButton5";
+			this.toolStripButton5.Size = new System.Drawing.Size(98, 22);
+			this.toolStripButton5.Text = "Bot Launcher";
+			this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+			// 
 			// toolStripButton1
 			// 
 			this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
 			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripButton1.Name = "toolStripButton1";
-			this.toolStripButton1.Size = new System.Drawing.Size(121, 22);
+			this.toolStripButton1.Size = new System.Drawing.Size(122, 22);
 			this.toolStripButton1.Text = "HandId Converter";
 			this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton_HandIdConverter_Click);
 			// 
@@ -78,7 +87,7 @@
 			this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
 			this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripButton2.Name = "toolStripButton2";
-			this.toolStripButton2.Size = new System.Drawing.Size(107, 22);
+			this.toolStripButton2.Size = new System.Drawing.Size(108, 22);
 			this.toolStripButton2.Text = "Guid Generator";
 			this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton_GuidGenerator_Click);
 			// 
@@ -87,7 +96,7 @@
 			this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
 			this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripButton3.Name = "toolStripButton3";
-			this.toolStripButton3.Size = new System.Drawing.Size(66, 22);
+			this.toolStripButton3.Size = new System.Drawing.Size(69, 22);
 			this.toolStripButton3.Text = "exec PS";
 			this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
 			// 
@@ -96,18 +105,9 @@
 			this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
 			this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripButton4.Name = "toolStripButton4";
-			this.toolStripButton4.Size = new System.Drawing.Size(62, 22);
+			this.toolStripButton4.Size = new System.Drawing.Size(63, 22);
 			this.toolStripButton4.Text = "Socket";
 			this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
-			// 
-			// toolStripButton5
-			// 
-			this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-			this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolStripButton5.Name = "toolStripButton5";
-			this.toolStripButton5.Size = new System.Drawing.Size(97, 22);
-			this.toolStripButton5.Text = "Bot Launcher";
-			this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
 			// 
 			// frmMainContainer
 			// 

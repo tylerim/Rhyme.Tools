@@ -105,6 +105,7 @@
 			this.txtUATPath = new System.Windows.Forms.TextBox();
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.btnKillProcessRhymeBot = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.gbClient.SuspendLayout();
@@ -740,12 +741,13 @@
 			// 
 			// gbTerminate
 			// 
+			this.gbTerminate.Controls.Add(this.btnKillProcessRhymeBot);
 			this.gbTerminate.Controls.Add(this.button3);
 			this.gbTerminate.Controls.Add(this.button14);
 			this.gbTerminate.Controls.Add(this.button4);
 			this.gbTerminate.Location = new System.Drawing.Point(10, 193);
 			this.gbTerminate.Name = "gbTerminate";
-			this.gbTerminate.Size = new System.Drawing.Size(152, 85);
+			this.gbTerminate.Size = new System.Drawing.Size(245, 85);
 			this.gbTerminate.TabIndex = 13;
 			this.gbTerminate.TabStop = false;
 			this.gbTerminate.Text = "Terminate";
@@ -799,7 +801,7 @@
 			// 
 			this.gbDbUpdate.Controls.Add(this.btnDbUpdate_CRM);
 			this.gbDbUpdate.Controls.Add(this.btnDbUpdate_RB);
-			this.gbDbUpdate.Location = new System.Drawing.Point(328, 197);
+			this.gbDbUpdate.Location = new System.Drawing.Point(421, 197);
 			this.gbDbUpdate.Name = "gbDbUpdate";
 			this.gbDbUpdate.Size = new System.Drawing.Size(91, 85);
 			this.gbDbUpdate.TabIndex = 17;
@@ -810,7 +812,7 @@
 			// 
 			this.gbJump.Controls.Add(this.btnMoveHoldemTable);
 			this.gbJump.Controls.Add(this.btnClientCaptionChange);
-			this.gbJump.Location = new System.Drawing.Point(168, 197);
+			this.gbJump.Location = new System.Drawing.Point(261, 197);
 			this.gbJump.Name = "gbJump";
 			this.gbJump.Size = new System.Drawing.Size(154, 85);
 			this.gbJump.TabIndex = 18;
@@ -909,6 +911,16 @@
 			this.groupBox2.TabIndex = 20;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "UAT / Live Path";
+			// 
+			// btnKillProcessRhymeBot
+			// 
+			this.btnKillProcessRhymeBot.Location = new System.Drawing.Point(148, 53);
+			this.btnKillProcessRhymeBot.Name = "btnKillProcessRhymeBot";
+			this.btnKillProcessRhymeBot.Size = new System.Drawing.Size(90, 25);
+			this.btnKillProcessRhymeBot.TabIndex = 2;
+			this.btnKillProcessRhymeBot.Text = "Rhyme.Bot.exe";
+			this.btnKillProcessRhymeBot.UseVisualStyleBackColor = true;
+			this.btnKillProcessRhymeBot.Click += new System.EventHandler(this.btnKillProcessRhymeBot_Click);
 			// 
 			// frmMain
 			// 
@@ -1029,6 +1041,7 @@
 		private System.Windows.Forms.TextBox txtPassword;
 		private System.Windows.Forms.RadioButton rbGp;
 		private System.Windows.Forms.RadioButton rbVault;
+		private System.Windows.Forms.Button btnKillProcessRhymeBot;
 	}
 }
 

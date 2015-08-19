@@ -329,6 +329,11 @@ namespace Rhyme.Tools.Services.LoginTool
 			ProcessBehavior.DoProcessClose("Rhyme.CRM.Server");
 		}
 
+		private void btnKillProcessRhymeBot_Click(object sender, EventArgs e)
+		{
+			ProcessBehavior.DoProcessClose("Rhyme.Bot");
+		}
+
 		#endregion
 
 		#region Test Methods

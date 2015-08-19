@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBotLauncher));
 			this.btnStart = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtPath = new System.Windows.Forms.TextBox();
@@ -352,6 +353,7 @@
 			this.Controls.Add(this.txtPath);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnStart);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "FrmBotLauncher";
 			this.Text = "FrmBotLauncher";
 			this.Load += new System.EventHandler(this.FrmBotLauncher_Load);
