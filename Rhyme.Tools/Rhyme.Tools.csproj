@@ -189,6 +189,25 @@
     <Content Include="RequireFiles\HAHA.ico" />
     <Content Include="RequireFiles\Newtonsoft.Json.dll" />
     <Content Include="RequireFiles\Newtonsoft.Json.xml" />
+    <None Include="Resources\88FOXGG.ico" />
+    <None Include="Resources\AHAH.ico" />
+    <None Include="Resources\ALLNEWPOKER.ico" />
+    <None Include="Resources\APESPOKER.ico" />
+    <None Include="Resources\ASYAPOKER.ico" />
+    <None Include="Resources\CPA.ico" />
+    <None Include="Resources\DFP.ico" />
+    <None Include="Resources\GG.ico" />
+    <None Include="Resources\GGPOKER.COM.ico" />
+    <None Include="Resources\HAHA.ico" />
+    <None Include="Resources\NONE.ico" />
+    <None Include="Resources\OMGFISH.ico" />
+    <None Include="Resources\ONGATE.ico" />
+    <None Include="Resources\OWG.ico" />
+    <None Include="Resources\RED6POKER.ico" />
+    <None Include="Resources\Rhyme.ico" />
+    <None Include="Resources\TNL.ico" />
+    <None Include="Resources\W88.ico" />
+    <None Include="Resources\YOULE.ico" />
     <Content Include="TableManager.xml">
       <SubType>Designer</SubType>
     </Content>
