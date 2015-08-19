@@ -355,7 +355,7 @@
 			this.Controls.Add(this.btnStart);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "FrmBotLauncher";
-			this.Text = "FrmBotLauncher";
+			this.Text = "Rhyme.Bot";
 			this.Load += new System.EventHandler(this.FrmBotLauncher_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
