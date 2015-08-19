@@ -55,6 +55,7 @@
 			this.label12 = new System.Windows.Forms.Label();
 			this.label13 = new System.Windows.Forms.Label();
 			this.txtCommand = new System.Windows.Forms.TextBox();
+			this.rbRegisterTourneyTrueOnce = new System.Windows.Forms.RadioButton();
 			this.SuspendLayout();
 			// 
 			// btnStart
@@ -263,7 +264,7 @@
 			// 
 			this.rbRegisterTourneyFalse.AutoSize = true;
 			this.rbRegisterTourneyFalse.Checked = true;
-			this.rbRegisterTourneyFalse.Location = new System.Drawing.Point(218, 197);
+			this.rbRegisterTourneyFalse.Location = new System.Drawing.Point(372, 197);
 			this.rbRegisterTourneyFalse.Name = "rbRegisterTourneyFalse";
 			this.rbRegisterTourneyFalse.Size = new System.Drawing.Size(159, 17);
 			this.rbRegisterTourneyFalse.TabIndex = 28;
@@ -322,11 +323,22 @@
 			this.txtCommand.Size = new System.Drawing.Size(434, 20);
 			this.txtCommand.TabIndex = 32;
 			// 
+			// rbRegisterTourneyTrueOnce
+			// 
+			this.rbRegisterTourneyTrueOnce.AutoSize = true;
+			this.rbRegisterTourneyTrueOnce.Location = new System.Drawing.Point(218, 197);
+			this.rbRegisterTourneyTrueOnce.Name = "rbRegisterTourneyTrueOnce";
+			this.rbRegisterTourneyTrueOnce.Size = new System.Drawing.Size(148, 17);
+			this.rbRegisterTourneyTrueOnce.TabIndex = 34;
+			this.rbRegisterTourneyTrueOnce.Text = "토너 자동 등록 (한번만)";
+			this.rbRegisterTourneyTrueOnce.UseVisualStyleBackColor = true;
+			// 
 			// FrmBotLauncher
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(555, 345);
+			this.Controls.Add(this.rbRegisterTourneyTrueOnce);
 			this.Controls.Add(this.label13);
 			this.Controls.Add(this.txtCommand);
 			this.Controls.Add(this.label12);
@@ -390,5 +402,6 @@
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.TextBox txtCommand;
+		private System.Windows.Forms.RadioButton rbRegisterTourneyTrueOnce;
 	}
 }

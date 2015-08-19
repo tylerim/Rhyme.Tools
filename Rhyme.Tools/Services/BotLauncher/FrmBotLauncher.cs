@@ -37,7 +37,7 @@ namespace Rhyme.Tools.Services.BotLauncher
 					txtBotCount.Text,
 					cboTableIndex.SelectedIndex,
 					txtStartBotDelay.Text,
-					rbRegisterTourneyTrue.Checked ? "True" : "False",
+					GetRegisterTourney(),
 					cboLoginPlatform.SelectedItem,
 					txtIPList.Text);
 
@@ -52,6 +52,20 @@ namespace Rhyme.Tools.Services.BotLauncher
 			{
 				MessageBox.Show(ex.ToString());
 			}
+		}
+
+		private string GetRegisterTourney()
+		{
+			if (rbRegisterTourneyTrue.Checked)
+				return "RegisterTourney";
+
+			if (rbRegisterTourneyTrueOnce.Checked)
+				return "RegisterTourneyOnce";
+
+			if (rbRegisterTourneyFalse.Checked)
+				return "CashGame";
+
+			throw new InvalidOperationException("Must checked any radio button.");
 		}
 
 		private void cboConnectType_SelectedIndexChanged(object sender, EventArgs e)
