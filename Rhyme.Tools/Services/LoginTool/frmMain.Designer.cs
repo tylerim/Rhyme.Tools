@@ -90,6 +90,7 @@
 			this.contextMenuStrip_Log = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.gbTerminate = new System.Windows.Forms.GroupBox();
+			this.btnKillProcessRhymeBot = new System.Windows.Forms.Button();
 			this.gbLog = new System.Windows.Forms.GroupBox();
 			this.btnLogClear = new System.Windows.Forms.Button();
 			this.btnDbUpdate_RB = new System.Windows.Forms.Button();
@@ -105,7 +106,6 @@
 			this.txtUATPath = new System.Windows.Forms.TextBox();
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.btnKillProcessRhymeBot = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.gbClient.SuspendLayout();
@@ -646,7 +646,7 @@
 			this.txtBufferTime.Name = "txtBufferTime";
 			this.txtBufferTime.Size = new System.Drawing.Size(65, 20);
 			this.txtBufferTime.TabIndex = 11;
-			this.txtBufferTime.Text = "15";
+			this.txtBufferTime.Text = "90";
 			// 
 			// txtTourneyTemplateId
 			// 
@@ -654,7 +654,7 @@
 			this.txtTourneyTemplateId.Name = "txtTourneyTemplateId";
 			this.txtTourneyTemplateId.Size = new System.Drawing.Size(65, 20);
 			this.txtTourneyTemplateId.TabIndex = 10;
-			this.txtTourneyTemplateId.Text = "192";
+			this.txtTourneyTemplateId.Text = "7";
 			// 
 			// txtDbConnectionString
 			// 
@@ -751,6 +751,16 @@
 			this.gbTerminate.TabIndex = 13;
 			this.gbTerminate.TabStop = false;
 			this.gbTerminate.Text = "Terminate";
+			// 
+			// btnKillProcessRhymeBot
+			// 
+			this.btnKillProcessRhymeBot.Location = new System.Drawing.Point(148, 53);
+			this.btnKillProcessRhymeBot.Name = "btnKillProcessRhymeBot";
+			this.btnKillProcessRhymeBot.Size = new System.Drawing.Size(90, 25);
+			this.btnKillProcessRhymeBot.TabIndex = 2;
+			this.btnKillProcessRhymeBot.Text = "Rhyme.Bot.exe";
+			this.btnKillProcessRhymeBot.UseVisualStyleBackColor = true;
+			this.btnKillProcessRhymeBot.Click += new System.EventHandler(this.btnKillProcessRhymeBot_Click);
 			// 
 			// gbLog
 			// 
@@ -911,16 +921,6 @@
 			this.groupBox2.TabIndex = 20;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "UAT / Live Path";
-			// 
-			// btnKillProcessRhymeBot
-			// 
-			this.btnKillProcessRhymeBot.Location = new System.Drawing.Point(148, 53);
-			this.btnKillProcessRhymeBot.Name = "btnKillProcessRhymeBot";
-			this.btnKillProcessRhymeBot.Size = new System.Drawing.Size(90, 25);
-			this.btnKillProcessRhymeBot.TabIndex = 2;
-			this.btnKillProcessRhymeBot.Text = "Rhyme.Bot.exe";
-			this.btnKillProcessRhymeBot.UseVisualStyleBackColor = true;
-			this.btnKillProcessRhymeBot.Click += new System.EventHandler(this.btnKillProcessRhymeBot_Click);
 			// 
 			// frmMain
 			// 
