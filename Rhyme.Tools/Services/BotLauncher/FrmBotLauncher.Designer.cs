@@ -63,7 +63,7 @@
 			this.btnStart.Location = new System.Drawing.Point(372, 250);
 			this.btnStart.Name = "btnStart";
 			this.btnStart.Size = new System.Drawing.Size(75, 23);
-			this.btnStart.TabIndex = 0;
+			this.btnStart.TabIndex = 130;
 			this.btnStart.Text = "Start";
 			this.btnStart.UseVisualStyleBackColor = true;
 			this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
@@ -84,7 +84,7 @@
 			this.txtPath.Location = new System.Drawing.Point(109, 12);
 			this.txtPath.Name = "txtPath";
 			this.txtPath.Size = new System.Drawing.Size(434, 20);
-			this.txtPath.TabIndex = 2;
+			this.txtPath.TabIndex = 10;
 			this.txtPath.Text = "D:\\Rhyme\\dev\\src\\tools\\Rhyme.Bot\\Rhyme.Bot\\bin\\Debug\\Rhyme.Bot.exe";
 			// 
 			// txtStartIndex
@@ -92,7 +92,7 @@
 			this.txtStartIndex.Location = new System.Drawing.Point(109, 92);
 			this.txtStartIndex.Name = "txtStartIndex";
 			this.txtStartIndex.Size = new System.Drawing.Size(100, 20);
-			this.txtStartIndex.TabIndex = 2;
+			this.txtStartIndex.TabIndex = 40;
 			this.txtStartIndex.Text = "1";
 			// 
 			// txtBotCount
@@ -100,7 +100,7 @@
 			this.txtBotCount.Location = new System.Drawing.Point(109, 118);
 			this.txtBotCount.Name = "txtBotCount";
 			this.txtBotCount.Size = new System.Drawing.Size(100, 20);
-			this.txtBotCount.TabIndex = 2;
+			this.txtBotCount.TabIndex = 50;
 			this.txtBotCount.Text = "50";
 			// 
 			// cboBotType
@@ -115,7 +115,7 @@
 			this.cboBotType.Location = new System.Drawing.Point(109, 38);
 			this.cboBotType.Name = "cboBotType";
 			this.cboBotType.Size = new System.Drawing.Size(100, 21);
-			this.cboBotType.TabIndex = 12;
+			this.cboBotType.TabIndex = 20;
 			// 
 			// cboConnectType
 			// 
@@ -130,7 +130,7 @@
 			this.cboConnectType.Location = new System.Drawing.Point(109, 65);
 			this.cboConnectType.Name = "cboConnectType";
 			this.cboConnectType.Size = new System.Drawing.Size(100, 21);
-			this.cboConnectType.TabIndex = 13;
+			this.cboConnectType.TabIndex = 30;
 			this.cboConnectType.SelectedIndexChanged += new System.EventHandler(this.cboConnectType_SelectedIndexChanged);
 			// 
 			// cboTableIndex
@@ -152,7 +152,7 @@
 			this.cboTableIndex.Location = new System.Drawing.Point(109, 144);
 			this.cboTableIndex.Name = "cboTableIndex";
 			this.cboTableIndex.Size = new System.Drawing.Size(257, 21);
-			this.cboTableIndex.TabIndex = 14;
+			this.cboTableIndex.TabIndex = 60;
 			// 
 			// label2
 			// 
@@ -204,7 +204,7 @@
 			this.txtStartBotDelay.Location = new System.Drawing.Point(109, 171);
 			this.txtStartBotDelay.Name = "txtStartBotDelay";
 			this.txtStartBotDelay.Size = new System.Drawing.Size(100, 20);
-			this.txtStartBotDelay.TabIndex = 21;
+			this.txtStartBotDelay.TabIndex = 70;
 			this.txtStartBotDelay.Text = "200";
 			// 
 			// label8
@@ -230,7 +230,7 @@
 			this.txtIPList.Location = new System.Drawing.Point(109, 252);
 			this.txtIPList.Name = "txtIPList";
 			this.txtIPList.Size = new System.Drawing.Size(257, 20);
-			this.txtIPList.TabIndex = 23;
+			this.txtIPList.TabIndex = 120;
 			// 
 			// label10
 			// 
@@ -256,7 +256,8 @@
 			this.rbRegisterTourneyTrue.Location = new System.Drawing.Point(109, 197);
 			this.rbRegisterTourneyTrue.Name = "rbRegisterTourneyTrue";
 			this.rbRegisterTourneyTrue.Size = new System.Drawing.Size(103, 17);
-			this.rbRegisterTourneyTrue.TabIndex = 27;
+			this.rbRegisterTourneyTrue.TabIndex = 80;
+			this.rbRegisterTourneyTrue.TabStop = true;
 			this.rbRegisterTourneyTrue.Text = "토너 자동 등록";
 			this.rbRegisterTourneyTrue.UseVisualStyleBackColor = true;
 			// 
@@ -267,7 +268,7 @@
 			this.rbRegisterTourneyFalse.Location = new System.Drawing.Point(372, 197);
 			this.rbRegisterTourneyFalse.Name = "rbRegisterTourneyFalse";
 			this.rbRegisterTourneyFalse.Size = new System.Drawing.Size(159, 17);
-			this.rbRegisterTourneyFalse.TabIndex = 28;
+			this.rbRegisterTourneyFalse.TabIndex = 100;
 			this.rbRegisterTourneyFalse.TabStop = true;
 			this.rbRegisterTourneyFalse.Text = "Table blind index 게임 등록";
 			this.rbRegisterTourneyFalse.UseVisualStyleBackColor = true;
@@ -292,7 +293,7 @@
 			this.cboLoginPlatform.Location = new System.Drawing.Point(109, 225);
 			this.cboLoginPlatform.Name = "cboLoginPlatform";
 			this.cboLoginPlatform.Size = new System.Drawing.Size(100, 21);
-			this.cboLoginPlatform.TabIndex = 29;
+			this.cboLoginPlatform.TabIndex = 110;
 			// 
 			// label12
 			// 
@@ -321,7 +322,8 @@
 			this.txtCommand.Name = "txtCommand";
 			this.txtCommand.ReadOnly = true;
 			this.txtCommand.Size = new System.Drawing.Size(434, 20);
-			this.txtCommand.TabIndex = 32;
+			this.txtCommand.TabIndex = 900;
+			this.txtCommand.TabStop = false;
 			// 
 			// rbRegisterTourneyTrueOnce
 			// 
@@ -329,7 +331,8 @@
 			this.rbRegisterTourneyTrueOnce.Location = new System.Drawing.Point(218, 197);
 			this.rbRegisterTourneyTrueOnce.Name = "rbRegisterTourneyTrueOnce";
 			this.rbRegisterTourneyTrueOnce.Size = new System.Drawing.Size(148, 17);
-			this.rbRegisterTourneyTrueOnce.TabIndex = 34;
+			this.rbRegisterTourneyTrueOnce.TabIndex = 90;
+			this.rbRegisterTourneyTrueOnce.TabStop = true;
 			this.rbRegisterTourneyTrueOnce.Text = "토너 자동 등록 (한번만)";
 			this.rbRegisterTourneyTrueOnce.UseVisualStyleBackColor = true;
 			// 

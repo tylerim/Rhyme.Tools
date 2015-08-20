@@ -17,6 +17,8 @@ namespace Rhyme.Tools.Services.BotLauncher
 			cboConnectType.SelectedIndex = 0;		// Dev
 			cboTableIndex.SelectedIndex = 1;		// 1
 			cboLoginPlatform.SelectedIndex = 1;		// GP
+
+			btnStart.Select();
 		}
 
 		private void btnStart_Click(object sender, EventArgs e)
