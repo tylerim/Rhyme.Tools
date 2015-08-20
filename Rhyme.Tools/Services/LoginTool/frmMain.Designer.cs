@@ -106,6 +106,7 @@
 			this.txtUATPath = new System.Windows.Forms.TextBox();
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.btnDbUpdate_rb_gamerecord = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.gbClient.SuspendLayout();
@@ -791,9 +792,9 @@
 			// 
 			this.btnDbUpdate_RB.Location = new System.Drawing.Point(15, 22);
 			this.btnDbUpdate_RB.Name = "btnDbUpdate_RB";
-			this.btnDbUpdate_RB.Size = new System.Drawing.Size(64, 25);
+			this.btnDbUpdate_RB.Size = new System.Drawing.Size(90, 25);
 			this.btnDbUpdate_RB.TabIndex = 16;
-			this.btnDbUpdate_RB.Text = "dev rb";
+			this.btnDbUpdate_RB.Text = "rb_dev";
 			this.btnDbUpdate_RB.UseVisualStyleBackColor = true;
 			this.btnDbUpdate_RB.Click += new System.EventHandler(this.btnDbUpdate_RB_Click);
 			// 
@@ -801,19 +802,20 @@
 			// 
 			this.btnDbUpdate_CRM.Location = new System.Drawing.Point(15, 49);
 			this.btnDbUpdate_CRM.Name = "btnDbUpdate_CRM";
-			this.btnDbUpdate_CRM.Size = new System.Drawing.Size(64, 25);
+			this.btnDbUpdate_CRM.Size = new System.Drawing.Size(90, 25);
 			this.btnDbUpdate_CRM.TabIndex = 16;
-			this.btnDbUpdate_CRM.Text = "dev crm";
+			this.btnDbUpdate_CRM.Text = "rb_crm_dev";
 			this.btnDbUpdate_CRM.UseVisualStyleBackColor = true;
 			this.btnDbUpdate_CRM.Click += new System.EventHandler(this.btnDbUpdate_CRM_Click);
 			// 
 			// gbDbUpdate
 			// 
+			this.gbDbUpdate.Controls.Add(this.btnDbUpdate_rb_gamerecord);
 			this.gbDbUpdate.Controls.Add(this.btnDbUpdate_CRM);
 			this.gbDbUpdate.Controls.Add(this.btnDbUpdate_RB);
 			this.gbDbUpdate.Location = new System.Drawing.Point(421, 197);
 			this.gbDbUpdate.Name = "gbDbUpdate";
-			this.gbDbUpdate.Size = new System.Drawing.Size(91, 85);
+			this.gbDbUpdate.Size = new System.Drawing.Size(216, 85);
 			this.gbDbUpdate.TabIndex = 17;
 			this.gbDbUpdate.TabStop = false;
 			this.gbDbUpdate.Text = "DB Update";
@@ -921,6 +923,16 @@
 			this.groupBox2.TabIndex = 20;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "UAT / Live Path";
+			// 
+			// btnDbUpdate_rb_gamerecord
+			// 
+			this.btnDbUpdate_rb_gamerecord.Location = new System.Drawing.Point(111, 22);
+			this.btnDbUpdate_rb_gamerecord.Name = "btnDbUpdate_rb_gamerecord";
+			this.btnDbUpdate_rb_gamerecord.Size = new System.Drawing.Size(90, 25);
+			this.btnDbUpdate_rb_gamerecord.TabIndex = 17;
+			this.btnDbUpdate_rb_gamerecord.Text = "rb_gamerecord";
+			this.btnDbUpdate_rb_gamerecord.UseVisualStyleBackColor = true;
+			this.btnDbUpdate_rb_gamerecord.Click += new System.EventHandler(this.btnDbUpdate_rb_gamerecord_Click);
 			// 
 			// frmMain
 			// 
@@ -1042,6 +1054,7 @@
 		private System.Windows.Forms.RadioButton rbGp;
 		private System.Windows.Forms.RadioButton rbVault;
 		private System.Windows.Forms.Button btnKillProcessRhymeBot;
+		private System.Windows.Forms.Button btnDbUpdate_rb_gamerecord;
 	}
 }
 

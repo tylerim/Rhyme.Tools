@@ -519,6 +519,11 @@ namespace Rhyme.Tools.Services.LoginTool
 			this.DoProcessStartDbUpdate("CRM");
 		}
 
+		private void btnDbUpdate_rb_gamerecord_Click(object sender, EventArgs e)
+		{
+			this.DoProcessStartDbUpdate("GameRecord");
+		}
+
 		private void DoProcessStartDbUpdate(string dbType)
 		{
 			ProcessBehavior.DbUpdate(this.GetSourceRootDir, dbType);
