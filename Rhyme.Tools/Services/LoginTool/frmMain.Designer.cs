@@ -46,11 +46,11 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.gbClient = new System.Windows.Forms.GroupBox();
+			this.rbMyPlatform = new System.Windows.Forms.RadioButton();
 			this.rbGp = new System.Windows.Forms.RadioButton();
 			this.rbVault = new System.Windows.Forms.RadioButton();
 			this.txtPassword = new System.Windows.Forms.TextBox();
 			this.txtServiceProviderName = new System.Windows.Forms.TextBox();
-			this.txtLanguage = new System.Windows.Forms.TextBox();
 			this.cbxEnvironment = new System.Windows.Forms.ComboBox();
 			this.isReleaseCheckBox = new System.Windows.Forms.CheckBox();
 			this.label3 = new System.Windows.Forms.Label();
@@ -107,7 +107,7 @@
 			this.txtUATPath = new System.Windows.Forms.TextBox();
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.rbMyPlatform = new System.Windows.Forms.RadioButton();
+			this.cboLanguage = new System.Windows.Forms.ComboBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.gbClient.SuspendLayout();
@@ -274,12 +274,12 @@
 			this.gbClient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.gbClient.Controls.Add(this.cboLanguage);
 			this.gbClient.Controls.Add(this.rbMyPlatform);
 			this.gbClient.Controls.Add(this.rbGp);
 			this.gbClient.Controls.Add(this.rbVault);
 			this.gbClient.Controls.Add(this.txtPassword);
 			this.gbClient.Controls.Add(this.txtServiceProviderName);
-			this.gbClient.Controls.Add(this.txtLanguage);
 			this.gbClient.Controls.Add(this.cbxEnvironment);
 			this.gbClient.Controls.Add(this.isReleaseCheckBox);
 			this.gbClient.Controls.Add(this.txtFrontIP);
@@ -296,6 +296,16 @@
 			this.gbClient.TabStop = false;
 			this.gbClient.Text = "Client";
 			// 
+			// rbMyPlatform
+			// 
+			this.rbMyPlatform.AutoSize = true;
+			this.rbMyPlatform.Location = new System.Drawing.Point(334, 54);
+			this.rbMyPlatform.Name = "rbMyPlatform";
+			this.rbMyPlatform.Size = new System.Drawing.Size(77, 17);
+			this.rbMyPlatform.TabIndex = 21;
+			this.rbMyPlatform.Text = "MyPlatform";
+			this.rbMyPlatform.UseVisualStyleBackColor = true;
+			// 
 			// rbGp
 			// 
 			this.rbGp.AutoSize = true;
@@ -304,6 +314,7 @@
 			this.rbGp.Name = "rbGp";
 			this.rbGp.Size = new System.Drawing.Size(40, 17);
 			this.rbGp.TabIndex = 20;
+			this.rbGp.TabStop = true;
 			this.rbGp.Text = "GP";
 			this.rbGp.UseVisualStyleBackColor = true;
 			// 
@@ -332,14 +343,6 @@
 			this.txtServiceProviderName.Size = new System.Drawing.Size(47, 20);
 			this.txtServiceProviderName.TabIndex = 17;
 			this.txtServiceProviderName.Text = "GG";
-			// 
-			// txtLanguage
-			// 
-			this.txtLanguage.Location = new System.Drawing.Point(133, 22);
-			this.txtLanguage.Name = "txtLanguage";
-			this.txtLanguage.Size = new System.Drawing.Size(51, 20);
-			this.txtLanguage.TabIndex = 8;
-			this.txtLanguage.Text = "en";
 			// 
 			// cbxEnvironment
 			// 
@@ -937,15 +940,24 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "UAT / Live Path";
 			// 
-			// rbMyPlatform
+			// cboLanguage
 			// 
-			this.rbMyPlatform.AutoSize = true;
-			this.rbMyPlatform.Location = new System.Drawing.Point(334, 54);
-			this.rbMyPlatform.Name = "rbMyPlatform";
-			this.rbMyPlatform.Size = new System.Drawing.Size(77, 17);
-			this.rbMyPlatform.TabIndex = 21;
-			this.rbMyPlatform.Text = "MyPlatform";
-			this.rbMyPlatform.UseVisualStyleBackColor = true;
+			this.cboLanguage.FormattingEnabled = true;
+			this.cboLanguage.Items.AddRange(new object[] {
+            "ko",
+            "en",
+            "zh",
+            "zh",
+            "zh",
+            "id",
+            "vi",
+            "km",
+            "th",
+            "ja"});
+			this.cboLanguage.Location = new System.Drawing.Point(133, 22);
+			this.cboLanguage.Name = "cboLanguage";
+			this.cboLanguage.Size = new System.Drawing.Size(51, 21);
+			this.cboLanguage.TabIndex = 22;
 			// 
 			// frmMain
 			// 
@@ -1015,7 +1027,6 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox txtTestEnvironment;
-		private System.Windows.Forms.TextBox txtLanguage;
 		private System.Windows.Forms.TextBox txtQALanguage;
 		private System.Windows.Forms.Button btnClientCaptionChange;
 		private System.Windows.Forms.Button btnMoveHoldemTable;
@@ -1069,6 +1080,7 @@
 		private System.Windows.Forms.Button btnKillProcessRhymeBot;
 		private System.Windows.Forms.Button btnDbUpdate_rb_gamerecord;
 		private System.Windows.Forms.RadioButton rbMyPlatform;
+		private System.Windows.Forms.ComboBox cboLanguage;
 	}
 }
 

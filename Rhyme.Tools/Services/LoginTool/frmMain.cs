@@ -71,6 +71,7 @@ namespace Rhyme.Tools.Services.LoginTool
 			// QA 탭 감춤.
 			tabControl1.SelectedTab.Visible = false;
 
+			cboLanguage.SelectedIndex = 1;
 			cbxClientCount.SelectedIndex = 0;
 			cbxEnvironment.SelectedIndex = 0;
 
@@ -275,7 +276,7 @@ namespace Rhyme.Tools.Services.LoginTool
 
 			var serviceProviderName = txtServiceProviderName.Text;
 			var env = cbxEnvironment.Text.ToLower();
-			var language = txtLanguage.Text;
+			var language = cboLanguage.Text;
 			var idNumberString = txtTestClientIdList.Text ?? "";
 			var idPrefix = txtPrefix.Text ?? "";
 			var commandLine = commandLineTextBox.Text;
