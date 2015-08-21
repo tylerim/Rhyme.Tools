@@ -5,16 +5,12 @@ using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 
+using Rhyme.Tools.Services.LoginTool.RhymeModule.Common;
+
 namespace Rhyme.Tools.Services.LoginTool.RhymeModule
 {
 	class GpLoginHelper
 	{
-		public class GPToken
-		{
-			public string gp_id { get; set; }
-			public string token { get; set; }
-		}
-
 		public static async Task<GPToken> GetAuthToken(string env, string userName, string password)
 		{
 			try
@@ -30,14 +26,18 @@ namespace Rhyme.Tools.Services.LoginTool.RhymeModule
 					case "stress":
 						throw new InvalidOperationException("Not support yet");
 					case "uat":
+					case "uatnew":
 						tokenUrlGP = "http://tst-uat.good-gamenetwork.com:8080/gg-launch-token?username={0}&password={1}";
 						break;
 					case "live":
 						throw new InvalidOperationException("Not support yet");
 				}
 
-				var request = WebRequest.CreateHttp(string.Format(tokenUrlGP, userName, password));
+				var requestQuery = string.Format(tokenUrlGP, userName, password);
+				var request = WebRequest.CreateHttp(requestQuery) as HttpWebRequest;
+				//request.ContentType = "application/json; charset=utf-8";
 				request.Method = "GET";
+				request.Timeout = 3000;
 				request.Proxy = null;
 
 				using (var response = await request.GetResponseAsync())

@@ -185,10 +185,10 @@ namespace Rhyme.Tools.Services.LoginTool
 					return null;
 				}
 
-				this.AddLog(string.Format("vault_login_token_info : {0}" , token));
+				this.AddLog(string.Format("vault_login_token_info : {0}" , token.token));
 				
 				Guid resultGuid;
-				return Guid.TryParse(token, out resultGuid) ? token : string.Empty;
+				return Guid.TryParse(token.token, out resultGuid) ? token.token : string.Empty;
 			}
 			finally
 			{

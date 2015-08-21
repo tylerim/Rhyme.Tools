@@ -121,6 +121,7 @@
     <Compile Include="Services\LoginTool\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\LoginTool\RhymeModule\Common\GPToken.cs" />
     <Compile Include="Services\LoginTool\RhymeModule\Common\Utilities\DirectoryHelper.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -129,6 +130,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helper\NativeMethodsHelper.cs" />
+    <Compile Include="Services\LoginTool\RhymeModule\MyPlatformLoginHelper.cs" />
     <Compile Include="Services\LoginTool\RhymeModule\Preferences.cs" />
     <Compile Include="Services\LoginTool\RhymeModule\VaultLoginHelper.cs" />
     <Compile Include="Services\Socket\frmSocket.cs">
