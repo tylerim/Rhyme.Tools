@@ -299,7 +299,7 @@
 			// rbMyPlatform
 			// 
 			this.rbMyPlatform.AutoSize = true;
-			this.rbMyPlatform.Location = new System.Drawing.Point(334, 54);
+			this.rbMyPlatform.Location = new System.Drawing.Point(334, 50);
 			this.rbMyPlatform.Name = "rbMyPlatform";
 			this.rbMyPlatform.Size = new System.Drawing.Size(77, 17);
 			this.rbMyPlatform.TabIndex = 21;
@@ -310,7 +310,7 @@
 			// 
 			this.rbGp.AutoSize = true;
 			this.rbGp.Checked = true;
-			this.rbGp.Location = new System.Drawing.Point(288, 54);
+			this.rbGp.Location = new System.Drawing.Point(288, 50);
 			this.rbGp.Name = "rbGp";
 			this.rbGp.Size = new System.Drawing.Size(40, 17);
 			this.rbGp.TabIndex = 20;
@@ -321,7 +321,7 @@
 			// rbVault
 			// 
 			this.rbVault.AutoSize = true;
-			this.rbVault.Location = new System.Drawing.Point(233, 54);
+			this.rbVault.Location = new System.Drawing.Point(233, 50);
 			this.rbVault.Name = "rbVault";
 			this.rbVault.Size = new System.Drawing.Size(49, 17);
 			this.rbVault.TabIndex = 19;
@@ -330,7 +330,7 @@
 			// 
 			// txtPassword
 			// 
-			this.txtPassword.Location = new System.Drawing.Point(377, 22);
+			this.txtPassword.Location = new System.Drawing.Point(315, 22);
 			this.txtPassword.Name = "txtPassword";
 			this.txtPassword.Size = new System.Drawing.Size(45, 20);
 			this.txtPassword.TabIndex = 18;
@@ -362,7 +362,7 @@
 			// isReleaseCheckBox
 			// 
 			this.isReleaseCheckBox.AutoSize = true;
-			this.isReleaseCheckBox.Location = new System.Drawing.Point(6, 55);
+			this.isReleaseCheckBox.Location = new System.Drawing.Point(6, 52);
 			this.isReleaseCheckBox.Name = "isReleaseCheckBox";
 			this.isReleaseCheckBox.Size = new System.Drawing.Size(65, 17);
 			this.isReleaseCheckBox.TabIndex = 15;
@@ -372,7 +372,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(77, 56);
+			this.label3.Location = new System.Drawing.Point(73, 53);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(54, 13);
 			this.label3.TabIndex = 14;
@@ -380,7 +380,7 @@
 			// 
 			// commandLineTextBox
 			// 
-			this.commandLineTextBox.Location = new System.Drawing.Point(137, 53);
+			this.commandLineTextBox.Location = new System.Drawing.Point(133, 50);
 			this.commandLineTextBox.Name = "commandLineTextBox";
 			this.commandLineTextBox.Size = new System.Drawing.Size(90, 20);
 			this.commandLineTextBox.TabIndex = 13;
@@ -419,7 +419,7 @@
             "18",
             "19",
             "20"});
-			this.cbxClientCount.Location = new System.Drawing.Point(315, 22);
+			this.cbxClientCount.Location = new System.Drawing.Point(366, 21);
 			this.cbxClientCount.Name = "cbxClientCount";
 			this.cbxClientCount.Size = new System.Drawing.Size(56, 21);
 			this.cbxClientCount.TabIndex = 11;
@@ -954,7 +954,7 @@
             "km",
             "th",
             "ja"});
-			this.cboLanguage.Location = new System.Drawing.Point(133, 22);
+			this.cboLanguage.Location = new System.Drawing.Point(133, 21);
 			this.cboLanguage.Name = "cboLanguage";
 			this.cboLanguage.Size = new System.Drawing.Size(51, 21);
 			this.cboLanguage.TabIndex = 22;
