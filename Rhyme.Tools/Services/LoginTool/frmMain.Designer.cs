@@ -46,6 +46,7 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.gbClient = new System.Windows.Forms.GroupBox();
+			this.cboLanguage = new System.Windows.Forms.ComboBox();
 			this.rbMyPlatform = new System.Windows.Forms.RadioButton();
 			this.rbGp = new System.Windows.Forms.RadioButton();
 			this.rbVault = new System.Windows.Forms.RadioButton();
@@ -53,7 +54,6 @@
 			this.txtServiceProviderName = new System.Windows.Forms.TextBox();
 			this.cbxEnvironment = new System.Windows.Forms.ComboBox();
 			this.isReleaseCheckBox = new System.Windows.Forms.CheckBox();
-			this.label3 = new System.Windows.Forms.Label();
 			this.commandLineTextBox = new System.Windows.Forms.TextBox();
 			this.txtPrefix = new System.Windows.Forms.TextBox();
 			this.cbxClientCount = new System.Windows.Forms.ComboBox();
@@ -107,7 +107,6 @@
 			this.txtUATPath = new System.Windows.Forms.TextBox();
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.cboLanguage = new System.Windows.Forms.ComboBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.gbClient.SuspendLayout();
@@ -283,7 +282,6 @@
 			this.gbClient.Controls.Add(this.cbxEnvironment);
 			this.gbClient.Controls.Add(this.isReleaseCheckBox);
 			this.gbClient.Controls.Add(this.txtFrontIP);
-			this.gbClient.Controls.Add(this.label3);
 			this.gbClient.Controls.Add(this.commandLineTextBox);
 			this.gbClient.Controls.Add(this.btnStartAll);
 			this.gbClient.Controls.Add(this.txtPrefix);
@@ -296,10 +294,29 @@
 			this.gbClient.TabStop = false;
 			this.gbClient.Text = "Client";
 			// 
+			// cboLanguage
+			// 
+			this.cboLanguage.FormattingEnabled = true;
+			this.cboLanguage.Items.AddRange(new object[] {
+            "ko",
+            "en",
+            "zh",
+            "zh",
+            "zh",
+            "id",
+            "vi",
+            "km",
+            "th",
+            "ja"});
+			this.cboLanguage.Location = new System.Drawing.Point(133, 21);
+			this.cboLanguage.Name = "cboLanguage";
+			this.cboLanguage.Size = new System.Drawing.Size(51, 21);
+			this.cboLanguage.TabIndex = 22;
+			// 
 			// rbMyPlatform
 			// 
 			this.rbMyPlatform.AutoSize = true;
-			this.rbMyPlatform.Location = new System.Drawing.Point(334, 50);
+			this.rbMyPlatform.Location = new System.Drawing.Point(330, 51);
 			this.rbMyPlatform.Name = "rbMyPlatform";
 			this.rbMyPlatform.Size = new System.Drawing.Size(77, 17);
 			this.rbMyPlatform.TabIndex = 21;
@@ -310,7 +327,7 @@
 			// 
 			this.rbGp.AutoSize = true;
 			this.rbGp.Checked = true;
-			this.rbGp.Location = new System.Drawing.Point(288, 50);
+			this.rbGp.Location = new System.Drawing.Point(284, 51);
 			this.rbGp.Name = "rbGp";
 			this.rbGp.Size = new System.Drawing.Size(40, 17);
 			this.rbGp.TabIndex = 20;
@@ -321,7 +338,7 @@
 			// rbVault
 			// 
 			this.rbVault.AutoSize = true;
-			this.rbVault.Location = new System.Drawing.Point(233, 50);
+			this.rbVault.Location = new System.Drawing.Point(229, 51);
 			this.rbVault.Name = "rbVault";
 			this.rbVault.Size = new System.Drawing.Size(49, 17);
 			this.rbVault.TabIndex = 19;
@@ -369,20 +386,11 @@
 			this.isReleaseCheckBox.Text = "Release";
 			this.isReleaseCheckBox.UseVisualStyleBackColor = true;
 			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(73, 53);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(54, 13);
-			this.label3.TabIndex = 14;
-			this.label3.Text = "Command";
-			// 
 			// commandLineTextBox
 			// 
-			this.commandLineTextBox.Location = new System.Drawing.Point(133, 50);
+			this.commandLineTextBox.Location = new System.Drawing.Point(80, 50);
 			this.commandLineTextBox.Name = "commandLineTextBox";
-			this.commandLineTextBox.Size = new System.Drawing.Size(90, 20);
+			this.commandLineTextBox.Size = new System.Drawing.Size(143, 20);
 			this.commandLineTextBox.TabIndex = 13;
 			this.commandLineTextBox.Text = "/lobbyvisible true";
 			// 
@@ -940,25 +948,6 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "UAT / Live Path";
 			// 
-			// cboLanguage
-			// 
-			this.cboLanguage.FormattingEnabled = true;
-			this.cboLanguage.Items.AddRange(new object[] {
-            "ko",
-            "en",
-            "zh",
-            "zh",
-            "zh",
-            "id",
-            "vi",
-            "km",
-            "th",
-            "ja"});
-			this.cboLanguage.Location = new System.Drawing.Point(133, 21);
-			this.cboLanguage.Name = "cboLanguage";
-			this.cboLanguage.Size = new System.Drawing.Size(51, 21);
-			this.cboLanguage.TabIndex = 22;
-			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1059,7 +1048,6 @@
 		private System.Windows.Forms.TextBox txtLivePath;
 		private System.Windows.Forms.ComboBox cbxClientCount;
 		private System.Windows.Forms.TextBox txtPrefix;
-		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox commandLineTextBox;
 		private System.Windows.Forms.CheckBox isReleaseCheckBox;
 		private System.Windows.Forms.ComboBox cbxEnvironment;
