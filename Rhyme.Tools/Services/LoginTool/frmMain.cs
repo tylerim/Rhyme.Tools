@@ -253,6 +253,34 @@ namespace Rhyme.Tools.Services.LoginTool
 			}
 		}
 
+		private async Task<string> Get2AcePlatformLoginToken(string environment, string userId, string password)
+		{
+			this.AddLog("Start, Get 2Ace Platform Token...");
+
+			Cursor.Current = Cursors.WaitCursor;
+
+			try
+			{
+				var token = await _2AceLoginhelper.GetAuthToken(environment, userId, password);
+				if (token == null)
+				{
+					this.AddLog(string.Format("2ace_platform_auth_failed : {0}, {1}, {2}", environment, userId, password));
+					return null;
+				}
+
+				this.AddLog(string.Format("2ace_platform_login_token_info : {0} | {1}", token.gp_id, token.token));
+
+				Guid resultGuid;
+				return Guid.TryParse(token.token, out resultGuid) == false
+					? string.Empty
+					: string.Format("{0}:{1}", token.token, token.gp_id);
+			}
+			finally
+			{
+				Cursor.Current = Cursors.Default;
+			}
+		}
+
 		// GGnet.exe 시작 버튼
 		private async void btnStartAll_Click(object sender, EventArgs e)
 		{
@@ -290,6 +318,7 @@ namespace Rhyme.Tools.Services.LoginTool
 			var isLoginTokenFromVault = rbVault.Checked;
 			var isLoginTokenFromGp = rbGp.Checked;
 			var isLoginTokenFromMyPlatform = rbMyPlatform.Checked;
+			var isLoginTokenFrom2Ace = rb2AcePlatform.Checked;
 
 			for (var i = clientCount - 1; i >= 0; i--)
 			{
@@ -298,8 +327,8 @@ namespace Rhyme.Tools.Services.LoginTool
 				await Task.Run(() =>
 				{
 					var testClientId = GetClientId(isBoolIdNumber, idPrefix, idNumber, refI, idNumberString);
-					var loginToken = GetLoginToken(env, testClientId, password, isLoginTokenFromVault, isLoginTokenFromGp, isLoginTokenFromMyPlatform);
-					SetServiceProviderIfGpOrMyPlatform(ref serviceProviderName , isLoginTokenFromVault, isLoginTokenFromGp, isLoginTokenFromMyPlatform);
+					var loginToken = GetLoginToken(env, testClientId, password, isLoginTokenFromVault, isLoginTokenFromGp, isLoginTokenFromMyPlatform, isLoginTokenFrom2Ace);
+					SetServiceProviderIfGpOrMyPlatform(ref serviceProviderName, isLoginTokenFromVault, isLoginTokenFromGp, isLoginTokenFromMyPlatform, isLoginTokenFrom2Ace);
 					
 					if (string.IsNullOrEmpty(loginToken) || loginToken == Guid.Empty.ToString())
 					{
@@ -325,21 +354,24 @@ namespace Rhyme.Tools.Services.LoginTool
 				: string.Format("{0}{1}", idPrefix, idNumberString);
 		}
 
-		private string GetLoginToken(string env, string testClientId, string password, bool isLoginTokenFromVault, bool isLoginTokenFromGp, bool isLoginTokenFromMyPlatform)
+		private string GetLoginToken(string env, string testClientId, string password, bool isLoginTokenFromVault, bool isLoginTokenFromGp, bool isLoginTokenFromMyPlatform, bool isLoginTokenFrom2Ace)
 		{
 			if (isLoginTokenFromVault)
-				return GetVaultLoginToken(env, testClientId, password).Result;		// login_token
+				return GetVaultLoginToken(env, testClientId, password).Result;			// login_token
 
 			if (isLoginTokenFromGp)
-				return GetGpLoginToken(env, testClientId, password).Result;			// login_token:gp_id
+				return GetGpLoginToken(env, testClientId, password).Result;				// login_token:gp_id
 
 			if (isLoginTokenFromMyPlatform)
-				return GetMyPlatformLoginToken(env, testClientId, password).Result; // login_token:gp_id
+				return GetMyPlatformLoginToken(env, testClientId, password).Result;		// login_token:gp_id
+
+			if (isLoginTokenFrom2Ace)
+				return Get2AcePlatformLoginToken(env, testClientId, password).Result;	// login_token:gp_id
 
 			return string.Empty;
 		}
 
-		private void SetServiceProviderIfGpOrMyPlatform(ref string serviceProviderName, bool isLoginTokenFromVault, bool isLoginTokenFromGp, bool isLoginTokenFromMyPlatform)
+		private void SetServiceProviderIfGpOrMyPlatform(ref string serviceProviderName, bool isLoginTokenFromVault, bool isLoginTokenFromGp, bool isLoginTokenFromMyPlatform, bool isLoginTokenFrom2Ace)
 		{
 			if (isLoginTokenFromVault)
 				return;
@@ -348,7 +380,14 @@ namespace Rhyme.Tools.Services.LoginTool
 			{
 				// NOTE : service provider is must GP
 				serviceProviderName = "GP";
-			} 
+				return;
+			}
+
+			if (isLoginTokenFrom2Ace)
+			{
+				serviceProviderName = "2ACE";
+				return;
+			}
 		}
 
 		#endregion

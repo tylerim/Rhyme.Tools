@@ -107,6 +107,7 @@
 			this.txtUATPath = new System.Windows.Forms.TextBox();
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.rb2AcePlatform = new System.Windows.Forms.RadioButton();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.gbClient.SuspendLayout();
@@ -273,6 +274,7 @@
 			this.gbClient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+			this.gbClient.Controls.Add(this.rb2AcePlatform);
 			this.gbClient.Controls.Add(this.cboLanguage);
 			this.gbClient.Controls.Add(this.rbMyPlatform);
 			this.gbClient.Controls.Add(this.rbGp);
@@ -316,7 +318,7 @@
 			// rbMyPlatform
 			// 
 			this.rbMyPlatform.AutoSize = true;
-			this.rbMyPlatform.Location = new System.Drawing.Point(330, 51);
+			this.rbMyPlatform.Location = new System.Drawing.Point(275, 51);
 			this.rbMyPlatform.Name = "rbMyPlatform";
 			this.rbMyPlatform.Size = new System.Drawing.Size(77, 17);
 			this.rbMyPlatform.TabIndex = 21;
@@ -327,7 +329,7 @@
 			// 
 			this.rbGp.AutoSize = true;
 			this.rbGp.Checked = true;
-			this.rbGp.Location = new System.Drawing.Point(284, 51);
+			this.rbGp.Location = new System.Drawing.Point(229, 51);
 			this.rbGp.Name = "rbGp";
 			this.rbGp.Size = new System.Drawing.Size(40, 17);
 			this.rbGp.TabIndex = 20;
@@ -338,7 +340,8 @@
 			// rbVault
 			// 
 			this.rbVault.AutoSize = true;
-			this.rbVault.Location = new System.Drawing.Point(229, 51);
+			this.rbVault.Enabled = false;
+			this.rbVault.Location = new System.Drawing.Point(174, 51);
 			this.rbVault.Name = "rbVault";
 			this.rbVault.Size = new System.Drawing.Size(49, 17);
 			this.rbVault.TabIndex = 19;
@@ -390,7 +393,7 @@
 			// 
 			this.commandLineTextBox.Location = new System.Drawing.Point(80, 50);
 			this.commandLineTextBox.Name = "commandLineTextBox";
-			this.commandLineTextBox.Size = new System.Drawing.Size(143, 20);
+			this.commandLineTextBox.Size = new System.Drawing.Size(88, 20);
 			this.commandLineTextBox.TabIndex = 13;
 			this.commandLineTextBox.Text = "/lobbyvisible true";
 			// 
@@ -948,6 +951,16 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "UAT / Live Path";
 			// 
+			// rb2AcePlatform
+			// 
+			this.rb2AcePlatform.AutoSize = true;
+			this.rb2AcePlatform.Location = new System.Drawing.Point(358, 51);
+			this.rb2AcePlatform.Name = "rb2AcePlatform";
+			this.rb2AcePlatform.Size = new System.Drawing.Size(50, 17);
+			this.rb2AcePlatform.TabIndex = 23;
+			this.rb2AcePlatform.Text = "2Ace";
+			this.rb2AcePlatform.UseVisualStyleBackColor = true;
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1069,6 +1082,7 @@
 		private System.Windows.Forms.Button btnDbUpdate_rb_gamerecord;
 		private System.Windows.Forms.RadioButton rbMyPlatform;
 		private System.Windows.Forms.ComboBox cboLanguage;
+		private System.Windows.Forms.RadioButton rb2AcePlatform;
 	}
 }
 
