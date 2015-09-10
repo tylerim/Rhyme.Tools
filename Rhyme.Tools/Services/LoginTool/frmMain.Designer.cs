@@ -46,6 +46,7 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.gbClient = new System.Windows.Forms.GroupBox();
+			this.rb2AcePlatform = new System.Windows.Forms.RadioButton();
 			this.cboLanguage = new System.Windows.Forms.ComboBox();
 			this.rbMyPlatform = new System.Windows.Forms.RadioButton();
 			this.rbGp = new System.Windows.Forms.RadioButton();
@@ -107,7 +108,6 @@
 			this.txtUATPath = new System.Windows.Forms.TextBox();
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.rb2AcePlatform = new System.Windows.Forms.RadioButton();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.gbClient.SuspendLayout();
@@ -296,6 +296,16 @@
 			this.gbClient.TabStop = false;
 			this.gbClient.Text = "Client";
 			// 
+			// rb2AcePlatform
+			// 
+			this.rb2AcePlatform.AutoSize = true;
+			this.rb2AcePlatform.Location = new System.Drawing.Point(358, 51);
+			this.rb2AcePlatform.Name = "rb2AcePlatform";
+			this.rb2AcePlatform.Size = new System.Drawing.Size(50, 17);
+			this.rb2AcePlatform.TabIndex = 23;
+			this.rb2AcePlatform.Text = "2Ace";
+			this.rb2AcePlatform.UseVisualStyleBackColor = true;
+			// 
 			// cboLanguage
 			// 
 			this.cboLanguage.FormattingEnabled = true;
@@ -401,7 +411,6 @@
 			// 
 			this.txtPrefix.Location = new System.Drawing.Point(190, 22);
 			this.txtPrefix.Name = "txtPrefix";
-			this.txtPrefix.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
 			this.txtPrefix.Size = new System.Drawing.Size(61, 20);
 			this.txtPrefix.TabIndex = 12;
 			this.txtPrefix.Text = "t";
@@ -950,16 +959,6 @@
 			this.groupBox2.TabIndex = 20;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "UAT / Live Path";
-			// 
-			// rb2AcePlatform
-			// 
-			this.rb2AcePlatform.AutoSize = true;
-			this.rb2AcePlatform.Location = new System.Drawing.Point(358, 51);
-			this.rb2AcePlatform.Name = "rb2AcePlatform";
-			this.rb2AcePlatform.Size = new System.Drawing.Size(50, 17);
-			this.rb2AcePlatform.TabIndex = 23;
-			this.rb2AcePlatform.Text = "2Ace";
-			this.rb2AcePlatform.UseVisualStyleBackColor = true;
 			// 
 			// frmMain
 			// 

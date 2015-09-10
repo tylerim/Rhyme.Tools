@@ -32,7 +32,7 @@ namespace Rhyme.Tools.Services.BotLauncher
 			try
 			{
 				var arguments = string.Format(
-					"{0} {1} {2} {3} {4} {5} {6} {7} {8}",
+					"{0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11}",
 					cboBotType.SelectedItem,
 					cboConnectType.SelectedItem,
 					txtStartIndex.Text,
@@ -41,7 +41,11 @@ namespace Rhyme.Tools.Services.BotLauncher
 					txtStartBotDelay.Text,
 					GetRegisterTourney(),
 					cboLoginPlatform.SelectedItem,
-					txtIPList.Text);
+					txtIPList.Text,
+					txtPrefixBotLoginId.Text,
+					txtBotLoginPassword.Text,
+					GetBotIdPasswordSame()
+					);
 
 				txtCommand.Text = arguments;
 
@@ -67,7 +71,18 @@ namespace Rhyme.Tools.Services.BotLauncher
 			if (rbRegisterTourneyFalse.Checked)
 				return "CashGame";
 
-			throw new InvalidOperationException("Must checked any radio button.");
+			throw new InvalidOperationException("Must checked any radio button; Register Tourney.");
+		}
+
+		private string GetBotIdPasswordSame()
+		{
+			if (rbBotIdPasswordDifferent.Checked)
+				return false.ToString();
+
+			if (rbBotIdPasswordSame.Checked)
+				return true.ToString();
+
+			throw new InvalidOperationException("Must checked any radio button; Id Password same.");
 		}
 
 		private void cboConnectType_SelectedIndexChanged(object sender, EventArgs e)
