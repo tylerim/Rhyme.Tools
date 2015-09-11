@@ -108,6 +108,7 @@
 			this.txtUATPath = new System.Windows.Forms.TextBox();
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.btmGitRemoteUpdateOrigin = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.gbClient.SuspendLayout();
@@ -960,11 +961,22 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "UAT / Live Path";
 			// 
+			// btmGitRemoteUpdateOrigin
+			// 
+			this.btmGitRemoteUpdateOrigin.Location = new System.Drawing.Point(532, 248);
+			this.btmGitRemoteUpdateOrigin.Name = "btmGitRemoteUpdateOrigin";
+			this.btmGitRemoteUpdateOrigin.Size = new System.Drawing.Size(178, 23);
+			this.btmGitRemoteUpdateOrigin.TabIndex = 21;
+			this.btmGitRemoteUpdateOrigin.Text = "Git Remote Update Origin";
+			this.btmGitRemoteUpdateOrigin.UseVisualStyleBackColor = true;
+			this.btmGitRemoteUpdateOrigin.Click += new System.EventHandler(this.btmGitRemoteUpdateOrigin_Click);
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(722, 504);
+			this.Controls.Add(this.btmGitRemoteUpdateOrigin);
 			this.Controls.Add(this.gbDbUpdate);
 			this.Controls.Add(this.groupBox2);
 			this.Controls.Add(this.groupBox1);
@@ -1082,6 +1094,7 @@
 		private System.Windows.Forms.RadioButton rbMyPlatform;
 		private System.Windows.Forms.ComboBox cboLanguage;
 		private System.Windows.Forms.RadioButton rb2AcePlatform;
+		private System.Windows.Forms.Button btmGitRemoteUpdateOrigin;
 	}
 }
 

@@ -21,26 +21,29 @@ namespace Rhyme.Tools.Behavior
 
 		public static void DbUpdate(string sourceRootDir, string dbType)
 		{
-			DbUpdate(
-				sourceRootDir: sourceRootDir,
-				rhymePath: Paths.GetRhymePath(Paths.RhymePathEnum.Sql),
-				programName: @"cmd.exe",
-				windowStyle: ProcessWindowStyle.Normal,
-				dbType: dbType);
+			UpdateByCmd(
+				@"db.env_modify.bat",
+				sourceRootDir, Paths.GetRhymePath(Paths.RhymePathEnum.Sql), @"cmd.exe", ProcessWindowStyle.Normal, dbType);
 		}
 
-		private static Process DbUpdate(string sourceRootDir, string rhymePath, string programName, ProcessWindowStyle windowStyle, string dbType)
+		public static void GitUpdate(string sourceRootDir)
+		{
+			UpdateByCmd(
+				@"git_remote_update_origin.bat",
+				sourceRootDir, Paths.GetRhymePath(Paths.RhymePathEnum.Sql), @"cmd.exe", ProcessWindowStyle.Normal, "GitUpdate");
+		}
+
+		private static Process UpdateByCmd(string executeProgramString, string sourceRootDir, string rhymePath, string programName, ProcessWindowStyle windowStyle, string dbType)
 		{
 			// info.WorkingDirectory
 			var workingDirectory = Path.Combine(Application.StartupPath, @"RequireFiles\");
 
 			// info.Arguments
-			var executeString = @"db.env_modify.bat";
 			//var projectRootDirPath = Path.GetDirectoryName(sourceRootDir);
 			var projectRootDirPath = sourceRootDir;
 			var argsPath = Path.Combine(sourceRootDir, rhymePath);
 			var args = string.Format("{0} {1} {2} {3}", projectRootDirPath, argsPath, dbType, workingDirectory);
-			var argsReal = string.Format(@"/C {0} {1}", Path.Combine(workingDirectory, executeString), args);
+			var argsReal = string.Format(@"/C {0} {1}", Path.Combine(workingDirectory, executeProgramString), args);
 
 			return DoProcessStart(programName, workingDirectory, argsReal, windowStyle);
 		}

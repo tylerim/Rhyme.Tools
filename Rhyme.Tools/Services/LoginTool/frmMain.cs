@@ -602,6 +602,11 @@ namespace Rhyme.Tools.Services.LoginTool
 			this.DoProcessStartDbUpdate("GameRecord");
 		}
 
+		private void btmGitRemoteUpdateOrigin_Click(object sender, EventArgs e)
+		{
+			ProcessBehavior.GitUpdate(this.GetSourceRootDir);
+		}
+
 		private void DoProcessStartDbUpdate(string dbType)
 		{
 			ProcessBehavior.DbUpdate(this.GetSourceRootDir, dbType);

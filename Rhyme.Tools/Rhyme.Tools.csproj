@@ -190,9 +190,15 @@
     <None Include="RequireFiles\App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="RequireFiles\GitRemoteUpdateOrigin.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="RequireFiles\HAHA.ico" />
     <Content Include="RequireFiles\Newtonsoft.Json.dll" />
     <Content Include="RequireFiles\Newtonsoft.Json.xml" />
+    <None Include="RequireFiles\git_remote_update_origin.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\88FOXGG.ico" />
     <None Include="Resources\AHAH.ico" />
     <None Include="Resources\ALLNEWPOKER.ico" />
