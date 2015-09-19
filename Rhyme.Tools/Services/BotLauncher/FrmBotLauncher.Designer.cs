@@ -383,23 +383,23 @@
 			// rbBotIdPasswordSame
 			// 
 			this.rbBotIdPasswordSame.AutoSize = true;
-			this.rbBotIdPasswordSame.Checked = true;
-			this.rbBotIdPasswordSame.Location = new System.Drawing.Point(576, 46);
+			this.rbBotIdPasswordSame.Location = new System.Drawing.Point(455, 46);
 			this.rbBotIdPasswordSame.Name = "rbBotIdPasswordSame";
 			this.rbBotIdPasswordSame.Size = new System.Drawing.Size(49, 17);
 			this.rbBotIdPasswordSame.TabIndex = 92;
 			this.rbBotIdPasswordSame.TabStop = true;
-			this.rbBotIdPasswordSame.Text = "고정";
+			this.rbBotIdPasswordSame.Text = "True";
 			this.rbBotIdPasswordSame.UseVisualStyleBackColor = true;
 			// 
 			// rbBotIdPasswordDifferent
 			// 
 			this.rbBotIdPasswordDifferent.AutoSize = true;
-			this.rbBotIdPasswordDifferent.Location = new System.Drawing.Point(455, 46);
+			this.rbBotIdPasswordDifferent.Checked = true;
+			this.rbBotIdPasswordDifferent.Location = new System.Drawing.Point(510, 46);
 			this.rbBotIdPasswordDifferent.Name = "rbBotIdPasswordDifferent";
 			this.rbBotIdPasswordDifferent.Size = new System.Drawing.Size(115, 17);
 			this.rbBotIdPasswordDifferent.TabIndex = 91;
-			this.rbBotIdPasswordDifferent.Text = "ID, Password 동일";
+			this.rbBotIdPasswordDifferent.Text = "False";
 			this.rbBotIdPasswordDifferent.UseVisualStyleBackColor = true;
 			// 
 			// label14
