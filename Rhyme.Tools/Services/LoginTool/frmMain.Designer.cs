@@ -109,6 +109,10 @@
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.btmGitRemoteUpdateOrigin = new System.Windows.Forms.Button();
+			this.btnAutoMake = new System.Windows.Forms.Button();
+			this.txtAutoMakeInterrval = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.timerTourneyAutoMake = new System.Windows.Forms.Timer(this.components);
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.gbClient.SuspendLayout();
@@ -603,6 +607,9 @@
 			// 
 			// tabPage5
 			// 
+			this.tabPage5.Controls.Add(this.label3);
+			this.tabPage5.Controls.Add(this.txtAutoMakeInterrval);
+			this.tabPage5.Controls.Add(this.btnAutoMake);
 			this.tabPage5.Controls.Add(this.btnConnect);
 			this.tabPage5.Controls.Add(this.label4);
 			this.tabPage5.Controls.Add(this.btnViewTourney);
@@ -971,6 +978,37 @@
 			this.btmGitRemoteUpdateOrigin.UseVisualStyleBackColor = true;
 			this.btmGitRemoteUpdateOrigin.Click += new System.EventHandler(this.btmGitRemoteUpdateOrigin_Click);
 			// 
+			// btnAutoMake
+			// 
+			this.btnAutoMake.Location = new System.Drawing.Point(291, 59);
+			this.btnAutoMake.Name = "btnAutoMake";
+			this.btnAutoMake.Size = new System.Drawing.Size(117, 23);
+			this.btnAutoMake.TabIndex = 17;
+			this.btnAutoMake.Text = "Auto Make Enable";
+			this.btnAutoMake.UseVisualStyleBackColor = true;
+			this.btnAutoMake.Click += new System.EventHandler(this.btnAutoMake_Click);
+			// 
+			// txtAutoMakeInterrval
+			// 
+			this.txtAutoMakeInterrval.Location = new System.Drawing.Point(220, 59);
+			this.txtAutoMakeInterrval.Name = "txtAutoMakeInterrval";
+			this.txtAutoMakeInterrval.Size = new System.Drawing.Size(65, 20);
+			this.txtAutoMakeInterrval.TabIndex = 18;
+			this.txtAutoMakeInterrval.Text = "600";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(141, 62);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(73, 13);
+			this.label3.TabIndex = 19;
+			this.label3.Text = "반복주기(초)";
+			// 
+			// timerTourneyAutoMake
+			// 
+			this.timerTourneyAutoMake.Tick += new System.EventHandler(this.timerTourneyAutoMake_Tick);
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1095,6 +1133,10 @@
 		private System.Windows.Forms.ComboBox cboLanguage;
 		private System.Windows.Forms.RadioButton rb2AcePlatform;
 		private System.Windows.Forms.Button btmGitRemoteUpdateOrigin;
+		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.TextBox txtAutoMakeInterrval;
+		private System.Windows.Forms.Button btnAutoMake;
+		private System.Windows.Forms.Timer timerTourneyAutoMake;
 	}
 }
 

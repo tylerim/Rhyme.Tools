@@ -329,7 +329,7 @@ namespace Rhyme.Tools.Services.LoginTool
 					var testClientId = GetClientId(isBoolIdNumber, idPrefix, idNumber, refI, idNumberString);
 					var loginToken = GetLoginToken(env, testClientId, password, isLoginTokenFromVault, isLoginTokenFromGp, isLoginTokenFromMyPlatform, isLoginTokenFrom2Ace);
 					SetServiceProviderIfGpOrMyPlatform(ref serviceProviderName, isLoginTokenFromVault, isLoginTokenFromGp, isLoginTokenFromMyPlatform, isLoginTokenFrom2Ace);
-					
+
 					if (string.IsNullOrEmpty(loginToken) || loginToken == Guid.Empty.ToString())
 					{
 						AddLog(string.Format("invalid token : {0}", loginToken));
@@ -699,6 +699,37 @@ namespace Rhyme.Tools.Services.LoginTool
 		private void btnStartUAT_Click(object sender, EventArgs e)
 		{
 			ProcessBehavior.ExecuteFile(txtUATPath.Text);
+		}
+
+		private void btnAutoMake_Click(object sender, EventArgs e)
+		{
+			switch (btnAutoMake.Text)
+			{
+				case Constants.TournamentAutoMakeButtonTextEnable:
+					timerTourneyAutoMake.Interval = int.Parse(txtAutoMakeInterrval.Text) * 1000;
+					timerTourneyAutoMake.Start();
+
+					// toggle
+					btnAutoMake.Text = Constants.TournamentAutoMakeButtonTextDisable;
+
+					AddLog(string.Format("Start, auto make tournament with {0} seconds internal.", txtAutoMakeInterrval.Text));
+					break;
+				case Constants.TournamentAutoMakeButtonTextDisable:
+					timerTourneyAutoMake.Stop();
+
+					// toggle
+					btnAutoMake.Text = Constants.TournamentAutoMakeButtonTextEnable;
+
+					AddLog("Stop, auto make tournament.");
+					break;
+			}
+		}
+
+		private void timerTourneyAutoMake_Tick(object sender, EventArgs e)
+		{
+			btnDbExecute_Click(this, EventArgs.Empty);
+
+			AddLog("Tournament make by automatic timer.");
 		}
 	}
 }

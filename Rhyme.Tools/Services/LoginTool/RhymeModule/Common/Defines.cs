@@ -565,5 +565,8 @@ namespace Rhyme.Common
 
 		// couchdb (portal)
 		public const string CouchdbConflictMessage = "conflict";
+
+		public const string TournamentAutoMakeButtonTextEnable = "Auto Make Enable";
+		public const string TournamentAutoMakeButtonTextDisable = "Auto Make Disable";
 	}
 }
