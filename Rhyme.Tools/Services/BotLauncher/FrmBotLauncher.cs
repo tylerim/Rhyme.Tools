@@ -15,7 +15,6 @@ namespace Rhyme.Tools.Services.BotLauncher
 		{
 			cboBotType.SelectedIndex = 2;			// TCP
 			cboConnectType.SelectedIndex = 0;		// Dev
-			cboTableIndex.SelectedIndex = 1;		// 1
 			cboLoginPlatform.SelectedIndex = 1;		// GP
 
 			btnStart.Select();
@@ -23,28 +22,26 @@ namespace Rhyme.Tools.Services.BotLauncher
 
 		private void btnStart_Click(object sender, EventArgs e)
 		{
-			if (cboTableIndex.SelectedIndex == 0)
-			{
-				MessageBox.Show("Error : Table index is 0");
-				return;
-			}
-
 			try
 			{
+				if (cboConnectType.SelectedIndex == 4 && string.IsNullOrEmpty(txtIPList.Text))
+					txtIPList.Text = "127.0.0.1";
+
 				var arguments = string.Format(
-					"{0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11}",
+					"{0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12}",
 					cboBotType.SelectedItem,
 					cboConnectType.SelectedItem,
 					txtStartIndex.Text,
 					txtBotCount.Text,
-					cboTableIndex.SelectedIndex,
+					txtTableIndex.Text,
 					txtStartBotDelay.Text,
 					GetRegisterTourney(),
 					cboLoginPlatform.SelectedItem,
 					txtIPList.Text,
 					txtPrefixBotLoginId.Text,
 					txtBotLoginPassword.Text,
-					GetBotIdPasswordSame()
+					GetBotIdPasswordSame(),
+					txtReEnteringHandIntervalCount.Text
 					);
 
 				txtCommand.Text = arguments;

@@ -36,7 +36,6 @@
 			this.txtBotCount = new System.Windows.Forms.TextBox();
 			this.cboBotType = new System.Windows.Forms.ComboBox();
 			this.cboConnectType = new System.Windows.Forms.ComboBox();
-			this.cboTableIndex = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
@@ -58,13 +57,16 @@
 			this.rbRegisterTourneyTrueOnce = new System.Windows.Forms.RadioButton();
 			this.gbRegisterTourney = new System.Windows.Forms.GroupBox();
 			this.gbIsBotLoginIdPasswordSame = new System.Windows.Forms.GroupBox();
-			this.rbBotIdPasswordSame = new System.Windows.Forms.RadioButton();
-			this.rbBotIdPasswordDifferent = new System.Windows.Forms.RadioButton();
-			this.label14 = new System.Windows.Forms.Label();
-			this.label15 = new System.Windows.Forms.Label();
-			this.txtPrefixBotLoginId = new System.Windows.Forms.TextBox();
 			this.label16 = new System.Windows.Forms.Label();
 			this.txtBotLoginPassword = new System.Windows.Forms.TextBox();
+			this.label15 = new System.Windows.Forms.Label();
+			this.txtPrefixBotLoginId = new System.Windows.Forms.TextBox();
+			this.label14 = new System.Windows.Forms.Label();
+			this.rbBotIdPasswordSame = new System.Windows.Forms.RadioButton();
+			this.rbBotIdPasswordDifferent = new System.Windows.Forms.RadioButton();
+			this.txtTableIndex = new System.Windows.Forms.TextBox();
+			this.txtReEnteringHandIntervalCount = new System.Windows.Forms.TextBox();
+			this.label17 = new System.Windows.Forms.Label();
 			this.gbRegisterTourney.SuspendLayout();
 			this.gbIsBotLoginIdPasswordSame.SuspendLayout();
 			this.SuspendLayout();
@@ -144,27 +146,6 @@
 			this.cboConnectType.Size = new System.Drawing.Size(100, 21);
 			this.cboConnectType.TabIndex = 30;
 			this.cboConnectType.SelectedIndexChanged += new System.EventHandler(this.cboConnectType_SelectedIndexChanged);
-			// 
-			// cboTableIndex
-			// 
-			this.cboTableIndex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cboTableIndex.FormattingEnabled = true;
-			this.cboTableIndex.Items.AddRange(new object[] {
-            "0, None",
-            "1, $0.01 / $0.02 | $0.50",
-            "2, $0.02 / $0.05 | $1.50",
-            "3, $0.05 / $0.10 | $5",
-            "4, $0.10 / $0.25 | $15",
-            "5, $0.25 / $0.50 | $40",
-            "6, $0.50 / $1.00 | $80",
-            "7, $1    / $2    | $160",
-            "8, $2    / $4    | $320",
-            "9, $3    / $6    | $500",
-            "10, $5    / $10   | $800"});
-			this.cboTableIndex.Location = new System.Drawing.Point(154, 91);
-			this.cboTableIndex.Name = "cboTableIndex";
-			this.cboTableIndex.Size = new System.Drawing.Size(189, 21);
-			this.cboTableIndex.TabIndex = 60;
 			// 
 			// label2
 			// 
@@ -380,36 +361,22 @@
 			this.gbIsBotLoginIdPasswordSame.TabIndex = 902;
 			this.gbIsBotLoginIdPasswordSame.TabStop = false;
 			// 
-			// rbBotIdPasswordSame
+			// label16
 			// 
-			this.rbBotIdPasswordSame.AutoSize = true;
-			this.rbBotIdPasswordSame.Location = new System.Drawing.Point(455, 46);
-			this.rbBotIdPasswordSame.Name = "rbBotIdPasswordSame";
-			this.rbBotIdPasswordSame.Size = new System.Drawing.Size(49, 17);
-			this.rbBotIdPasswordSame.TabIndex = 92;
-			this.rbBotIdPasswordSame.TabStop = true;
-			this.rbBotIdPasswordSame.Text = "True";
-			this.rbBotIdPasswordSame.UseVisualStyleBackColor = true;
+			this.label16.AutoSize = true;
+			this.label16.Location = new System.Drawing.Point(24, 48);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(107, 13);
+			this.label16.TabIndex = 906;
+			this.label16.Text = "Bot Login Password :";
 			// 
-			// rbBotIdPasswordDifferent
+			// txtBotLoginPassword
 			// 
-			this.rbBotIdPasswordDifferent.AutoSize = true;
-			this.rbBotIdPasswordDifferent.Checked = true;
-			this.rbBotIdPasswordDifferent.Location = new System.Drawing.Point(510, 46);
-			this.rbBotIdPasswordDifferent.Name = "rbBotIdPasswordDifferent";
-			this.rbBotIdPasswordDifferent.Size = new System.Drawing.Size(115, 17);
-			this.rbBotIdPasswordDifferent.TabIndex = 91;
-			this.rbBotIdPasswordDifferent.Text = "False";
-			this.rbBotIdPasswordDifferent.UseVisualStyleBackColor = true;
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(339, 48);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(110, 13);
-			this.label14.TabIndex = 903;
-			this.label14.Text = "ID Password same ? :";
+			this.txtBotLoginPassword.Location = new System.Drawing.Point(137, 45);
+			this.txtBotLoginPassword.Name = "txtBotLoginPassword";
+			this.txtBotLoginPassword.Size = new System.Drawing.Size(100, 20);
+			this.txtBotLoginPassword.TabIndex = 907;
+			this.txtBotLoginPassword.Text = "1";
 			// 
 			// label15
 			// 
@@ -428,28 +395,71 @@
 			this.txtPrefixBotLoginId.TabIndex = 905;
 			this.txtPrefixBotLoginId.Text = "t";
 			// 
-			// label16
+			// label14
 			// 
-			this.label16.AutoSize = true;
-			this.label16.Location = new System.Drawing.Point(24, 48);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(107, 13);
-			this.label16.TabIndex = 906;
-			this.label16.Text = "Bot Login Password :";
+			this.label14.AutoSize = true;
+			this.label14.Location = new System.Drawing.Point(339, 48);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(110, 13);
+			this.label14.TabIndex = 903;
+			this.label14.Text = "ID Password same ? :";
 			// 
-			// txtBotLoginPassword
+			// rbBotIdPasswordSame
 			// 
-			this.txtBotLoginPassword.Location = new System.Drawing.Point(137, 45);
-			this.txtBotLoginPassword.Name = "txtBotLoginPassword";
-			this.txtBotLoginPassword.Size = new System.Drawing.Size(100, 20);
-			this.txtBotLoginPassword.TabIndex = 907;
-			this.txtBotLoginPassword.Text = "1";
+			this.rbBotIdPasswordSame.AutoSize = true;
+			this.rbBotIdPasswordSame.Location = new System.Drawing.Point(455, 46);
+			this.rbBotIdPasswordSame.Name = "rbBotIdPasswordSame";
+			this.rbBotIdPasswordSame.Size = new System.Drawing.Size(47, 17);
+			this.rbBotIdPasswordSame.TabIndex = 92;
+			this.rbBotIdPasswordSame.TabStop = true;
+			this.rbBotIdPasswordSame.Text = "True";
+			this.rbBotIdPasswordSame.UseVisualStyleBackColor = true;
+			// 
+			// rbBotIdPasswordDifferent
+			// 
+			this.rbBotIdPasswordDifferent.AutoSize = true;
+			this.rbBotIdPasswordDifferent.Checked = true;
+			this.rbBotIdPasswordDifferent.Location = new System.Drawing.Point(510, 46);
+			this.rbBotIdPasswordDifferent.Name = "rbBotIdPasswordDifferent";
+			this.rbBotIdPasswordDifferent.Size = new System.Drawing.Size(50, 17);
+			this.rbBotIdPasswordDifferent.TabIndex = 91;
+			this.rbBotIdPasswordDifferent.TabStop = true;
+			this.rbBotIdPasswordDifferent.Text = "False";
+			this.rbBotIdPasswordDifferent.UseVisualStyleBackColor = true;
+			// 
+			// txtTableIndex
+			// 
+			this.txtTableIndex.Location = new System.Drawing.Point(154, 91);
+			this.txtTableIndex.Name = "txtTableIndex";
+			this.txtTableIndex.Size = new System.Drawing.Size(100, 20);
+			this.txtTableIndex.TabIndex = 903;
+			this.txtTableIndex.Text = "1,2";
+			// 
+			// txtReEnteringHandIntervalCount
+			// 
+			this.txtReEnteringHandIntervalCount.Location = new System.Drawing.Point(154, 280);
+			this.txtReEnteringHandIntervalCount.Name = "txtReEnteringHandIntervalCount";
+			this.txtReEnteringHandIntervalCount.Size = new System.Drawing.Size(100, 20);
+			this.txtReEnteringHandIntervalCount.TabIndex = 905;
+			this.txtReEnteringHandIntervalCount.Text = "2";
+			// 
+			// label17
+			// 
+			this.label17.AutoSize = true;
+			this.label17.Location = new System.Drawing.Point(15, 283);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(133, 13);
+			this.label17.TabIndex = 904;
+			this.label17.Text = "ReEntering Hand Interval :";
 			// 
 			// FrmBotLauncher
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(721, 338);
+			this.Controls.Add(this.txtReEnteringHandIntervalCount);
+			this.Controls.Add(this.label17);
+			this.Controls.Add(this.txtTableIndex);
 			this.Controls.Add(this.gbIsBotLoginIdPasswordSame);
 			this.Controls.Add(this.gbRegisterTourney);
 			this.Controls.Add(this.label13);
@@ -468,7 +478,6 @@
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this.cboTableIndex);
 			this.Controls.Add(this.cboConnectType);
 			this.Controls.Add(this.cboBotType);
 			this.Controls.Add(this.txtBotCount);
@@ -498,7 +507,6 @@
 		private System.Windows.Forms.TextBox txtBotCount;
 		private System.Windows.Forms.ComboBox cboBotType;
 		private System.Windows.Forms.ComboBox cboConnectType;
-		private System.Windows.Forms.ComboBox cboTableIndex;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label5;
@@ -527,5 +535,8 @@
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.RadioButton rbBotIdPasswordSame;
 		private System.Windows.Forms.RadioButton rbBotIdPasswordDifferent;
+		private System.Windows.Forms.TextBox txtTableIndex;
+		private System.Windows.Forms.TextBox txtReEnteringHandIntervalCount;
+		private System.Windows.Forms.Label label17;
 	}
 }

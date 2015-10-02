@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Aliyun.OpenServices.OpenStorageService;
@@ -27,7 +20,6 @@ namespace Rhyme.Tools.Services.UploadImage
 
 		private void frmUploadImage_Load(object sender, EventArgs e)
 		{
-
 		}
 
 		private void button1_Click(object sender, EventArgs e)
@@ -39,7 +31,7 @@ namespace Rhyme.Tools.Services.UploadImage
 
 			if (dlg.FileName.Length <= 0)
 				return;
-			
+
 			var oss = new OssClient(EndPoint, AccessKeyId, AccessKeySecret);
 
 			foreach (var fileName in dlg.FileNames)
@@ -65,7 +57,7 @@ namespace Rhyme.Tools.Services.UploadImage
 
 			foreach (var image in images.ObjectSummaries)
 			{
-				if(image.Size > 0)
+				if (image.Size > 0)
 					textBox1.AppendText(string.Format("{0}, Size = {1} kb\n", image.Key, image.Size / 1000));
 			}
 		}
