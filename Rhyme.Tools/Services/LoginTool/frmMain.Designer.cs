@@ -74,6 +74,9 @@
 			this.btnLogServer = new System.Windows.Forms.Button();
 			this.btnLogClient = new System.Windows.Forms.Button();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.label3 = new System.Windows.Forms.Label();
+			this.txtAutoMakeInterrval = new System.Windows.Forms.TextBox();
+			this.btnAutoMake = new System.Windows.Forms.Button();
 			this.btnConnect = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.btnViewTourney = new System.Windows.Forms.Button();
@@ -109,9 +112,6 @@
 			this.txtLivePath = new System.Windows.Forms.TextBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.btmGitRemoteUpdateOrigin = new System.Windows.Forms.Button();
-			this.btnAutoMake = new System.Windows.Forms.Button();
-			this.txtAutoMakeInterrval = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
 			this.timerTourneyAutoMake = new System.Windows.Forms.Timer(this.components);
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -182,9 +182,10 @@
 			// 
 			// txtSourceRootDir
 			// 
+			this.txtSourceRootDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSourceRootDir.Location = new System.Drawing.Point(22, 22);
 			this.txtSourceRootDir.Name = "txtSourceRootDir";
-			this.txtSourceRootDir.Size = new System.Drawing.Size(73, 20);
+			this.txtSourceRootDir.Size = new System.Drawing.Size(73, 18);
 			this.txtSourceRootDir.TabIndex = 3;
 			this.txtSourceRootDir.Text = "D:\\Rhyme";
 			// 
@@ -626,6 +627,33 @@
 			this.tabPage5.Text = "Tourney";
 			this.tabPage5.UseVisualStyleBackColor = true;
 			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(141, 62);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(73, 13);
+			this.label3.TabIndex = 19;
+			this.label3.Text = "반복주기(초)";
+			// 
+			// txtAutoMakeInterrval
+			// 
+			this.txtAutoMakeInterrval.Location = new System.Drawing.Point(220, 59);
+			this.txtAutoMakeInterrval.Name = "txtAutoMakeInterrval";
+			this.txtAutoMakeInterrval.Size = new System.Drawing.Size(65, 20);
+			this.txtAutoMakeInterrval.TabIndex = 18;
+			this.txtAutoMakeInterrval.Text = "600";
+			// 
+			// btnAutoMake
+			// 
+			this.btnAutoMake.Location = new System.Drawing.Point(291, 59);
+			this.btnAutoMake.Name = "btnAutoMake";
+			this.btnAutoMake.Size = new System.Drawing.Size(117, 23);
+			this.btnAutoMake.TabIndex = 17;
+			this.btnAutoMake.Text = "Auto Make Enable";
+			this.btnAutoMake.UseVisualStyleBackColor = true;
+			this.btnAutoMake.Click += new System.EventHandler(this.btnAutoMake_Click);
+			// 
 			// btnConnect
 			// 
 			this.btnConnect.Location = new System.Drawing.Point(557, 34);
@@ -892,19 +920,21 @@
 			// 
 			// txtSourceRootDir3
 			// 
+			this.txtSourceRootDir3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSourceRootDir3.Location = new System.Drawing.Point(264, 22);
 			this.txtSourceRootDir3.Name = "txtSourceRootDir3";
-			this.txtSourceRootDir3.Size = new System.Drawing.Size(85, 20);
+			this.txtSourceRootDir3.Size = new System.Drawing.Size(85, 18);
 			this.txtSourceRootDir3.TabIndex = 5;
 			this.txtSourceRootDir3.Text = "D:\\Rhyme_uat";
 			// 
 			// txtSourceRootDir2
 			// 
+			this.txtSourceRootDir2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSourceRootDir2.Location = new System.Drawing.Point(118, 22);
 			this.txtSourceRootDir2.Name = "txtSourceRootDir2";
-			this.txtSourceRootDir2.Size = new System.Drawing.Size(120, 20);
+			this.txtSourceRootDir2.Size = new System.Drawing.Size(120, 18);
 			this.txtSourceRootDir2.TabIndex = 5;
-			this.txtSourceRootDir2.Text = "D:\\Rhyme_dev_refac";
+			this.txtSourceRootDir2.Text = "D:\\Rhyme_develop_2ace";
 			// 
 			// rbSourceRootDir3
 			// 
@@ -977,33 +1007,6 @@
 			this.btmGitRemoteUpdateOrigin.Text = "Git Remote Update Origin";
 			this.btmGitRemoteUpdateOrigin.UseVisualStyleBackColor = true;
 			this.btmGitRemoteUpdateOrigin.Click += new System.EventHandler(this.btmGitRemoteUpdateOrigin_Click);
-			// 
-			// btnAutoMake
-			// 
-			this.btnAutoMake.Location = new System.Drawing.Point(291, 59);
-			this.btnAutoMake.Name = "btnAutoMake";
-			this.btnAutoMake.Size = new System.Drawing.Size(117, 23);
-			this.btnAutoMake.TabIndex = 17;
-			this.btnAutoMake.Text = "Auto Make Enable";
-			this.btnAutoMake.UseVisualStyleBackColor = true;
-			this.btnAutoMake.Click += new System.EventHandler(this.btnAutoMake_Click);
-			// 
-			// txtAutoMakeInterrval
-			// 
-			this.txtAutoMakeInterrval.Location = new System.Drawing.Point(220, 59);
-			this.txtAutoMakeInterrval.Name = "txtAutoMakeInterrval";
-			this.txtAutoMakeInterrval.Size = new System.Drawing.Size(65, 20);
-			this.txtAutoMakeInterrval.TabIndex = 18;
-			this.txtAutoMakeInterrval.Text = "600";
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(141, 62);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(73, 13);
-			this.label3.TabIndex = 19;
-			this.label3.Text = "반복주기(초)";
 			// 
 			// timerTourneyAutoMake
 			// 
