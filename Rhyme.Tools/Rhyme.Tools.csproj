@@ -53,6 +53,9 @@
     <ApplicationIcon>RequireFiles\HAHA.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aliyun.OSS">
+      <HintPath>packages\Aliyun.OSS.1.0.1\lib\net45\Aliyun.OSS.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>RequireFiles\Newtonsoft.Json.dll</HintPath>
@@ -141,6 +144,12 @@
     <Compile Include="Services\Socket\frmSocket.Designer.cs">
       <DependentUpon>frmSocket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\UploadImage\frmUploadImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\UploadImage\frmUploadImage.Designer.cs">
+      <DependentUpon>frmUploadImage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Services\BotLauncher\FrmBotLauncher.resx">
       <DependentUpon>FrmBotLauncher.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +184,10 @@
     <EmbeddedResource Include="Services\Socket\frmSocket.resx">
       <DependentUpon>frmSocket.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Services\UploadImage\frmUploadImage.resx">
+      <DependentUpon>frmUploadImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="RequireFiles\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
