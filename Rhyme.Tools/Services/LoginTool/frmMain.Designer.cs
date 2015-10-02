@@ -185,7 +185,7 @@
 			this.txtSourceRootDir.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSourceRootDir.Location = new System.Drawing.Point(22, 22);
 			this.txtSourceRootDir.Name = "txtSourceRootDir";
-			this.txtSourceRootDir.Size = new System.Drawing.Size(73, 18);
+			this.txtSourceRootDir.Size = new System.Drawing.Size(81, 18);
 			this.txtSourceRootDir.TabIndex = 3;
 			this.txtSourceRootDir.Text = "D:\\Rhyme";
 			// 
@@ -738,7 +738,8 @@
 			// 
 			// btnStartLive
 			// 
-			this.btnStartLive.Location = new System.Drawing.Point(297, 45);
+			this.btnStartLive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnStartLive.Location = new System.Drawing.Point(194, 45);
 			this.btnStartLive.Name = "btnStartLive";
 			this.btnStartLive.Size = new System.Drawing.Size(38, 25);
 			this.btnStartLive.TabIndex = 9;
@@ -748,7 +749,8 @@
 			// 
 			// btnStartUAT
 			// 
-			this.btnStartUAT.Location = new System.Drawing.Point(297, 19);
+			this.btnStartUAT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnStartUAT.Location = new System.Drawing.Point(194, 19);
 			this.btnStartUAT.Name = "btnStartUAT";
 			this.btnStartUAT.Size = new System.Drawing.Size(38, 25);
 			this.btnStartUAT.TabIndex = 10;
@@ -913,7 +915,7 @@
 			this.groupBox1.Controls.Add(this.txtSourceRootDir);
 			this.groupBox1.Location = new System.Drawing.Point(10, 12);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(355, 57);
+			this.groupBox1.Size = new System.Drawing.Size(458, 57);
 			this.groupBox1.TabIndex = 19;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "DEV Root Path";
@@ -921,25 +923,25 @@
 			// txtSourceRootDir3
 			// 
 			this.txtSourceRootDir3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtSourceRootDir3.Location = new System.Drawing.Point(264, 22);
+			this.txtSourceRootDir3.Location = new System.Drawing.Point(302, 22);
 			this.txtSourceRootDir3.Name = "txtSourceRootDir3";
-			this.txtSourceRootDir3.Size = new System.Drawing.Size(85, 18);
+			this.txtSourceRootDir3.Size = new System.Drawing.Size(150, 18);
 			this.txtSourceRootDir3.TabIndex = 5;
-			this.txtSourceRootDir3.Text = "D:\\Rhyme_uat";
+			this.txtSourceRootDir3.Text = "D:\\Rhyme_develop_2ace";
 			// 
 			// txtSourceRootDir2
 			// 
 			this.txtSourceRootDir2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtSourceRootDir2.Location = new System.Drawing.Point(118, 22);
+			this.txtSourceRootDir2.Location = new System.Drawing.Point(126, 22);
 			this.txtSourceRootDir2.Name = "txtSourceRootDir2";
-			this.txtSourceRootDir2.Size = new System.Drawing.Size(120, 18);
+			this.txtSourceRootDir2.Size = new System.Drawing.Size(150, 18);
 			this.txtSourceRootDir2.TabIndex = 5;
-			this.txtSourceRootDir2.Text = "D:\\Rhyme_develop_2ace";
+			this.txtSourceRootDir2.Text = "D:\\Rhyme_develop_refactoring";
 			// 
 			// rbSourceRootDir3
 			// 
 			this.rbSourceRootDir3.AutoSize = true;
-			this.rbSourceRootDir3.Location = new System.Drawing.Point(244, 25);
+			this.rbSourceRootDir3.Location = new System.Drawing.Point(282, 25);
 			this.rbSourceRootDir3.Name = "rbSourceRootDir3";
 			this.rbSourceRootDir3.Size = new System.Drawing.Size(14, 13);
 			this.rbSourceRootDir3.TabIndex = 4;
@@ -948,7 +950,7 @@
 			// rbSourceRootDir2
 			// 
 			this.rbSourceRootDir2.AutoSize = true;
-			this.rbSourceRootDir2.Location = new System.Drawing.Point(101, 25);
+			this.rbSourceRootDir2.Location = new System.Drawing.Point(109, 25);
 			this.rbSourceRootDir2.Name = "rbSourceRootDir2";
 			this.rbSourceRootDir2.Size = new System.Drawing.Size(14, 13);
 			this.rbSourceRootDir2.TabIndex = 4;
@@ -967,19 +969,23 @@
 			// 
 			// txtUATPath
 			// 
+			this.txtUATPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtUATPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtUATPath.Location = new System.Drawing.Point(6, 22);
 			this.txtUATPath.Name = "txtUATPath";
-			this.txtUATPath.Size = new System.Drawing.Size(285, 18);
+			this.txtUATPath.Size = new System.Drawing.Size(182, 18);
 			this.txtUATPath.TabIndex = 7;
 			this.txtUATPath.Text = "C:\\Program Files (x86)\\GGpoker_UAT\\GGNetLauncher.exe";
 			// 
 			// txtLivePath
 			// 
+			this.txtLivePath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtLivePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtLivePath.Location = new System.Drawing.Point(6, 48);
 			this.txtLivePath.Name = "txtLivePath";
-			this.txtLivePath.Size = new System.Drawing.Size(285, 18);
+			this.txtLivePath.Size = new System.Drawing.Size(182, 18);
 			this.txtLivePath.TabIndex = 6;
 			this.txtLivePath.Text = "C:\\Program Files (x86)\\GGpoker\\GGNetLauncher.exe";
 			// 
@@ -991,9 +997,9 @@
 			this.groupBox2.Controls.Add(this.btnStartLive);
 			this.groupBox2.Controls.Add(this.txtUATPath);
 			this.groupBox2.Controls.Add(this.btnStartUAT);
-			this.groupBox2.Location = new System.Drawing.Point(371, 12);
+			this.groupBox2.Location = new System.Drawing.Point(474, 12);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(341, 79);
+			this.groupBox2.Size = new System.Drawing.Size(238, 79);
 			this.groupBox2.TabIndex = 20;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "UAT / Live Path";
