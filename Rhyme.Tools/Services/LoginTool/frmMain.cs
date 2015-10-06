@@ -733,6 +733,31 @@ namespace Rhyme.Tools.Services.LoginTool
 				return;
 			}
 
+			DbBehavior.DbConnectionString = this.txtDbConnectionString.Text;
+
+			var tourneyTemplateId = int.Parse(this.txtTourneyTemplateId.Text);
+
+			// auto increase event number ...
+			DbBehavior.ExecuteOnlySql(string.Format(
+				"update [rb_crm_dev].[dbo].[TourneyTemplates] " +
+				"set  " +
+				"		[Name] = y.NewName " +
+				"		, [EventNumber] = y.NewEventNumber " +
+				"from	[rb_crm_dev].[dbo].[TourneyTemplates] x " +
+				"		, ( " +
+				"			select	[TourneyTemplateId] " +
+				"					, [BrandName] + ' #' + Cast([NewEventNumber] as varchar) + ' ' + Cast(GamePlayerCount as varchar) + 'Max $0 Freeroll' as [NewName] " +
+				"					, [NewEventNumber] " +
+				"			from	( " +
+				"						select [TourneyTemplateId], [BrandName], [GamePlayerCount], [EventNumber] + 1 as [NewEventNumber] " +
+				"						from [rb_crm_dev].[dbo].[TourneyTemplates] " +
+				"						where [TourneyTemplateId] = {0} " +
+				"					) inner_y " +
+				"		) y " +
+				"where x.[TourneyTemplateId] = y.[TourneyTemplateId] " +
+				" "
+				, tourneyTemplateId));
+
 			btnDbExecute_Click(this, EventArgs.Empty);
 
 			AddLog("Tournament make by automatic timer.");

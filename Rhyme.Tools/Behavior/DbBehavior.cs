@@ -112,5 +112,17 @@ namespace Rhyme.Tools.Behavior
 				return new DataTable();
 			}
 		}
+
+		public static void ExecuteOnlySql(string sql)
+		{
+			try
+			{
+				SqlHelperAdd.ExecuteOnlySql(DbConnectionString, sql);
+			}
+			catch (Exception ex)
+			{
+				PrintLog(string.Format("Error, {0}", ex));
+			}
+		}
 	}
 }

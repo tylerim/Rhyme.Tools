@@ -3,15 +3,13 @@ using System.Data.SqlClient;
 
 namespace Server.Lib.Common
 {
-    public class SqlHelperAdd
-    {
-        public static DataTable ExecuteSql(
-            string dbConnectionString,
-            string sqlString)
-        {
-            // execute stored procedure
-            using (var conn = new SqlConnection(dbConnectionString))
-            {
+	public class SqlHelperAdd
+	{
+		public static DataTable ExecuteSql(string dbConnectionString, string sqlString)
+		{
+			// execute stored procedure
+			using (var conn = new SqlConnection(dbConnectionString))
+			{
 				conn.Open();
 
 				using (var ds = new DataSet())
@@ -23,7 +21,18 @@ namespace Server.Lib.Common
 
 					return ds.Tables[0];
 				}
-            }
-        }
-    }
+			}
+		}
+
+		public static int ExecuteOnlySql(string dbConnectionString, string sqlString)
+		{
+			// execute stored procedure
+			using (var conn = new SqlConnection(dbConnectionString))
+			{
+				conn.Open();
+				var cmd = new SqlCommand(sqlString, conn);
+				return cmd.ExecuteNonQuery();
+			}
+		}
+	}
 }
