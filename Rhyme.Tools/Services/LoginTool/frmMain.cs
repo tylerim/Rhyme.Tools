@@ -727,6 +727,12 @@ namespace Rhyme.Tools.Services.LoginTool
 
 		private void timerTourneyAutoMake_Tick(object sender, EventArgs e)
 		{
+			if (this.InvokeRequired)
+			{
+				this.Invoke(new Action(() => timerTourneyAutoMake_Tick(this, EventArgs.Empty)));
+				return;
+			}
+
 			btnDbExecute_Click(this, EventArgs.Empty);
 
 			AddLog("Tournament make by automatic timer.");
