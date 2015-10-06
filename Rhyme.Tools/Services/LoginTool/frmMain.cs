@@ -713,6 +713,10 @@ namespace Rhyme.Tools.Services.LoginTool
 					btnAutoMake.Text = Constants.TournamentAutoMakeButtonTextDisable;
 
 					AddLog(string.Format("Start, auto make tournament with {0} seconds internal.", txtAutoMakeInterrval.Text));
+
+					// first time, manual execute
+					timerTourneyAutoMake_Tick(this, EventArgs.Empty);
+
 					break;
 				case Constants.TournamentAutoMakeButtonTextDisable:
 					timerTourneyAutoMake.Stop();
