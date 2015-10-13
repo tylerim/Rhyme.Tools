@@ -7,6 +7,7 @@ using Rhyme.Tools.Services.ExecutePowerShell;
 using Rhyme.Tools.Services.GuidGenerator;
 using Rhyme.Tools.Services.HandIdConverter;
 using Rhyme.Tools.Services.LoginTool;
+using Rhyme.Tools.Services.Tourney;
 using Rhyme.Tools.Services.UploadImage;
 
 using RhymeLoginTool.Z_Socket;
@@ -60,6 +61,11 @@ namespace Rhyme.Tools
 		private void toolStripButton6_Click(object sender, EventArgs e)
 		{
 			MDIManager.Show(this, new frmUploadImage());
+		}
+
+		private void toolStripButton7_Click(object sender, EventArgs e)
+		{
+			MDIManager.Show(this, new TourneyForm());
 		}
 	}
 

@@ -641,55 +641,6 @@ namespace Rhyme.Tools.Services.LoginTool
 			Process.Start(fullPath);
 		}
 
-		private void btnDbExecute_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				DbBehavior.DbConnectionString = this.txtDbConnectionString.Text;
-
-				var tourneyTemplateId = int.Parse(this.txtTourneyTemplateId.Text);
-				var bufferTime = int.Parse(this.txtBufferTime.Text);
-
-				var result = DbBehavior.CreateTourney(tourneyTemplateId, bufferTime);
-
-				AddLog("Result code : ", result.ToString());
-			}
-			catch (Exception ex)
-			{
-				AddLog("Exception : ", ex.ToString());
-			}
-		}
-
-		private void btnViewTourney_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				DbBehavior.DbConnectionString = this.txtDbConnectionString.Text;
-
-				var form = new frmViewTourney();
-				form.Show();
-			}
-			catch (Exception ex)
-			{
-				AddLog("Exception : ", ex.ToString());
-			}
-		}
-
-		private void btnConnect_Click(object sender, EventArgs e)
-		{
-			try
-			{
-				DbBehavior.DbConnectionString = this.txtDbConnectionString.Text;
-
-				var dateTime = DbBehavior.ExecuteSql("Select Getdate() as MSSQLServerDate").Rows[0][0];
-
-				AddLog("Now db server datetime : ", dateTime.ToString());
-			}
-			catch (Exception ex)
-			{
-				AddLog("Exception : ", ex.ToString());
-			}
-		}
 
 		private void btnStartLive_Click(object sender, EventArgs e)
 		{
@@ -699,72 +650,6 @@ namespace Rhyme.Tools.Services.LoginTool
 		private void btnStartUAT_Click(object sender, EventArgs e)
 		{
 			ProcessBehavior.ExecuteFile(txtUATPath.Text);
-		}
-
-		private void btnAutoMake_Click(object sender, EventArgs e)
-		{
-			switch (btnAutoMake.Text)
-			{
-				case Constants.TournamentAutoMakeButtonTextEnable:
-					timerTourneyAutoMake.Interval = int.Parse(txtAutoMakeInterrval.Text) * 1000;
-					timerTourneyAutoMake.Start();
-
-					// toggle
-					btnAutoMake.Text = Constants.TournamentAutoMakeButtonTextDisable;
-
-					AddLog(string.Format("Start, auto make tournament with {0} seconds internal.", txtAutoMakeInterrval.Text));
-
-					// first time, manual execute
-					timerTourneyAutoMake_Tick(this, EventArgs.Empty);
-
-					break;
-				case Constants.TournamentAutoMakeButtonTextDisable:
-					timerTourneyAutoMake.Stop();
-
-					// toggle
-					btnAutoMake.Text = Constants.TournamentAutoMakeButtonTextEnable;
-
-					AddLog("Stop, auto make tournament.");
-					break;
-			}
-		}
-
-		private void timerTourneyAutoMake_Tick(object sender, EventArgs e)
-		{
-			if (this.InvokeRequired)
-			{
-				this.Invoke(new Action(() => timerTourneyAutoMake_Tick(this, EventArgs.Empty)));
-				return;
-			}
-
-			DbBehavior.DbConnectionString = this.txtDbConnectionString.Text;
-
-			var tourneyTemplateId = int.Parse(this.txtTourneyTemplateId.Text);
-
-			// auto increase event number ...
-			DbBehavior.ExecuteOnlySql(string.Format(
-				"update [rb_crm_dev].[dbo].[TourneyTemplates] " +
-				"set  " +
-				"		[Name] = y.NewName " +
-				"		, [EventNumber] = y.NewEventNumber " +
-				"from	[rb_crm_dev].[dbo].[TourneyTemplates] x " +
-				"		, ( " +
-				"			select	[TourneyTemplateId] " +
-				"					, [BrandName] + ' #' + Cast([NewEventNumber] as varchar) + ' ' + Cast(GamePlayerCount as varchar) + 'Max $0 Freeroll' as [NewName] " +
-				"					, [NewEventNumber] " +
-				"			from	( " +
-				"						select [TourneyTemplateId], [BrandName], [GamePlayerCount], [EventNumber] + 1 as [NewEventNumber] " +
-				"						from [rb_crm_dev].[dbo].[TourneyTemplates] " +
-				"						where [TourneyTemplateId] = {0} " +
-				"					) inner_y " +
-				"		) y " +
-				"where x.[TourneyTemplateId] = y.[TourneyTemplateId] " +
-				" "
-				, tourneyTemplateId));
-
-			btnDbExecute_Click(this, EventArgs.Empty);
-
-			AddLog("Tournament make by automatic timer.");
 		}
 	}
 }

@@ -32,6 +32,7 @@
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.toolStripButton_LoginTool = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
@@ -45,6 +46,7 @@
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton_LoginTool,
             this.toolStripButton5,
+            this.toolStripButton7,
             this.toolStripButton1,
             this.toolStripButton2,
             this.toolStripButton3,
@@ -52,7 +54,7 @@
             this.toolStripButton6});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(725, 25);
+			this.toolStrip1.Size = new System.Drawing.Size(814, 25);
 			this.toolStrip1.TabIndex = 1;
 			this.toolStrip1.Text = "toolStripMain";
 			// 
@@ -74,6 +76,15 @@
 			this.toolStripButton5.Size = new System.Drawing.Size(97, 22);
 			this.toolStripButton5.Text = "Bot Launcher";
 			this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+			// 
+			// toolStripButton7
+			// 
+			this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
+			this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton7.Name = "toolStripButton7";
+			this.toolStripButton7.Size = new System.Drawing.Size(71, 22);
+			this.toolStripButton7.Text = "Tourney";
+			this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
 			// 
 			// toolStripButton1
 			// 
@@ -124,7 +135,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(725, 407);
+			this.ClientSize = new System.Drawing.Size(814, 489);
 			this.Controls.Add(this.toolStrip1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.IsMdiContainer = true;
@@ -148,5 +159,6 @@
 		private System.Windows.Forms.ToolStripButton toolStripButton4;
 		private System.Windows.Forms.ToolStripButton toolStripButton5;
 		private System.Windows.Forms.ToolStripButton toolStripButton6;
+		private System.Windows.Forms.ToolStripButton toolStripButton7;
 	}
 }

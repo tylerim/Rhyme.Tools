@@ -114,10 +114,10 @@
       <DependentUpon>frmHandIdConverter.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\HandIdConverter\HandIdConverter.cs" />
-    <Compile Include="Services\LoginTool\frmViewTourney.cs">
+    <Compile Include="Services\Tourney\frmViewTourney.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Services\LoginTool\frmViewTourney.Designer.cs">
+    <Compile Include="Services\Tourney\frmViewTourney.Designer.cs">
       <DependentUpon>frmViewTourney.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\LoginTool\RhymeModule\2AceLoginhelper.cs" />
@@ -145,6 +145,12 @@
     </Compile>
     <Compile Include="Services\Socket\frmSocket.Designer.cs">
       <DependentUpon>frmSocket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Tourney\TourneyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\Tourney\TourneyForm.Designer.cs">
+      <DependentUpon>TourneyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\UploadImage\frmUploadImage.cs">
       <SubType>Form</SubType>
@@ -180,11 +186,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Services\LoginTool\frmViewTourney.resx">
+    <EmbeddedResource Include="Services\Tourney\frmViewTourney.resx">
       <DependentUpon>frmViewTourney.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Services\Socket\frmSocket.resx">
       <DependentUpon>frmSocket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\Tourney\TourneyForm.resx">
+      <DependentUpon>TourneyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Services\UploadImage\frmUploadImage.resx">
       <DependentUpon>frmUploadImage.cs</DependentUpon>
