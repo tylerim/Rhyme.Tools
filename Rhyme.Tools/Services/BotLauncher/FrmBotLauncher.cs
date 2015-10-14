@@ -11,6 +11,14 @@ namespace Rhyme.Tools.Services.BotLauncher
 			InitializeComponent();
 		}
 
+		protected override void OnClosed(EventArgs e)
+		{
+			base.OnClosed(e);
+
+			MDIManager.ParentForm.FrmBotLaunchers.Remove(this);
+		}
+
+
 		private void FrmBotLauncher_Load(object sender, EventArgs e)
 		{
 			cboBotType.SelectedIndex = 2;			// TCP
@@ -95,6 +103,11 @@ namespace Rhyme.Tools.Services.BotLauncher
 				return;
 
 			txtIPList.Enabled = true;
+		}
+
+		private void buttonNewInstance_Click(object sender, EventArgs e)
+		{
+			MDIManager.Show(new FrmBotLauncher());
 		}
 	}
 }

@@ -67,6 +67,7 @@
 			this.txtTableIndex = new System.Windows.Forms.TextBox();
 			this.txtReEnteringHandIntervalCount = new System.Windows.Forms.TextBox();
 			this.label17 = new System.Windows.Forms.Label();
+			this.buttonNewInstance = new System.Windows.Forms.Button();
 			this.gbRegisterTourney.SuspendLayout();
 			this.gbIsBotLoginIdPasswordSame.SuspendLayout();
 			this.SuspendLayout();
@@ -452,11 +453,22 @@
 			this.label17.TabIndex = 904;
 			this.label17.Text = "ReEntering Hand Interval :";
 			// 
+			// buttonNewInstance
+			// 
+			this.buttonNewInstance.Location = new System.Drawing.Point(12, 5);
+			this.buttonNewInstance.Name = "buttonNewInstance";
+			this.buttonNewInstance.Size = new System.Drawing.Size(85, 23);
+			this.buttonNewInstance.TabIndex = 906;
+			this.buttonNewInstance.Text = "New Instance";
+			this.buttonNewInstance.UseVisualStyleBackColor = true;
+			this.buttonNewInstance.Click += new System.EventHandler(this.buttonNewInstance_Click);
+			// 
 			// FrmBotLauncher
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(721, 338);
+			this.Controls.Add(this.buttonNewInstance);
 			this.Controls.Add(this.txtReEnteringHandIntervalCount);
 			this.Controls.Add(this.label17);
 			this.Controls.Add(this.txtTableIndex);
@@ -538,5 +550,6 @@
 		private System.Windows.Forms.TextBox txtTableIndex;
 		private System.Windows.Forms.TextBox txtReEnteringHandIntervalCount;
 		private System.Windows.Forms.Label label17;
+		private System.Windows.Forms.Button buttonNewInstance;
 	}
 }

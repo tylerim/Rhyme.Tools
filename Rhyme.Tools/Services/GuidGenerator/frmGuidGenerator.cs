@@ -29,6 +29,14 @@ namespace Rhyme.Tools.Services.GuidGenerator
 			CB_Prefix.SelectedIndex = 0;
 		}
 
+		protected override void OnClosed(EventArgs e)
+		{
+			base.OnClosed(e);
+
+			MDIManager.ParentForm.FrmGuidGenerator = null;
+		}
+
+
 		private void btGenerate_Click(object sender, EventArgs e)
 		{
 			int tryPrefix = -1;

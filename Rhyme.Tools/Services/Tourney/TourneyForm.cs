@@ -18,6 +18,14 @@ namespace Rhyme.Tools.Services.Tourney
 			InitializeComponent();
 		}
 
+		protected override void OnClosed(EventArgs e)
+		{
+			base.OnClosed(e);
+
+			MDIManager.ParentForm.FrmTourney = null;
+		}
+
+
 		private void AddLog(params string[] logs)
 		{
 			if (InvokeRequired)

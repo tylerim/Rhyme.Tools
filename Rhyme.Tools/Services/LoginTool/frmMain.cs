@@ -43,6 +43,13 @@ namespace Rhyme.Tools.Services.LoginTool
 			InitializeComponent();
 			InitializeForm();
 		}
+		
+		protected override void OnClosed(EventArgs e)
+		{
+			base.OnClosed(e);
+
+			MDIManager.ParentForm.FrmLoginTool = null;
+		}
 
 		private void InitializeForm()
 		{

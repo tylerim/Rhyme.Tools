@@ -11,14 +11,21 @@ namespace Rhyme.Tools.Services.Socket
 {
 	public partial class frmSocket : Form
 	{
+		private System.Net.Sockets.Socket _socket;
+		private List<System.Net.Sockets.Socket> _socketList = new List<System.Net.Sockets.Socket>();
+		private bool _isMultiStart;
+		
 		public frmSocket()
 		{
 			InitializeComponent();
 		}
 
-		private System.Net.Sockets.Socket _socket;
-		private List<System.Net.Sockets.Socket> _socketList = new List<System.Net.Sockets.Socket>();
-		private bool _isMultiStart = false;
+		protected override void OnClosed(EventArgs e)
+		{
+			base.OnClosed(e);
+
+			MDIManager.ParentForm.FrmSocket = null;
+		}
 
 		private void btnConnect_Click(object sender, EventArgs e)
 		{

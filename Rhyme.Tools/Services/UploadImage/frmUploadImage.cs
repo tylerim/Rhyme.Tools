@@ -22,6 +22,14 @@ namespace Rhyme.Tools.Services.UploadImage
 		{
 		}
 
+		protected override void OnClosed(EventArgs e)
+		{
+			base.OnClosed(e);
+
+			MDIManager.ParentForm.FrmUploadImage = null;
+		}
+
+
 		private void button1_Click(object sender, EventArgs e)
 		{
 			var dlg = new OpenFileDialog();

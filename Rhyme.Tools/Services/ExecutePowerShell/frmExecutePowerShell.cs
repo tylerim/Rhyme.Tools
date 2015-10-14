@@ -11,6 +11,14 @@ namespace Rhyme.Tools.Services.ExecutePowerShell
 			InitializeComponent();
 		}
 
+		protected override void OnClosed(EventArgs e)
+		{
+			base.OnClosed(e);
+
+			MDIManager.ParentForm.FrmExecutePowerShell = null;
+		}
+
+
 		private void btExecute_Click(object sender, EventArgs e)
 		{
 			// return value

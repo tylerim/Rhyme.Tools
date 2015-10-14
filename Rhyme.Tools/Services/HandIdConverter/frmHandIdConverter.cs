@@ -40,6 +40,14 @@ namespace Rhyme.Tools.Services.HandIdConverter
 			TB_ClientHandID.Select();
 		}
 
+		protected override void OnClosed(EventArgs e)
+		{
+			base.OnClosed(e);
+
+			MDIManager.ParentForm.FrmHandIdConverter = null;
+		}
+
+
 		private void BT_C2S_Click(object sender, EventArgs e)
 		{
 			if (string.IsNullOrEmpty(TB_ClientHandID.Text) || string.IsNullOrWhiteSpace(TB_ClientHandID.Text))
