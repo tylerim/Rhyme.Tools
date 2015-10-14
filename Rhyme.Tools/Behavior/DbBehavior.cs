@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+
+using Rhyme.Common.Utilities;
+
 using Server.Lib.Common;
 
 namespace Rhyme.Tools.Behavior
@@ -99,6 +102,41 @@ namespace Rhyme.Tools.Behavior
 			}
 		}
 
+		public static GiveTicketResponse CrmCreateTicket(Guid ticketGuid, int ticketTemplateId, int accountId)
+		{
+			var response = new GiveTicketResponse { Result = 10 };
+			try
+			{
+				// out params
+				var ticketName = SqlHelper.ToSqlOutParam("ticketName", SqlDbType.NVarChar);
+				var ticketValue = SqlHelper.ToSqlOutParam("ticketValue", SqlDbType.BigInt);
+
+				var resultCode = ExecuteStoredProcedure(
+					"p_CreateTicket",
+					SqlHelper.ToSqlInParam("ticketGuid", ticketGuid),
+					SqlHelper.ToSqlInParam("ticketTemplateId", ticketTemplateId),
+					SqlHelper.ToSqlInParam("accountId", accountId),
+					SqlHelper.ToSqlInParam("createdTime", DateTime.UtcNow),
+					SqlHelper.ToSqlInParam("expirationTime", new DateTime(2999, 12, 31, 23, 59, 59, 997)),
+					SqlHelper.ToSqlInParam("issued", false),
+					SqlHelper.ToSqlInParam("ticketIssueReason", 3), //TicketIssueReason.Promotion
+					ticketName,
+					ticketValue);
+
+				response.Result = resultCode;
+				response.TicketId = ticketGuid;
+				response.TicketName = ticketName.Value.Equals(DBNull.Value) ? null : (string)ticketName.Value;
+				response.TicketValue = (long)ticketValue.Value;
+			}
+			catch (Exception ex)
+			{
+				response.ErrorCode = string.Format("Exception in CRMCreateTicket : {0}", ex);
+			}
+
+			return response;
+		}
+
+
 		public static DataTable ExecuteSql(string sql)
 		{
 			try
@@ -124,5 +162,16 @@ namespace Rhyme.Tools.Behavior
 				PrintLog(string.Format("Error, {0}", ex));
 			}
 		}
+	}
+
+	public class GiveTicketResponse
+	{
+		public uint Result;
+		public string UserName;
+		public string ErrorCode;
+		public int TicketTemplateId;
+		public Guid TicketId;
+		public string TicketName;
+		public long TicketValue;
 	}
 }
