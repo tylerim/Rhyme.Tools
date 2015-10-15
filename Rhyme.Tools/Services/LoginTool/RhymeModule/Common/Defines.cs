@@ -1,7 +1,6 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 
-namespace Rhyme.Common
+namespace Rhyme.Tools.Services.LoginTool.RhymeModule.Common
 {
 	public enum TableSize
 	{

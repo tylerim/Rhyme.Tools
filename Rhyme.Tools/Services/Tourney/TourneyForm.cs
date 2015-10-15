@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using Rhyme.Common;
-using Rhyme.Common.Utilities;
 using Rhyme.Tools.Behavior;
-using Rhyme.Tools.Services.LoginTool;
+using Rhyme.Tools.Services.GuidGenerator;
+using Rhyme.Tools.Services.LoginTool.RhymeModule.Common;
 
 namespace Rhyme.Tools.Services.Tourney
 {

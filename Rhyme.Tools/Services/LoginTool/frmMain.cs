@@ -11,12 +11,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using Rhyme.Bootstrapper;
-using Rhyme.Common;
-using Rhyme.Common.Utilities;
 using Rhyme.Tools.Behavior;
 using Rhyme.Tools.Helper;
 using Rhyme.Tools.Services.LoginTool.RhymeModule;
+using Rhyme.Tools.Services.LoginTool.RhymeModule.Common;
+using Rhyme.Tools.Services.LoginTool.RhymeModule.Common.Utilities;
 
 namespace Rhyme.Tools.Services.LoginTool
 {

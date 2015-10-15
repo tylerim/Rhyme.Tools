@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -10,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RhymeLoginTool.Z_Socket
+namespace Rhyme.Tools.Services.Socket
 {
 	public partial class frmSocket : Form
 	{
@@ -19,13 +16,13 @@ namespace RhymeLoginTool.Z_Socket
 			InitializeComponent();
 		}
 
-		private Socket _socket;
-		private List<Socket> _socketList = new List<Socket>();
+		private System.Net.Sockets.Socket _socket;
+		private List<System.Net.Sockets.Socket> _socketList = new List<System.Net.Sockets.Socket>();
 		private bool _isMultiStart = false;
 
 		private void btnConnect_Click(object sender, EventArgs e)
 		{
-			_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+			_socket = new System.Net.Sockets.Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 			_socket.Connect(new IPEndPoint(IPAddress.Parse(txtAddress.Text), int.Parse(txtPort.Text)));
 		}
 
@@ -60,7 +57,7 @@ namespace RhymeLoginTool.Z_Socket
 				{
 					while (_isMultiStart)
 					{
-						var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+						var socket = new System.Net.Sockets.Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 						try
 						{
 							_socketList.Add(socket);

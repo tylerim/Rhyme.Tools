@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Server.Lib.Common
+namespace Rhyme.Tools.Helper
 {
     public class SqlHelper
     {

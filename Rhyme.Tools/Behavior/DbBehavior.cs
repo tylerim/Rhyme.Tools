@@ -4,9 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 
-using Rhyme.Common.Utilities;
-
-using Server.Lib.Common;
+using Rhyme.Tools.Helper;
 
 namespace Rhyme.Tools.Behavior
 {

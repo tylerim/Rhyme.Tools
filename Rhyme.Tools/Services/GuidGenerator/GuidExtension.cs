@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Rhyme.Common.Utilities
+namespace Rhyme.Tools.Services.GuidGenerator
 {
 	public static class GuidHelper
 	{

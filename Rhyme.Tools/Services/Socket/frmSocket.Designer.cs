@@ -1,4 +1,4 @@
-﻿namespace RhymeLoginTool.Z_Socket
+﻿namespace Rhyme.Tools.Services.Socket
 {
 	partial class frmSocket
 	{

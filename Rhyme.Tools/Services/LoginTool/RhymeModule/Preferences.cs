@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Windows;
-//using System.Windows.Threading;
 using System.Xml.Serialization;
-using Rhyme.Common;
-using Rhyme.Common.Utilities;
 
-namespace Rhyme.Bootstrapper
+using Rhyme.Tools.Services.LoginTool.RhymeModule.Common;
+using Rhyme.Tools.Services.LoginTool.RhymeModule.Common.Utilities;
+//using System.Windows.Threading;
+
+namespace Rhyme.Tools.Services.LoginTool.RhymeModule
 {
 	//[Serializable]
 	//[XmlSerializerAssembly("RhymeLoginTool.XmlSerializers")]

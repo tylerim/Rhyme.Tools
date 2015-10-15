@@ -1,11 +1,7 @@
 ﻿using System;
-using System.ComponentModel;
 using System.IO;
-using System.Windows;
 
-using Microsoft.Win32;
-
-namespace Rhyme.Common.Utilities
+namespace Rhyme.Tools.Services.LoginTool.RhymeModule.Common.Utilities
 {
 	public static class DirectoryHelper
 	{

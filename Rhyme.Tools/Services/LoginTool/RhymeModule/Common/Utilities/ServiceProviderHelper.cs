@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace Rhyme.Common.Utilities
+namespace Rhyme.Tools.Services.LoginTool.RhymeModule.Common.Utilities
 {
 	public static class ServiceProviderHelper
 	{
