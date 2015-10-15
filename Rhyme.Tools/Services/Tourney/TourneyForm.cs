@@ -166,8 +166,6 @@ namespace Rhyme.Tools.Services.Tourney
 			lbLog.Items.Clear();
 		}
 
-
-
 		private void button1_Click(object sender, EventArgs e)
 		{
 			var accountId = 0;
@@ -206,9 +204,19 @@ namespace Rhyme.Tools.Services.Tourney
 			}
 		}
 
-		private void textBox2_TextChanged(object sender, EventArgs e)
+		private void btnViewPlayers_Click(object sender, EventArgs e)
 		{
+			try
+			{
+				DbBehavior.DbConnectionString = txtDbConnectionString.Text;
 
+				var form = new frmViewPlayers();
+				form.Show();
+			}
+			catch (Exception ex)
+			{
+				AddLog("Exception : ", ex.ToString());
+			}
 		}
 	}
 }

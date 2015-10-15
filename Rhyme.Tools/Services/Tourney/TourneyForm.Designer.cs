@@ -42,15 +42,18 @@
 			this.btnViewTourney = new System.Windows.Forms.Button();
 			this.btnDbExecute = new System.Windows.Forms.Button();
 			this.gbLog = new System.Windows.Forms.GroupBox();
-			this.btnLogClear = new System.Windows.Forms.Button();
 			this.lbLog = new System.Windows.Forms.ListBox();
+			this.btnLogClear = new System.Windows.Forms.Button();
 			this.timerTourneyAutoMake = new System.Windows.Forms.Timer(this.components);
-			this.label5 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.button1 = new System.Windows.Forms.Button();
+			this.btnViewPlayers = new System.Windows.Forms.Button();
+			this.gbTicket = new System.Windows.Forms.GroupBox();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.label5 = new System.Windows.Forms.Label();
 			this.gbLog.SuspendLayout();
+			this.gbTicket.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label4
@@ -175,17 +178,6 @@
 			this.gbLog.TabStop = false;
 			this.gbLog.Text = "Log";
 			// 
-			// btnLogClear
-			// 
-			this.btnLogClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnLogClear.Location = new System.Drawing.Point(654, 219);
-			this.btnLogClear.Name = "btnLogClear";
-			this.btnLogClear.Size = new System.Drawing.Size(45, 25);
-			this.btnLogClear.TabIndex = 13;
-			this.btnLogClear.Text = "Clear";
-			this.btnLogClear.UseVisualStyleBackColor = true;
-			this.btnLogClear.Click += new System.EventHandler(this.btnLogClear_Click);
-			// 
 			// lbLog
 			// 
 			this.lbLog.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -198,42 +190,36 @@
 			this.lbLog.Size = new System.Drawing.Size(695, 190);
 			this.lbLog.TabIndex = 12;
 			// 
-			// label5
+			// btnLogClear
 			// 
-			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(21, 117);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(56, 13);
-			this.label5.TabIndex = 31;
-			this.label5.Text = "AccountId";
+			this.btnLogClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnLogClear.Location = new System.Drawing.Point(654, 219);
+			this.btnLogClear.Name = "btnLogClear";
+			this.btnLogClear.Size = new System.Drawing.Size(45, 25);
+			this.btnLogClear.TabIndex = 13;
+			this.btnLogClear.Text = "Clear";
+			this.btnLogClear.UseVisualStyleBackColor = true;
+			this.btnLogClear.Click += new System.EventHandler(this.btnLogClear_Click);
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(21, 143);
+			this.label6.Location = new System.Drawing.Point(6, 48);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(96, 13);
+			this.label6.Size = new System.Drawing.Size(102, 13);
 			this.label6.TabIndex = 32;
-			this.label6.Text = "TicketTemplatedId";
-			// 
-			// textBox1
-			// 
-			this.textBox1.Location = new System.Drawing.Point(122, 114);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(66, 20);
-			this.textBox1.TabIndex = 33;
+			this.label6.Text = "TicketTemplatedId :";
 			// 
 			// textBox2
 			// 
-			this.textBox2.Location = new System.Drawing.Point(123, 140);
+			this.textBox2.Location = new System.Drawing.Point(114, 45);
 			this.textBox2.Name = "textBox2";
 			this.textBox2.Size = new System.Drawing.Size(65, 20);
 			this.textBox2.TabIndex = 34;
-			this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(299, 114);
+			this.button1.Location = new System.Drawing.Point(287, 17);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(117, 25);
 			this.button1.TabIndex = 35;
@@ -241,17 +227,54 @@
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
+			// btnViewPlayers
+			// 
+			this.btnViewPlayers.Location = new System.Drawing.Point(186, 17);
+			this.btnViewPlayers.Name = "btnViewPlayers";
+			this.btnViewPlayers.Size = new System.Drawing.Size(95, 23);
+			this.btnViewPlayers.TabIndex = 36;
+			this.btnViewPlayers.Text = "View Players";
+			this.btnViewPlayers.UseVisualStyleBackColor = true;
+			this.btnViewPlayers.Click += new System.EventHandler(this.btnViewPlayers_Click);
+			// 
+			// gbTicket
+			// 
+			this.gbTicket.Controls.Add(this.btnViewPlayers);
+			this.gbTicket.Controls.Add(this.label5);
+			this.gbTicket.Controls.Add(this.button1);
+			this.gbTicket.Controls.Add(this.label6);
+			this.gbTicket.Controls.Add(this.textBox2);
+			this.gbTicket.Controls.Add(this.textBox1);
+			this.gbTicket.Location = new System.Drawing.Point(12, 101);
+			this.gbTicket.Name = "gbTicket";
+			this.gbTicket.Size = new System.Drawing.Size(676, 75);
+			this.gbTicket.TabIndex = 37;
+			this.gbTicket.TabStop = false;
+			this.gbTicket.Text = "Tourney Ticket";
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(114, 19);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(66, 20);
+			this.textBox1.TabIndex = 33;
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Location = new System.Drawing.Point(46, 22);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(62, 13);
+			this.label5.TabIndex = 31;
+			this.label5.Text = "AccountId :";
+			// 
 			// TourneyForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(703, 451);
+			this.Controls.Add(this.gbTicket);
 			this.Controls.Add(this.btnLogClear);
-			this.Controls.Add(this.button1);
-			this.Controls.Add(this.textBox2);
-			this.Controls.Add(this.textBox1);
-			this.Controls.Add(this.label6);
-			this.Controls.Add(this.label5);
 			this.Controls.Add(this.gbLog);
 			this.Controls.Add(this.btnAutoMake);
 			this.Controls.Add(this.btnConnect);
@@ -268,6 +291,8 @@
 			this.Name = "TourneyForm";
 			this.Text = "TourneyForm";
 			this.gbLog.ResumeLayout(false);
+			this.gbTicket.ResumeLayout(false);
+			this.gbTicket.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -291,11 +316,13 @@
 		private System.Windows.Forms.Button btnLogClear;
 		private System.Windows.Forms.ListBox lbLog;
 		private System.Windows.Forms.Timer timerTourneyAutoMake;
-		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label6;
-		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnViewPlayers;
+		private System.Windows.Forms.GroupBox gbTicket;
+		private System.Windows.Forms.Label label5;
+		private System.Windows.Forms.TextBox textBox1;
 
 	}
 }

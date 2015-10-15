@@ -1,4 +1,4 @@
-﻿namespace Rhyme.Tools.Services.LoginTool
+﻿namespace Rhyme.Tools.Services.Tourney
 {
 	partial class frmViewTourney
 	{
@@ -30,7 +30,7 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmViewTourney));
 			this.dataGridViewTourney = new System.Windows.Forms.DataGridView();
-			this.btnViewTourny = new System.Windows.Forms.Button();
+			this.btnViewTourney = new System.Windows.Forms.Button();
 			this.txtSql = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewTourney)).BeginInit();
 			this.SuspendLayout();
@@ -47,16 +47,16 @@
 			this.dataGridViewTourney.Size = new System.Drawing.Size(1565, 166);
 			this.dataGridViewTourney.TabIndex = 0;
 			// 
-			// btnViewTourny
+			// btnViewTourney
 			// 
-			this.btnViewTourny.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnViewTourny.Location = new System.Drawing.Point(1511, 13);
-			this.btnViewTourny.Name = "btnViewTourny";
-			this.btnViewTourny.Size = new System.Drawing.Size(64, 25);
-			this.btnViewTourny.TabIndex = 1;
-			this.btnViewTourny.Text = "View";
-			this.btnViewTourny.UseVisualStyleBackColor = true;
-			this.btnViewTourny.Click += new System.EventHandler(this.btnViewTourny_Click);
+			this.btnViewTourney.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnViewTourney.Location = new System.Drawing.Point(1511, 13);
+			this.btnViewTourney.Name = "btnViewTourny";
+			this.btnViewTourney.Size = new System.Drawing.Size(64, 25);
+			this.btnViewTourney.TabIndex = 1;
+			this.btnViewTourney.Text = "View";
+			this.btnViewTourney.UseVisualStyleBackColor = true;
+			this.btnViewTourney.Click += new System.EventHandler(this.btnViewTourny_Click);
 			// 
 			// txtSql
 			// 
@@ -74,7 +74,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1585, 284);
-			this.Controls.Add(this.btnViewTourny);
+			this.Controls.Add(this.btnViewTourney);
 			this.Controls.Add(this.txtSql);
 			this.Controls.Add(this.dataGridViewTourney);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
@@ -89,7 +89,7 @@
 		#endregion
 
 		private System.Windows.Forms.DataGridView dataGridViewTourney;
-		private System.Windows.Forms.Button btnViewTourny;
+		private System.Windows.Forms.Button btnViewTourney;
 		private System.Windows.Forms.TextBox txtSql;
 	}
 }

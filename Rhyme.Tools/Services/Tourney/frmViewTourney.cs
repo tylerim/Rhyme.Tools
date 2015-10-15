@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
+
 using Rhyme.Tools.Behavior;
 
-namespace Rhyme.Tools.Services.LoginTool
+namespace Rhyme.Tools.Services.Tourney
 {
 	public partial class frmViewTourney : Form
 	{
