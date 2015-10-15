@@ -50,8 +50,8 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.btnViewPlayers = new System.Windows.Forms.Button();
 			this.gbTicket = new System.Windows.Forms.GroupBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
+			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.gbLog.SuspendLayout();
 			this.gbTicket.SuspendLayout();
 			this.SuspendLayout();
@@ -59,17 +59,19 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(15, 20);
+			this.label4.Location = new System.Drawing.Point(9, 20);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(61, 13);
+			this.label4.Size = new System.Drawing.Size(67, 13);
 			this.label4.TabIndex = 17;
-			this.label4.Text = "Connection";
+			this.label4.Text = "Connection :";
 			// 
 			// txtDbConnectionString
 			// 
+			this.txtDbConnectionString.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.txtDbConnectionString.Location = new System.Drawing.Point(82, 17);
 			this.txtDbConnectionString.Name = "txtDbConnectionString";
-			this.txtDbConnectionString.Size = new System.Drawing.Size(606, 20);
+			this.txtDbConnectionString.Size = new System.Drawing.Size(513, 20);
 			this.txtDbConnectionString.TabIndex = 16;
 			this.txtDbConnectionString.Text = "Data Source=LOCALHOST\\RICHBITCH;Initial Catalog=rb_crm_dev;Integrated Security=Tr" +
     "ue";
@@ -77,15 +79,15 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(114, 78);
+			this.label3.Location = new System.Drawing.Point(201, 79);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(73, 13);
+			this.label3.Size = new System.Drawing.Size(79, 13);
 			this.label3.TabIndex = 25;
-			this.label3.Text = "반복주기(초)";
+			this.label3.Text = "반복주기(초) :";
 			// 
 			// txtAutoMakeInterrval
 			// 
-			this.txtAutoMakeInterrval.Location = new System.Drawing.Point(193, 75);
+			this.txtAutoMakeInterrval.Location = new System.Drawing.Point(286, 75);
 			this.txtAutoMakeInterrval.Name = "txtAutoMakeInterrval";
 			this.txtAutoMakeInterrval.Size = new System.Drawing.Size(65, 20);
 			this.txtAutoMakeInterrval.TabIndex = 24;
@@ -94,24 +96,24 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(114, 52);
+			this.label2.Location = new System.Drawing.Point(201, 52);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(73, 13);
+			this.label2.Size = new System.Drawing.Size(79, 13);
 			this.label2.TabIndex = 22;
-			this.label2.Text = "여유시간(초)";
+			this.label2.Text = "여유시간(초) :";
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(21, 52);
+			this.label1.Location = new System.Drawing.Point(15, 52);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(16, 13);
+			this.label1.Size = new System.Drawing.Size(105, 13);
 			this.label1.TabIndex = 23;
-			this.label1.Text = "Id";
+			this.label1.Text = "TourneyTemplateId :";
 			// 
 			// txtBufferTime
 			// 
-			this.txtBufferTime.Location = new System.Drawing.Point(193, 49);
+			this.txtBufferTime.Location = new System.Drawing.Point(286, 49);
 			this.txtBufferTime.Name = "txtBufferTime";
 			this.txtBufferTime.Size = new System.Drawing.Size(65, 20);
 			this.txtBufferTime.TabIndex = 21;
@@ -119,7 +121,7 @@
 			// 
 			// txtTourneyTemplateId
 			// 
-			this.txtTourneyTemplateId.Location = new System.Drawing.Point(43, 49);
+			this.txtTourneyTemplateId.Location = new System.Drawing.Point(126, 49);
 			this.txtTourneyTemplateId.Name = "txtTourneyTemplateId";
 			this.txtTourneyTemplateId.Size = new System.Drawing.Size(65, 20);
 			this.txtTourneyTemplateId.TabIndex = 20;
@@ -127,7 +129,7 @@
 			// 
 			// btnAutoMake
 			// 
-			this.btnAutoMake.Location = new System.Drawing.Point(299, 75);
+			this.btnAutoMake.Location = new System.Drawing.Point(357, 72);
 			this.btnAutoMake.Name = "btnAutoMake";
 			this.btnAutoMake.Size = new System.Drawing.Size(117, 23);
 			this.btnAutoMake.TabIndex = 29;
@@ -137,7 +139,8 @@
 			// 
 			// btnConnect
 			// 
-			this.btnConnect.Location = new System.Drawing.Point(565, 50);
+			this.btnConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnConnect.Location = new System.Drawing.Point(601, 15);
 			this.btnConnect.Name = "btnConnect";
 			this.btnConnect.Size = new System.Drawing.Size(90, 23);
 			this.btnConnect.TabIndex = 28;
@@ -147,7 +150,7 @@
 			// 
 			// btnViewTourney
 			// 
-			this.btnViewTourney.Location = new System.Drawing.Point(422, 49);
+			this.btnViewTourney.Location = new System.Drawing.Point(54, 74);
 			this.btnViewTourney.Name = "btnViewTourney";
 			this.btnViewTourney.Size = new System.Drawing.Size(137, 25);
 			this.btnViewTourney.TabIndex = 27;
@@ -157,7 +160,7 @@
 			// 
 			// btnDbExecute
 			// 
-			this.btnDbExecute.Location = new System.Drawing.Point(299, 49);
+			this.btnDbExecute.Location = new System.Drawing.Point(357, 46);
 			this.btnDbExecute.Name = "btnDbExecute";
 			this.btnDbExecute.Size = new System.Drawing.Size(117, 25);
 			this.btnDbExecute.TabIndex = 26;
@@ -219,7 +222,7 @@
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(287, 17);
+			this.button1.Location = new System.Drawing.Point(345, 15);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(117, 25);
 			this.button1.TabIndex = 35;
@@ -245,19 +248,12 @@
 			this.gbTicket.Controls.Add(this.label6);
 			this.gbTicket.Controls.Add(this.textBox2);
 			this.gbTicket.Controls.Add(this.textBox1);
-			this.gbTicket.Location = new System.Drawing.Point(12, 101);
+			this.gbTicket.Location = new System.Drawing.Point(12, 105);
 			this.gbTicket.Name = "gbTicket";
 			this.gbTicket.Size = new System.Drawing.Size(676, 75);
 			this.gbTicket.TabIndex = 37;
 			this.gbTicket.TabStop = false;
 			this.gbTicket.Text = "Tourney Ticket";
-			// 
-			// textBox1
-			// 
-			this.textBox1.Location = new System.Drawing.Point(114, 19);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(66, 20);
-			this.textBox1.TabIndex = 33;
 			// 
 			// label5
 			// 
@@ -267,6 +263,13 @@
 			this.label5.Size = new System.Drawing.Size(62, 13);
 			this.label5.TabIndex = 31;
 			this.label5.Text = "AccountId :";
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(114, 19);
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(66, 20);
+			this.textBox1.TabIndex = 33;
 			// 
 			// TourneyForm
 			// 
